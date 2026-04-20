@@ -33,6 +33,12 @@ def build_model(name: str, load_in_4bit: bool = False):
             return GeminiModel(name="gemini-2.5-flash-lite")
     if normalized == "qwen-vl-max":
         return DashScopeQwenModel(name="qwen-vl-max")
+    
+    # Allow arbitrary HuggingFace model IDs (e.g., "unsloth/gemma-3-12b-it-bnb-4bit")
+    if "/" in name:
+        from .local import TransformersVLM
+        return TransformersVLM(name=name, model_id=name, load_in_4bit=load_in_4bit)
+    
     raise KeyError(f"Unknown model name: {name}")
 
 
