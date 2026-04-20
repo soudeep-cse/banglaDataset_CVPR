@@ -1,0 +1,13 @@
+.venv/
+.env
+.env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+data/
+data/Bangla-Bayanno-Full/
+results/
+figures/
+banglabench.egg-info/
+logs/
