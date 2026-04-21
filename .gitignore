@@ -6,7 +6,6 @@ __pycache__/
 *.pyo
 *.pyd
 data/
-data/Bangla-Bayanno-Full/
 results/
 figures/
 banglabench.egg-info/

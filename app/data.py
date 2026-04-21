@@ -66,12 +66,7 @@ def _resolve_image_path(images_dir: Path, raw_value: Any) -> Path:
     return (images_dir / candidate).resolve()
 
 
-def load_dataset(data_dir: str | Path, limit: int | None = None) -> list[QuestionSample]:
-    data_dir = Path(data_dir)
-    qa_path = data_dir / "qa.json"
-    images_dir = data_dir / "images"
-    payload = _read_json(qa_path)
-    rows = _extract_rows(payload)
+def _rows_to_samples(rows: list[dict[str, Any]], images_dir: Path, limit: int | None = None) -> list[QuestionSample]:
     if limit is not None:
         rows = rows[:limit]
 
@@ -98,3 +93,23 @@ def load_dataset(data_dir: str | Path, limit: int | None = None) -> list[Questio
             )
         )
     return samples
+
+
+def load_dataset_from_file(qa_file: str | Path, images_dir: str | Path, limit: int | None = None) -> list[QuestionSample]:
+    qa_file = Path(qa_file)
+    payload = _read_json(qa_file)
+    rows = _extract_rows(payload)
+    return _rows_to_samples(rows, Path(images_dir), limit=limit)
+
+
+def load_dataset(data_dir: str | Path, limit: int | None = None) -> list[QuestionSample]:
+    data_dir = Path(data_dir)
+    if not data_dir.exists():
+        alternate = Path("dataset") if data_dir.name == "data" else Path("data")
+        if alternate.exists():
+            data_dir = alternate
+    qa_path = data_dir / "qa.json"
+    images_dir = data_dir / "images"
+    payload = _read_json(qa_path)
+    rows = _extract_rows(payload)
+    return _rows_to_samples(rows, images_dir, limit=limit)

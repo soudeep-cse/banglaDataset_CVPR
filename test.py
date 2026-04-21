@@ -1,14 +1,13 @@
 import requests
 
-url = "http://69.30.85.131:22054/api/chat"
+BASE = "http://69.30.85.131:22054"
 
-payload = {
-    "model": "qwen2.5vl:7b",
-    "messages": [
-        {"role": "user", "content": "Hello, how are you?"}
-    ],
+models = requests.get(f"{BASE}/api/tags", timeout=5).json().get("models", [])
+print("Models:", [m["name"] for m in models])
+
+response = requests.post(f"{BASE}/api/generate", json={
+    "model": models[0]["name"],
+    "prompt": "Say hello in one sentence.",
     "stream": False
-}
-
-response = requests.post(url, json=payload)
-print(response.json()["message"]["content"])
+}, timeout=30).json().get("response")
+print("Response:", response)

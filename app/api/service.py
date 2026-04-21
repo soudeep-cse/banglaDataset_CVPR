@@ -3,9 +3,9 @@ from __future__ import annotations
 import tempfile
 from pathlib import Path
 
-from banglabench.evaluator import evaluate
-from banglabench.models import build_model
-from banglabench.types import ModelResponse, QuestionSample
+from app.evaluator import evaluate
+from app.models import build_model
+from app.types import ModelResponse, QuestionSample
 
 
 def run_evaluation(
@@ -13,6 +13,7 @@ def run_evaluation(
     data_dir: str,
     results_dir: str,
     sample: int | None,
+    ollama_host: str | None,
     request_delay: float,
     max_retries: int,
     retry_backoff: float,
@@ -22,13 +23,14 @@ def run_evaluation(
         data_dir=data_dir,
         results_dir=results_dir,
         sample=sample,
+        ollama_host=ollama_host,
         request_delay=request_delay,
         max_retries=max_retries,
         retry_backoff=retry_backoff,
     )
 
 
-def run_single_generation(model: str, question: str, image_path: str) -> ModelResponse:
+def run_single_generation(model: str, question: str, image_path: str, ollama_host: str | None = None) -> ModelResponse:
     sample = QuestionSample(
         sample_id="adhoc",
         question=question,
@@ -37,16 +39,22 @@ def run_single_generation(model: str, question: str, image_path: str) -> ModelRe
         question_type="unknown",
         answer_type="unknown",
     )
-    vlm = build_model(model)
+    vlm = build_model(model, host=ollama_host)
     return vlm.generate(sample)
 
 
-def run_single_generation_from_upload(model: str, question: str, image_bytes: bytes, filename: str) -> ModelResponse:
+def run_single_generation_from_upload(
+    model: str,
+    question: str,
+    image_bytes: bytes,
+    filename: str,
+    ollama_host: str | None = None,
+) -> ModelResponse:
     suffix = Path(filename).suffix or ".jpg"
     with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
         tmp.write(image_bytes)
         temp_path = Path(tmp.name)
     try:
-        return run_single_generation(model=model, question=question, image_path=str(temp_path))
+        return run_single_generation(model=model, question=question, image_path=str(temp_path), ollama_host=ollama_host)
     finally:
         temp_path.unlink(missing_ok=True)

@@ -11,21 +11,16 @@ requires-python = ">=3.10"
 dependencies = [
   "numpy>=1.24",
   "pillow>=10.0",
-  "matplotlib>=3.8",
   "python-dotenv>=1.0",
   "ollama>=0.4.7",
   "fastapi>=0.115",
   "uvicorn>=0.30",
   "python-multipart>=0.0.9",
+  "requests",
+  "ipython>=8.39.0",
 ]
 
 [project.optional-dependencies]
-local = [
-  "ollama>=0.4.7",
-]
-api = [
-  "python-dotenv>=1.0",
-]
 dev = [
   "pytest>=8.0",
 ]
@@ -35,4 +30,4 @@ include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["banglabench*"]
+include = ["app*"]

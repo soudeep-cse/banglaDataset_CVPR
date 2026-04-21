@@ -21,6 +21,7 @@ def evaluate_endpoint(payload: EvaluateRequest) -> dict[str, object]:
             data_dir=payload.data_dir,
             results_dir=payload.results_dir,
             sample=payload.sample,
+            ollama_host=payload.ollama_host,
             request_delay=payload.request_delay,
             max_retries=payload.max_retries,
             retry_backoff=payload.retry_backoff,
@@ -36,6 +37,7 @@ def generate_endpoint(payload: GenerateRequest) -> GenerateResponse:
             model=payload.model,
             question=payload.question,
             image_path=payload.image_path,
+            ollama_host=payload.ollama_host,
         )
     except Exception as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
@@ -52,6 +54,7 @@ async def generate_upload_endpoint(
     question: str = Form(...),
     image: UploadFile = File(...),
     model: str = Form("ollama/qwen2.5vl:7b"),
+    ollama_host: str | None = Form(default=None),
 ) -> GenerateResponse:
     try:
         image_bytes = await image.read()
@@ -60,6 +63,7 @@ async def generate_upload_endpoint(
             question=question,
             image_bytes=image_bytes,
             filename=image.filename or "upload.jpg",
+            ollama_host=ollama_host,
         )
     except Exception as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc

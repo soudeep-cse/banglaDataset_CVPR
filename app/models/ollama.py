@@ -8,10 +8,20 @@ from .base import BaseVLM, parse_model_output
 from ..types import ModelResponse, QuestionSample
 
 
+def _load_environment() -> None:
+    try:
+        from dotenv import load_dotenv
+    except ImportError:
+        return
+    load_dotenv(override=False)
+
+
 class OllamaVLM(BaseVLM):
     def __init__(self, name: str, model_id: str, host: str | None = None):
         super().__init__(name=name)
         self.model_id = model_id
+        if host is None:
+            _load_environment()
         self.host = host or os.getenv("OLLAMA_HOST", "http://localhost:11434")
 
     def generate(self, sample: QuestionSample) -> ModelResponse:
