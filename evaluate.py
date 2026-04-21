@@ -22,12 +22,12 @@ def load_environment(env_file: str) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Run BanglaBayanno benchmark evaluation")
-    parser.add_argument("--model", required=True, help="Model name, for example idefics2 or qwen2-vl")
+    parser.add_argument("--model", required=True, help="Ollama model name, for example ollama/qwen2.5vl:7b")
     parser.add_argument("--data_dir", default="data", help="Dataset directory containing qa.json and images/")
     parser.add_argument("--results_dir", default="results", help="Directory for prediction and metrics files")
     parser.add_argument("--sample", type=int, default=None, help="Optional sample limit")
-    parser.add_argument("--load_in_4bit", action="store_true", help="Load supported local models in 4-bit mode")
-    parser.add_argument("--env_file", default=".env", help="Path to .env file for API keys")
+    parser.add_argument("--load_in_4bit", action="store_true", help="Legacy flag, ignored in Ollama-only mode")
+    parser.add_argument("--env_file", default=".env", help="Path to .env file for runtime config (for example OLLAMA_HOST)")
     parser.add_argument("--request_delay", type=float, default=0.0, help="Delay in seconds between API requests")
     parser.add_argument("--max_retries", type=int, default=3, help="Maximum retries for retryable API errors")
     parser.add_argument("--retry_backoff", type=float, default=2.0, help="Base backoff in seconds for retries")

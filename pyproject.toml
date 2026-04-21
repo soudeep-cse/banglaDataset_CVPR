@@ -12,22 +12,18 @@ dependencies = [
   "numpy>=1.24",
   "pillow>=10.0",
   "matplotlib>=3.8",
+  "python-dotenv>=1.0",
+  "ollama>=0.4.7",
+  "fastapi>=0.115",
+  "uvicorn>=0.30",
+  "python-multipart>=0.0.9",
 ]
 
 [project.optional-dependencies]
 local = [
-  "torch>=2.1",
-  "torchvision>=0.16",
-  "transformers>=4.45",
-  "accelerate>=0.33",
-  "bitsandbytes>=0.43",
-  "qwen-vl-utils>=0.0.8",
+  "ollama>=0.4.7",
 ]
 api = [
-  "openai>=1.40",
-  "anthropic>=0.34",
-  "google-genai>=1.0.0",
-  "dashscope>=1.20",
   "python-dotenv>=1.0",
 ]
 dev = [
