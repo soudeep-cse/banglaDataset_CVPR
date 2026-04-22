@@ -22,11 +22,11 @@ uv pip install -e .
 Create `.env` in repo root:
 
 ```dotenv
-OLLAMA_HOST=http://69.30.85.131:22054
+OLLAMA_HOST=http://194.68.245.42:22166
 ```
 
 If not set, default host is `http://localhost:11434`.
-You can also override it per run with `--ollama_host http://69.30.85.131:22054`.
+You can also override it per run with `--ollama_host http://194.68.245.42:22166`.
 
 ## Dataset
 
@@ -35,7 +35,7 @@ Place dataset files manually in:
 - `dataset/qa.json`
 - `dataset/images/`
 
-If you prefer the old layout, `data/` also works as a fallback.
+If you prefer the old layout, `dataset/` also works as a fallback.
 
 The evaluator and API both read from this location by default.
 
@@ -74,7 +74,7 @@ python evaluate.py --model bakllava --skip_preprocess
 If your RunPod host is not in `.env`, pass it explicitly:
 
 ```bash
-python evaluate.py --model ollama/qwen2.5vl:7b --sample 5 --ollama_host http://69.30.85.131:22054
+python evaluate.py --model ollama/qwen2.5vl:7b --sample 5 --ollama_host http://194.68.245.42:22166
 ```
 
 Outputs:
@@ -146,7 +146,7 @@ curl -X POST http://127.0.0.1:8000/v1/generate \
 ```bash
 curl -X POST http://127.0.0.1:8000/v1/generate-upload \
   -F "model=ollama/qwen2.5vl:7b" \
-  -F "ollama_host=http://69.30.85.131:22054" \
+  -F "ollama_host=http://194.68.245.42:22166" \
   -F "question=ছবিতে কী আছে?" \
   -F "image=@dataset/images/1.jpg"
 ```

@@ -1,6 +1,6 @@
 import requests
 
-BASE = "http://69.30.85.131:22054"
+BASE = "http://194.68.245.42:22166"
 
 models = requests.get(f"{BASE}/api/tags", timeout=5).json().get("models", [])
 print("Models:", [m["name"] for m in models])

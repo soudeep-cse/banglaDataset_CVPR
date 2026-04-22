@@ -9,8 +9,8 @@ def build_model(name: str, load_in_4bit: bool = False, host: str | None = None):
 
     if normalized in {"ollama-llava", "llava-ollama", "llava"}:
         return build_ollama_model(name=normalized, model_id="llava:7b", host=host)
-    if normalized in {"ollama-qwen2-vl", "qwen2-vl-ollama", "ollama-qwen2.5vl", "qwen2.5vl-ollama", "qwen2.5vl"}:
-        return build_ollama_model(name=normalized, model_id="qwen2.5vl:7b", host=host)
+    if normalized in {"ollama-qwen2-vl", "qwen2-vl-ollama", "ollama-qwen2.5vl", "qwen2.5vl-ollama", "qwen2.5vl","qwen3.5"}:
+        return build_ollama_model(name=normalized, model_id="qwen3.5:9b", host=host)
     if normalized in {"bakllava", "ollama-bakllava", "bakllava-ollama"}:
         return build_ollama_model(name=normalized, model_id="bakllava:latest", host=host)
     if normalized in {"moondream", "ollama-moondream", "moondream-ollama"}:
