@@ -1,0 +1,101 @@
+[
+  {
+    "qa_id": 0,
+    "image_id": 480056,
+    "image_file": "COCO_train2014_000000480056.jpg",
+    "question_bn": "এই প্রাণীটি কি বন্য পরিবেশে আছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 6,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "নীচে কি কোনো স্টিকার আছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 9,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "বিড়ালটি কি নিরাপদে তা পান করতে পারে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 14,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "দেয়ালটি কি সম্প্রতি রঙ করা হয়েছে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 17,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "বিড়ালরা কি সাধারণত এভাবেই খায়",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 18,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "বিড়ালটি কি দুধ পান করছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "এই বিড়ালটি কি জলের বাটিতে আঁটবে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 21,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "এই প্রাণীটি কি তার উদ্দেশ্য অনুযায়ী সেই বস্তুটি ব্যবহার করতে পারে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 22,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "বাটিটি কি মাটিতে রাখা আছে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 27,
+    "image_id": 52305,
+    "image_file": "COCO_train2014_000000052305.jpg",
+    "question_bn": "লোকটি কি নৌকা থেকে মাছ ধরছে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 28,
+    "image_id": 52305,
+    "image_file": "COCO_train2014_000000052305.jpg",
+    "question_bn": "নৌকায় কি কোনো আলো আছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  }
+]

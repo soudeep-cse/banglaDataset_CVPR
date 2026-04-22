@@ -16,6 +16,7 @@ ID_KEYS = ("qa_id", "id", "uid", "sample_id", "qid")
 YES_VARIANTS = {"yes", "y", "haan", "ha", "হ্যাঁ", "হ্যা", "হঁ্যা", "জি", "yes."}
 NO_VARIANTS = {"no", "n", "na", "nah", "না", "no."}
 TRAILING_PUNCT_RE = re.compile(r"[।?!]+$")
+LATIN_RE = re.compile(r"[A-Za-z]")
 
 
 def _first_present(row: dict[str, Any], keys: tuple[str, ...], default: Any = "") -> Any:
@@ -39,6 +40,10 @@ def _extract_rows(payload: Any) -> list[dict[str, Any]]:
 
 def _normalize_digits(text: str) -> str:
     return text.translate(str.maketrans("০১২৩৪৫৬৭৮৯", "0123456789"))
+
+
+def _to_bangla_digits(text: str) -> str:
+    return text.translate(str.maketrans("0123456789", "০১২৩৪৫৬৭৮৯"))
 
 
 def normalize_text(text: str, lowercase: bool = True, remove_trailing_punct: bool = True) -> str:
@@ -82,11 +87,32 @@ def preprocess_answer(answer: str, segment: str) -> str:
             return "না"
         return cleaned
     if segment == "numeric":
-        return _normalize_digits(cleaned)
+        return _to_bangla_digits(cleaned)
     return cleaned
 
 
-def prepare_segment_files(data_dir: str | Path, output_dir: str | Path = "preprocessed", limit: int | None = None) -> dict[str, object]:
+def has_english_text(question_text: str, answer_text: str) -> bool:
+    return bool(LATIN_RE.search(question_text) or LATIN_RE.search(answer_text))
+
+
+def _numeric_to_english_variant(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    converted: list[dict[str, Any]] = []
+    for row in rows:
+        updated = dict(row)
+        if str(updated.get("type", "")) == "numeric":
+            answer_bn = str(updated.get("answer_bn", ""))
+            answer = str(updated.get("answer", answer_bn))
+            updated["answer_bn"] = _normalize_digits(answer_bn)
+            updated["answer"] = _normalize_digits(answer)
+        converted.append(updated)
+    return converted
+
+
+def prepare_segment_files(
+    data_dir: str | Path,
+    output_dir: str | Path = "preprocessed_dataset",
+    limit: int | None = None,
+) -> dict[str, object]:
     data_dir = Path(data_dir)
     if not data_dir.exists():
         alternate = Path("dataset") if data_dir.name == "data" else Path("data")
@@ -103,26 +129,35 @@ def prepare_segment_files(data_dir: str | Path, output_dir: str | Path = "prepro
     output_root.mkdir(parents=True, exist_ok=True)
 
     split_rows: dict[str, list[dict[str, Any]]] = {"polar": [], "numeric": [], "descriptive": []}
+    all_rows: list[dict[str, Any]] = []
+    english_rows: list[dict[str, Any]] = []
     for index, row in enumerate(rows):
-        sample_id = str(_first_present(row, ID_KEYS, f"sample-{index}"))
+        sample_id = _first_present(row, ID_KEYS, f"sample-{index}")
         question = str(_first_present(row, QUESTION_KEYS, "")).strip()
         answer = str(_first_present(row, ANSWER_KEYS, "")).strip()
         image_file = str(_first_present(row, IMAGE_KEYS, "")).strip()
         answer_type = str(_first_present(row, ANSWER_TYPE_KEYS, "unknown"))
 
         segment = infer_segment(answer_type, question, answer)
-        cleaned_question = normalize_text(question, lowercase=False, remove_trailing_punct=False)
+        cleaned_question = normalize_text(question, lowercase=False, remove_trailing_punct=True)
         cleaned_answer = preprocess_answer(answer, segment)
 
         out_row = dict(row)
-        out_row["qa_id"] = sample_id
+        if "qa_id" not in out_row:
+            out_row["qa_id"] = sample_id
         out_row["question_bn"] = cleaned_question
         out_row["answer_bn"] = cleaned_answer
         out_row["answer"] = cleaned_answer
         if image_file and "image_file" not in out_row:
             out_row["image_file"] = image_file
         out_row["type"] = segment
+
+        if has_english_text(cleaned_question, cleaned_answer):
+            english_rows.append(out_row)
+            continue
+
         split_rows[segment].append(out_row)
+        all_rows.append(out_row)
 
     output_paths: dict[str, str] = {}
     for segment, segment_rows in split_rows.items():
@@ -130,10 +165,28 @@ def prepare_segment_files(data_dir: str | Path, output_dir: str | Path = "prepro
         out_path.write_text(json.dumps(segment_rows, ensure_ascii=False, indent=2), encoding="utf-8")
         output_paths[segment] = str(out_path)
 
+    all_path = output_root / "qa_all.json"
+    all_path.write_text(json.dumps(all_rows, ensure_ascii=False, indent=2), encoding="utf-8")
+    output_paths["all"] = str(all_path)
+
+    all_numeric_en_rows = _numeric_to_english_variant(all_rows)
+    all_numeric_en_path = output_root / "qa_all_numeric_en.json"
+    all_numeric_en_path.write_text(json.dumps(all_numeric_en_rows, ensure_ascii=False, indent=2), encoding="utf-8")
+    output_paths["all_numeric_en"] = str(all_numeric_en_path)
+
+    english_path = output_root / "qa_english.json"
+    english_path.write_text(json.dumps(english_rows, ensure_ascii=False, indent=2), encoding="utf-8")
+    output_paths["english"] = str(english_path)
+
     return {
         "data_dir": str(data_dir),
         "output_dir": str(output_root),
-        "counts": {key: len(value) for key, value in split_rows.items()},
+        "counts": {
+            **{key: len(value) for key, value in split_rows.items()},
+            "all": len(all_rows),
+            "all_numeric_en": len(all_numeric_en_rows),
+            "english": len(english_rows),
+        },
         "files": output_paths,
-        "total": sum(len(value) for value in split_rows.values()),
+        "total": len(rows),
     }

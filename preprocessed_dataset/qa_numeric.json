@@ -1,0 +1,20 @@
+[
+  {
+    "qa_id": 12,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "ছবিতে কয়টি বিড়ালছানা আছে",
+    "answer_bn": "১",
+    "answer": "১",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 25,
+    "image_id": 52305,
+    "image_file": "COCO_train2014_000000052305.jpg",
+    "question_bn": "ছবিতে কয়টি বাড়ি আছে",
+    "answer_bn": "৯",
+    "answer": "৯",
+    "type": "numeric"
+  }
+]

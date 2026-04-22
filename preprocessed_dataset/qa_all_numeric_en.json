@@ -1,0 +1,263 @@
+[
+  {
+    "qa_id": 0,
+    "image_id": 480056,
+    "image_file": "COCO_train2014_000000480056.jpg",
+    "question_bn": "এই প্রাণীটি কি বন্য পরিবেশে আছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 1,
+    "image_id": 480056,
+    "image_file": "COCO_train2014_000000480056.jpg",
+    "question_bn": "বেড়াটি কী দিয়ে তৈরি",
+    "answer_bn": "কাঠ",
+    "answer": "কাঠ",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 2,
+    "image_id": 480056,
+    "image_file": "COCO_train2014_000000480056.jpg",
+    "question_bn": "এটা কী প্রাণী",
+    "answer_bn": "জিরাফ",
+    "answer": "জিরাফ",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 3,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "এটা কী ধরনের প্রাণী",
+    "answer_bn": "বিড়াল",
+    "answer": "বিড়াল",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 4,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "বিড়ালটি কী করছে",
+    "answer_bn": "জল পান করছে",
+    "answer": "জল পান করছে",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 5,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "দেয়ালগুলির রঙ কী",
+    "answer_bn": "সাদা",
+    "answer": "সাদা",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 6,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "নীচে কি কোনো স্টিকার আছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 7,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "বিড়ালটি কোথায় বসে আছে",
+    "answer_bn": "মেঝেতে",
+    "answer": "মেঝেতে",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 8,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "বিড়ালটির পেছনের দেয়ালটির রঙ কী",
+    "answer_bn": "সাদা",
+    "answer": "সাদা",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 9,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "বিড়ালটি কি নিরাপদে তা পান করতে পারে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 10,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "বিড়ালটির পাশে কী আছে",
+    "answer_bn": "জলের বাটি",
+    "answer": "জলের বাটি",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 11,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "বিড়ালটি কীসের দিকে তাকিয়ে আছে",
+    "answer_bn": "জল",
+    "answer": "জল",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 12,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "ছবিতে কয়টি বিড়ালছানা আছে",
+    "answer_bn": "1",
+    "answer": "1",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 13,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "বিড়ালটি কোথায়",
+    "answer_bn": "রান্নাঘরে",
+    "answer": "রান্নাঘরে",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 14,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "দেয়ালটি কি সম্প্রতি রঙ করা হয়েছে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 15,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "কোন প্রাণীটি দেখানো হয়েছে",
+    "answer_bn": "বিড়াল",
+    "answer": "বিড়াল",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 16,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "বিড়ালটি কী করার চেষ্টা করছে",
+    "answer_bn": "জল পান",
+    "answer": "জল পান",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 17,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "বিড়ালরা কি সাধারণত এভাবেই খায়",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 18,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "বিড়ালটি কি দুধ পান করছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "এই বিড়ালটি কি জলের বাটিতে আঁটবে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 20,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "এটি কি একটি কুকুরছানা নাকি বিড়ালছানা",
+    "answer_bn": "বিড়ালছানা",
+    "answer": "বিড়ালছানা",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 21,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "এই প্রাণীটি কি তার উদ্দেশ্য অনুযায়ী সেই বস্তুটি ব্যবহার করতে পারে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 22,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "বাটিটি কি মাটিতে রাখা আছে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 23,
+    "image_id": 499054,
+    "image_file": "COCO_train2014_000000499054.jpg",
+    "question_bn": "বাটিতে কী আছে",
+    "answer_bn": "জল",
+    "answer": "জল",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 24,
+    "image_id": 52305,
+    "image_file": "COCO_train2014_000000052305.jpg",
+    "question_bn": "লোকটি কীসের উপর দাঁড়িয়ে আছে",
+    "answer_bn": "নৌকা",
+    "answer": "নৌকা",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 25,
+    "image_id": 52305,
+    "image_file": "COCO_train2014_000000052305.jpg",
+    "question_bn": "ছবিতে কয়টি বাড়ি আছে",
+    "answer_bn": "9",
+    "answer": "9",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 26,
+    "image_id": 52305,
+    "image_file": "COCO_train2014_000000052305.jpg",
+    "question_bn": "এটি কী ধরনের নৌকা",
+    "answer_bn": "মোটর বোট",
+    "answer": "মোটর বোট",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 27,
+    "image_id": 52305,
+    "image_file": "COCO_train2014_000000052305.jpg",
+    "question_bn": "লোকটি কি নৌকা থেকে মাছ ধরছে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 28,
+    "image_id": 52305,
+    "image_file": "COCO_train2014_000000052305.jpg",
+    "question_bn": "নৌকায় কি কোনো আলো আছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  }
+]

@@ -46,16 +46,20 @@ Applied before benchmarking:
 - Whitespace + punctuation cleanup
 - Unicode normalization (NFC)
 - Polar canonicalization (`yes/no` variants -> `হ্যাঁ/না`)
-- Numeric digit normalization (Bangla -> English digits)
+- Numeric digit canonicalization for numeric answers (`0-9` -> `০-৯`)
 - Lowercase normalize
 - Trailing punctuation removal
 - Metadata unchanged (`qa_id`, `image_file`, `answer_type`)
+- English-row filtering: if `question_bn` or `answer_bn` contains `[A-Za-z]`, move that row to `qa_english.json`
 
-Segment files are saved in `preprocessed/`:
+Preprocessed files are saved in `preprocessed_dataset/`:
 
-- `preprocessed/qa_polar.json`
-- `preprocessed/qa_numeric.json`
-- `preprocessed/qa_descriptive.json`
+- `preprocessed_dataset/qa_polar.json`
+- `preprocessed_dataset/qa_numeric.json`
+- `preprocessed_dataset/qa_descriptive.json`
+- `preprocessed_dataset/qa_all.json` (combined non-English rows)
+- `preprocessed_dataset/qa_all_numeric_en.json` (same as `qa_all`, but numeric rows use English digits `0-9`)
+- `preprocessed_dataset/qa_english.json` (English-filtered rows)
 
 ## Run Benchmark (CLI)
 
@@ -66,7 +70,7 @@ python evaluate.py --model ollama/qwen2.5vl:7b --sample 5
 Useful options:
 
 ```bash
-python evaluate.py --model qwen2.5vl --sample 100 --preprocessed_dir preprocessed
+python evaluate.py --model qwen2.5vl --sample 100 --preprocessed_dir preprocessed_dataset
 python evaluate.py --model llava --sample 100 --oer_threshold 0.7 --ece_bins 10
 python evaluate.py --model bakllava --skip_preprocess
 ```

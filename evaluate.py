@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 
 from app.evaluator import evaluate
@@ -14,10 +15,10 @@ def load_environment(env_file: str) -> None:
         return
     env_path = Path(env_file)
     if env_path.exists():
-        load_dotenv(dotenv_path=env_path, override=False)
+        load_dotenv(dotenv_path=env_path, override=True, verbose=True)
     else:
         # Falls back to default .env lookup behavior if present in cwd/parents.
-        load_dotenv(override=False)
+        load_dotenv(override=True, verbose=True)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -25,7 +26,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--model", required=True, help="Ollama model name, for example ollama/qwen2.5vl:7b")
     parser.add_argument("--data_dir", default="dataset", help="Dataset directory containing qa.json and images/")
     parser.add_argument("--results_dir", default="results", help="Directory for benchmark reports")
-    parser.add_argument("--preprocessed_dir", default="preprocessed", help="Directory for preprocessed split JSON files")
+    parser.add_argument("--preprocessed_dir", default="preprocessed_dataset", help="Directory for preprocessed split JSON files")
     parser.add_argument("--skip_preprocess", action="store_true", help="Skip preprocessing and use existing split files")
     parser.add_argument("--sample", type=int, default=None, help="Optional sample limit")
     parser.add_argument("--load_in_4bit", action="store_true", help="Legacy flag, ignored in Ollama-only mode")
@@ -36,6 +37,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--request_delay", type=float, default=0.0, help="Delay in seconds between API requests")
     parser.add_argument("--max_retries", type=int, default=3, help="Maximum retries for retryable API errors")
     parser.add_argument("--retry_backoff", type=float, default=2.0, help="Base backoff in seconds for retries")
+    parser.add_argument("--save-raw", action="store_true", help="Save raw model outputs for each sample to results/raw_outputs/")
     return parser
 
 
@@ -43,6 +45,14 @@ def main() -> None:
     parser = build_parser()
     args = parser.parse_args()
     load_environment(args.env_file)
+
+    # Determine actual Ollama host
+    actual_host = args.ollama_host or os.getenv("OLLAMA_HOST")
+    if actual_host:
+        print(f"Using Ollama host: {actual_host}")
+    else:
+        print("Using default Ollama host (localhost)")
+
     result = evaluate(
         model_name=args.model,
         data_dir=args.data_dir,
@@ -51,12 +61,13 @@ def main() -> None:
         skip_preprocess=args.skip_preprocess,
         sample=args.sample,
         load_in_4bit=args.load_in_4bit,
-        ollama_host=args.ollama_host,
+        ollama_host=actual_host,
         oer_threshold=args.oer_threshold,
         ece_bins=args.ece_bins,
         request_delay=args.request_delay,
         max_retries=args.max_retries,
         retry_backoff=args.retry_backoff,
+        save_raw=args.save_raw,
     )
     report = result["report"]
     overall = report.get("overall", {})

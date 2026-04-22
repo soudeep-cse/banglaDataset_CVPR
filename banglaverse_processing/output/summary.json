@@ -1,0 +1,1330 @@
+{
+  "root": "BanglaVerse",
+  "output_dir": "banglaverse_processing/output",
+  "total_records": 17267,
+  "missing_image_path_records": 14,
+  "missing_answer_index_records": 85,
+  "task_counts": {
+    "captions": 5760,
+    "csu": 5757,
+    "vqa": 5750
+  },
+  "dialect_counts": {
+    "barishal": 3455,
+    "chittagong": 3454,
+    "noakhali": 3454,
+    "rangpur": 3452,
+    "sylhet": 3452
+  },
+  "image_index_size": 1152,
+  "files_processed": 135,
+  "file_level_stats": [
+    {
+      "dialect": "barishal",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/VQA/culture_vqa_barishal.json",
+      "rows": 114,
+      "missing_image_path": 0,
+      "missing_answer_index": 1
+    },
+    {
+      "dialect": "barishal",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/VQA/food_vqa_barishal.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 3
+    },
+    {
+      "dialect": "barishal",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/VQA/history_vqa_barishal.json",
+      "rows": 158,
+      "missing_image_path": 0,
+      "missing_answer_index": 2
+    },
+    {
+      "dialect": "barishal",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/VQA/media_and_movies_vqa_barishal.json",
+      "rows": 139,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/VQA/national_achievements_vqa_barishal.json",
+      "rows": 74,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/VQA/nature_vqa_barishal.json",
+      "rows": 149,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/VQA/personalities_vqa_barishal.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 2
+    },
+    {
+      "dialect": "barishal",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/VQA/politics_vqa_barishal.json",
+      "rows": 154,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/VQA/sports_vqa_barishal.json",
+      "rows": 62,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/CSU/culture_csu_barishal.json",
+      "rows": 114,
+      "missing_image_path": 0,
+      "missing_answer_index": 17
+    },
+    {
+      "dialect": "barishal",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/CSU/food_csu_barishal.json",
+      "rows": 151,
+      "missing_image_path": 0,
+      "missing_answer_index": 4
+    },
+    {
+      "dialect": "barishal",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/CSU/history_csu_barishal.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 2
+    },
+    {
+      "dialect": "barishal",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/CSU/media_and_movies_csu_barishal.json",
+      "rows": 149,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/CSU/national_achievements_csu_barishal.json",
+      "rows": 74,
+      "missing_image_path": 2,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/CSU/nature_csu_barishal.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/CSU/personalities_csu_barishal.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/CSU/politics_csu_barishal.json",
+      "rows": 152,
+      "missing_image_path": 4,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/CSU/sports_csu_barishal.json",
+      "rows": 63,
+      "missing_image_path": 0,
+      "missing_answer_index": 2
+    },
+    {
+      "dialect": "barishal",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/Captions/culture_captions_barishal.json",
+      "rows": 114,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/Captions/food_captions_barishal.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/Captions/history_captions_barishal.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/Captions/media_and_movies_captions_barishal.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/Captions/national_achievements_captions_barishal.json",
+      "rows": 74,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/Captions/nature_captions_barishal.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/Captions/personalities_captions_barishal.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/Captions/politics_captions_barishal.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "barishal",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/barishal/Results/Captions/sports_captions_barishal.json",
+      "rows": 64,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/VQA/culture_vqa_chittagong.json",
+      "rows": 114,
+      "missing_image_path": 0,
+      "missing_answer_index": 1
+    },
+    {
+      "dialect": "chittagong",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/VQA/food_vqa_chittagong.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 3
+    },
+    {
+      "dialect": "chittagong",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/VQA/history_vqa_chittagong.json",
+      "rows": 158,
+      "missing_image_path": 0,
+      "missing_answer_index": 2
+    },
+    {
+      "dialect": "chittagong",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/VQA/media_and_movies_vqa_chittagong.json",
+      "rows": 139,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/VQA/national_achievements_vqa_chittagong.json",
+      "rows": 74,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/VQA/nature_vqa_chittagong.json",
+      "rows": 149,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/VQA/personalities_vqa_chittagong.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 2
+    },
+    {
+      "dialect": "chittagong",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/VQA/politics_vqa_chittagong.json",
+      "rows": 154,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/VQA/sports_vqa_chittagong.json",
+      "rows": 62,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/CSU/culture_csu_chittagong.json",
+      "rows": 114,
+      "missing_image_path": 0,
+      "missing_answer_index": 1
+    },
+    {
+      "dialect": "chittagong",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/CSU/food_csu_chittagong.json",
+      "rows": 151,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/CSU/history_csu_chittagong.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 3
+    },
+    {
+      "dialect": "chittagong",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/CSU/media_and_movies_csu_chittagong.json",
+      "rows": 149,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/CSU/national_achievements_csu_chittagong.json",
+      "rows": 73,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/CSU/nature_csu_chittagong.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 1
+    },
+    {
+      "dialect": "chittagong",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/CSU/personalities_csu_chittagong.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/CSU/politics_csu_chittagong.json",
+      "rows": 152,
+      "missing_image_path": 2,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/CSU/sports_csu_chittagong.json",
+      "rows": 63,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/Captions/culture_captions_chittagong.json",
+      "rows": 114,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/Captions/food_captions_chittagong.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/Captions/history_captions_chittagong.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/Captions/media_and_movies_captions_chittagong.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/Captions/national_achievements_captions_chittagong.json",
+      "rows": 74,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/Captions/nature_captions_chittagong.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/Captions/personalities_captions_chittagong.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/Captions/politics_captions_chittagong.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "chittagong",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/chittagong/Results/Captions/sports_captions_chittagong.json",
+      "rows": 64,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/VQA/culture_vqa_noakhali.json",
+      "rows": 114,
+      "missing_image_path": 0,
+      "missing_answer_index": 1
+    },
+    {
+      "dialect": "noakhali",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/VQA/food_vqa_noakhali.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 3
+    },
+    {
+      "dialect": "noakhali",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/VQA/history_vqa_noakhali.json",
+      "rows": 158,
+      "missing_image_path": 0,
+      "missing_answer_index": 2
+    },
+    {
+      "dialect": "noakhali",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/VQA/media_and_movies_vqa_noakhali.json",
+      "rows": 139,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/VQA/national_achievements_vqa_noakhali.json",
+      "rows": 74,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/VQA/nature_vqa_noakhali.json",
+      "rows": 149,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/VQA/personalities_vqa_noakhali.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 2
+    },
+    {
+      "dialect": "noakhali",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/VQA/politics_vqa_noakhali.json",
+      "rows": 154,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/VQA/sports_vqa_noakhali.json",
+      "rows": 62,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/CSU/culture_csu_noakhali.json",
+      "rows": 114,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/CSU/food_csu_noakhali.json",
+      "rows": 151,
+      "missing_image_path": 0,
+      "missing_answer_index": 1
+    },
+    {
+      "dialect": "noakhali",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/CSU/history_csu_noakhali.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 1
+    },
+    {
+      "dialect": "noakhali",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/CSU/media_and_movies_csu_noakhali.json",
+      "rows": 149,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/CSU/national_achievements_csu_noakhali.json",
+      "rows": 73,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/CSU/nature_csu_noakhali.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/CSU/personalities_csu_noakhali.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 1
+    },
+    {
+      "dialect": "noakhali",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/CSU/politics_csu_noakhali.json",
+      "rows": 152,
+      "missing_image_path": 2,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/CSU/sports_csu_noakhali.json",
+      "rows": 63,
+      "missing_image_path": 0,
+      "missing_answer_index": 1
+    },
+    {
+      "dialect": "noakhali",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/Captions/culture_captions_noakhali.json",
+      "rows": 114,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/Captions/food_captions_noakhali.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/Captions/history_captions_noakhali.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/Captions/media_and_movies_captions_noakhali.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/Captions/national_achievements_captions_noakhali.json",
+      "rows": 74,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/Captions/nature_captions_noakhali.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/Captions/personalities_captions_noakhali.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/Captions/politics_captions_noakhali.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "noakhali",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/noakhali/Results/Captions/sports_captions_noakhali.json",
+      "rows": 64,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/VQA/culture_vqa_rangpur.json",
+      "rows": 114,
+      "missing_image_path": 0,
+      "missing_answer_index": 1
+    },
+    {
+      "dialect": "rangpur",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/VQA/food_vqa_rangpur.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 3
+    },
+    {
+      "dialect": "rangpur",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/VQA/history_vqa_rangpur.json",
+      "rows": 158,
+      "missing_image_path": 0,
+      "missing_answer_index": 2
+    },
+    {
+      "dialect": "rangpur",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/VQA/media_and_movies_vqa_rangpur.json",
+      "rows": 139,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/VQA/national_achievements_vqa_rangpur.json",
+      "rows": 74,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/VQA/nature_vqa_rangpur.json",
+      "rows": 149,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/VQA/personalities_vqa_rangpur.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 2
+    },
+    {
+      "dialect": "rangpur",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/VQA/politics_vqa_rangpur.json",
+      "rows": 154,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/VQA/sports_vqa_rangpur.json",
+      "rows": 62,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/CSU/culture_csu_rangpur.json",
+      "rows": 114,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/CSU/food_csu_rangpur.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/CSU/history_csu_rangpur.json",
+      "rows": 158,
+      "missing_image_path": 4,
+      "missing_answer_index": 1
+    },
+    {
+      "dialect": "rangpur",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/CSU/media_and_movies_csu_rangpur.json",
+      "rows": 139,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/CSU/national_achievements_csu_rangpur.json",
+      "rows": 74,
+      "missing_image_path": 0,
+      "missing_answer_index": 1
+    },
+    {
+      "dialect": "rangpur",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/CSU/nature_csu_rangpur.json",
+      "rows": 149,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/CSU/personalities_csu_rangpur.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/CSU/politics_csu_rangpur.json",
+      "rows": 154,
+      "missing_image_path": 0,
+      "missing_answer_index": 3
+    },
+    {
+      "dialect": "rangpur",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/CSU/sports_csu_rangpur.json",
+      "rows": 62,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/Captions/culture_captions_rangpur.json",
+      "rows": 114,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/Captions/food_captions_rangpur.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/Captions/history_captions_rangpur.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/Captions/media_and_movies_captions_rangpur.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/Captions/national_achievements_captions_rangpur.json",
+      "rows": 74,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/Captions/nature_captions_rangpur.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/Captions/personalities_captions_rangpur.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/Captions/politics_captions_rangpur.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "rangpur",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/rangpur/Results/Captions/sports_captions_rangpur.json",
+      "rows": 64,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/VQA/culture_vqa_sylhet.json",
+      "rows": 114,
+      "missing_image_path": 0,
+      "missing_answer_index": 1
+    },
+    {
+      "dialect": "sylhet",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/VQA/food_vqa_sylhet.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 3
+    },
+    {
+      "dialect": "sylhet",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/VQA/history_vqa_sylhet.json",
+      "rows": 158,
+      "missing_image_path": 0,
+      "missing_answer_index": 2
+    },
+    {
+      "dialect": "sylhet",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/VQA/media_and_movies_vqa_sylhet.json",
+      "rows": 139,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/VQA/national_achievements_vqa_sylhet.json",
+      "rows": 74,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/VQA/nature_vqa_sylhet.json",
+      "rows": 149,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/VQA/personalities_vqa_sylhet.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 2
+    },
+    {
+      "dialect": "sylhet",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/VQA/politics_vqa_sylhet.json",
+      "rows": 154,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "vqa",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/VQA/sports_vqa_sylhet.json",
+      "rows": 62,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/CSU/culture_csu_sylhet.json",
+      "rows": 114,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/CSU/food_csu_sylhet.json",
+      "rows": 151,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/CSU/history_csu_sylhet.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/CSU/media_and_movies_csu_sylhet.json",
+      "rows": 149,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/CSU/national_achievements_csu_sylhet.json",
+      "rows": 73,
+      "missing_image_path": 0,
+      "missing_answer_index": 1
+    },
+    {
+      "dialect": "sylhet",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/CSU/nature_csu_sylhet.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 1
+    },
+    {
+      "dialect": "sylhet",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/CSU/personalities_csu_sylhet.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 1
+    },
+    {
+      "dialect": "sylhet",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/CSU/politics_csu_sylhet.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 2
+    },
+    {
+      "dialect": "sylhet",
+      "task": "csu",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/CSU/sports_csu_sylhet.json",
+      "rows": 63,
+      "missing_image_path": 0,
+      "missing_answer_index": 1
+    },
+    {
+      "dialect": "sylhet",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/Captions/culture_captions_sylhet.json",
+      "rows": 114,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/Captions/food_captions_sylhet.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/Captions/history_captions_sylhet.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/Captions/media_and_movies_captions_sylhet.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/Captions/national_achievements_captions_sylhet.json",
+      "rows": 74,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/Captions/nature_captions_sylhet.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/Captions/personalities_captions_sylhet.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/Captions/politics_captions_sylhet.json",
+      "rows": 150,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    },
+    {
+      "dialect": "sylhet",
+      "task": "captions",
+      "source_file": "BanglaVerse/data/dialectual_data/sylhet/Results/Captions/sports_captions_sylhet.json",
+      "rows": 64,
+      "missing_image_path": 0,
+      "missing_answer_index": 0
+    }
+  ],
+  "dialect_domain_counts": [
+    {
+      "dialect": "barishal",
+      "domain": "culture",
+      "count": 342
+    },
+    {
+      "dialect": "barishal",
+      "domain": "food",
+      "count": 451
+    },
+    {
+      "dialect": "barishal",
+      "domain": "history",
+      "count": 458
+    },
+    {
+      "dialect": "barishal",
+      "domain": "media_and_movies",
+      "count": 438
+    },
+    {
+      "dialect": "barishal",
+      "domain": "national_achievements",
+      "count": 222
+    },
+    {
+      "dialect": "barishal",
+      "domain": "nature",
+      "count": 449
+    },
+    {
+      "dialect": "barishal",
+      "domain": "personalities",
+      "count": 450
+    },
+    {
+      "dialect": "barishal",
+      "domain": "politics",
+      "count": 456
+    },
+    {
+      "dialect": "barishal",
+      "domain": "sports",
+      "count": 189
+    },
+    {
+      "dialect": "chittagong",
+      "domain": "culture",
+      "count": 342
+    },
+    {
+      "dialect": "chittagong",
+      "domain": "food",
+      "count": 451
+    },
+    {
+      "dialect": "chittagong",
+      "domain": "history",
+      "count": 458
+    },
+    {
+      "dialect": "chittagong",
+      "domain": "media_and_movies",
+      "count": 438
+    },
+    {
+      "dialect": "chittagong",
+      "domain": "national_achievements",
+      "count": 221
+    },
+    {
+      "dialect": "chittagong",
+      "domain": "nature",
+      "count": 449
+    },
+    {
+      "dialect": "chittagong",
+      "domain": "personalities",
+      "count": 450
+    },
+    {
+      "dialect": "chittagong",
+      "domain": "politics",
+      "count": 456
+    },
+    {
+      "dialect": "chittagong",
+      "domain": "sports",
+      "count": 189
+    },
+    {
+      "dialect": "noakhali",
+      "domain": "culture",
+      "count": 342
+    },
+    {
+      "dialect": "noakhali",
+      "domain": "food",
+      "count": 451
+    },
+    {
+      "dialect": "noakhali",
+      "domain": "history",
+      "count": 458
+    },
+    {
+      "dialect": "noakhali",
+      "domain": "media_and_movies",
+      "count": 438
+    },
+    {
+      "dialect": "noakhali",
+      "domain": "national_achievements",
+      "count": 221
+    },
+    {
+      "dialect": "noakhali",
+      "domain": "nature",
+      "count": 449
+    },
+    {
+      "dialect": "noakhali",
+      "domain": "personalities",
+      "count": 450
+    },
+    {
+      "dialect": "noakhali",
+      "domain": "politics",
+      "count": 456
+    },
+    {
+      "dialect": "noakhali",
+      "domain": "sports",
+      "count": 189
+    },
+    {
+      "dialect": "rangpur",
+      "domain": "culture",
+      "count": 342
+    },
+    {
+      "dialect": "rangpur",
+      "domain": "food",
+      "count": 450
+    },
+    {
+      "dialect": "rangpur",
+      "domain": "history",
+      "count": 466
+    },
+    {
+      "dialect": "rangpur",
+      "domain": "media_and_movies",
+      "count": 428
+    },
+    {
+      "dialect": "rangpur",
+      "domain": "national_achievements",
+      "count": 222
+    },
+    {
+      "dialect": "rangpur",
+      "domain": "nature",
+      "count": 448
+    },
+    {
+      "dialect": "rangpur",
+      "domain": "personalities",
+      "count": 450
+    },
+    {
+      "dialect": "rangpur",
+      "domain": "politics",
+      "count": 458
+    },
+    {
+      "dialect": "rangpur",
+      "domain": "sports",
+      "count": 188
+    },
+    {
+      "dialect": "sylhet",
+      "domain": "culture",
+      "count": 342
+    },
+    {
+      "dialect": "sylhet",
+      "domain": "food",
+      "count": 451
+    },
+    {
+      "dialect": "sylhet",
+      "domain": "history",
+      "count": 458
+    },
+    {
+      "dialect": "sylhet",
+      "domain": "media_and_movies",
+      "count": 438
+    },
+    {
+      "dialect": "sylhet",
+      "domain": "national_achievements",
+      "count": 221
+    },
+    {
+      "dialect": "sylhet",
+      "domain": "nature",
+      "count": 449
+    },
+    {
+      "dialect": "sylhet",
+      "domain": "personalities",
+      "count": 450
+    },
+    {
+      "dialect": "sylhet",
+      "domain": "politics",
+      "count": 454
+    },
+    {
+      "dialect": "sylhet",
+      "domain": "sports",
+      "count": 189
+    }
+  ]
+}

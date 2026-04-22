@@ -154,3 +154,125 @@ def compute_metrics(results: list[dict[str, Any]], ece_bins: int = 10, oer_thres
         "brier": brier,
         "mcw": (sum(wrong_confidences) / len(wrong_confidences)) if wrong_confidences else 0.0,
     }
+
+
+# Caption evaluation metrics
+
+def _normalize_caption(text: str) -> str:
+    """Normalize caption for comparison."""
+    normalized = unicodedata.normalize("NFC", text or "")
+    normalized = normalized.lower()
+    # Remove punctuation and extra spaces
+    normalized = re.sub(r"[^\w\s\u0980-\u09ff]", " ", normalized)
+    normalized = re.sub(r"\s+", " ", normalized).strip()
+    return normalized
+
+
+def _tokenize_bangla(text: str) -> list[str]:
+    """Simple tokenization for Bangla text."""
+    normalized = _normalize_caption(text)
+    return normalized.split()
+
+
+def caption_exact_match(predicted: str, reference: str) -> bool:
+    """Check if predicted caption exactly matches reference."""
+    return _normalize_caption(predicted) == _normalize_caption(reference)
+
+
+def caption_token_overlap(predicted: str, reference: str) -> float:
+    """Calculate token overlap between predicted and reference captions.
+
+    Returns overlap ratio (0-1) based on common tokens.
+    """
+    pred_tokens = set(_tokenize_bangla(predicted))
+    ref_tokens = set(_tokenize_bangla(reference))
+
+    if not pred_tokens or not ref_tokens:
+        return 0.0
+
+    common = pred_tokens & ref_tokens
+    union = pred_tokens | ref_tokens
+
+    return len(common) / len(union) if union else 0.0
+
+
+def caption_similarity_metrics(predicted: str, reference: str) -> dict[str, float]:
+    """Compute multiple similarity metrics for caption evaluation.
+
+    Returns dict with:
+    - exact_match: 1 if exact match, 0 otherwise
+    - token_overlap: Jaccard-like token overlap ratio
+    - length_ratio: predicted length / reference length
+    """
+    pred_norm = _normalize_caption(predicted)
+    ref_norm = _normalize_caption(reference)
+
+    pred_tokens = _tokenize_bangla(predicted)
+    ref_tokens = _tokenize_bangla(reference)
+
+    # Exact match
+    exact = 1.0 if pred_norm == ref_norm else 0.0
+
+    # Token overlap (Jaccard)
+    pred_set = set(pred_tokens)
+    ref_set = set(ref_tokens)
+    if pred_set and ref_set:
+        jaccard = len(pred_set & ref_set) / len(pred_set | ref_set)
+    else:
+        jaccard = 0.0
+
+    # Length ratio
+    if ref_tokens:
+        length_ratio = len(pred_tokens) / len(ref_tokens)
+    else:
+        length_ratio = 0.0
+
+    return {
+        "exact_match": exact,
+        "token_overlap": jaccard,
+        "length_ratio": length_ratio,
+    }
+
+
+def compute_caption_metrics(results: list[dict[str, Any]], ece_bins: int = 10, oer_threshold: float = 0.7) -> dict[str, object]:
+    """Compute metrics for caption evaluation.
+
+    Uses token overlap as "correctness" metric since captions are free-form.
+    """
+    total = len(results)
+    if total == 0:
+        return {
+            "total": 0,
+            "accuracy": 0.0,
+            "oer": 0.0,
+            "ece": 0.0,
+            "brier": 0.0,
+            "mcw": 0.0,
+            "avg_token_overlap": 0.0,
+            "avg_length_ratio": 0.0,
+        }
+
+    # For captions, use token overlap as correctness threshold
+    # Overlap > 0.5 is considered "correct"
+    correct_threshold = 0.5
+
+    similarities = []
+    for item in results:
+        pred = item.get("predicted", "")
+        ref = item.get("ground_truth", "")
+        sims = caption_similarity_metrics(pred, ref)
+        similarities.append(sims)
+        item["correct"] = sims["token_overlap"] >= correct_threshold
+        item["token_overlap"] = sims["token_overlap"]
+
+    # Now compute standard metrics
+    metrics = compute_metrics(results, ece_bins=ece_bins, oer_threshold=oer_threshold)
+
+    # Add caption-specific metrics
+    avg_overlap = sum(s["token_overlap"] for s in similarities) / total
+    avg_length_ratio = sum(s["length_ratio"] for s in similarities) / total
+
+    metrics["avg_token_overlap"] = avg_overlap
+    metrics["avg_length_ratio"] = avg_length_ratio
+
+    return metrics

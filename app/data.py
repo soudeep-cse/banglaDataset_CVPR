@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .types import QuestionSample
+from .types import BanglaVerseSample, QuestionSample
 
 
 QUESTION_KEYS = ("question", "question_bn", "query", "q", "text", "prompt")
@@ -113,3 +113,128 @@ def load_dataset(data_dir: str | Path, limit: int | None = None) -> list[Questio
     payload = _read_json(qa_path)
     rows = _extract_rows(payload)
     return _rows_to_samples(rows, images_dir, limit=limit)
+
+
+def _resolve_banglaverse_image_path(raw_value: Any) -> Path:
+    """Resolve image path from BanglaVerse dataset."""
+    if raw_value is None:
+        raise ValueError("Missing image reference in BanglaVerse record")
+    candidate = Path(str(raw_value))
+    if candidate.is_absolute() and candidate.exists():
+        return candidate
+    if candidate.exists():
+        return candidate.resolve()
+    # Try relative to project root
+    project_root = Path.cwd()
+    full_path = project_root / candidate
+    if full_path.exists():
+        return full_path.resolve()
+    return candidate
+
+
+def load_banglaverse_from_jsonl(
+    jsonl_path: str | Path,
+    limit: int | None = None,
+    task_filter: str | None = None,
+    dialect_filter: str | None = None,
+) -> list[BanglaVerseSample]:
+    """Load BanglaVerse samples from JSONL file.
+
+    Args:
+        jsonl_path: Path to JSONL file (e.g., vqa_records.jsonl)
+        limit: Maximum number of samples to load
+        task_filter: Filter by task type ("vqa", "csu", "captions")
+        dialect_filter: Filter by dialect ("barishal", "chittagong", etc.)
+    """
+    jsonl_path = Path(jsonl_path)
+    if not jsonl_path.exists():
+        raise FileNotFoundError(f"JSONL file not found: {jsonl_path}")
+
+    samples: list[BanglaVerseSample] = []
+    with jsonl_path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+
+            task = row.get("task", "").lower()
+            dialect = row.get("dialect", "").lower()
+
+            # Apply filters
+            if task_filter and task != task_filter.lower():
+                continue
+            if dialect_filter and dialect != dialect_filter.lower():
+                continue
+
+            # Build sample
+            sample_id = row.get("record_id", f"{task}-{len(samples)}")
+            image_path = _resolve_banglaverse_image_path(row.get("image_path"))
+
+            if task in {"vqa", "csu"}:
+                # MCQ task
+                options = row.get("options", [])
+                answer = row.get("answer", "")
+                answer_index = row.get("answer_index")
+                sample = BanglaVerseSample(
+                    sample_id=sample_id,
+                    task=task,
+                    dialect=dialect,
+                    domain=row.get("domain", ""),
+                    image_path=image_path,
+                    question=row.get("question", ""),
+                    options=options if isinstance(options, list) else [],
+                    answer=answer,
+                    answer_index=answer_index if answer_index is not None else None,
+                    metadata=row,
+                )
+            elif task == "captions":
+                # Caption task
+                sample = BanglaVerseSample(
+                    sample_id=sample_id,
+                    task=task,
+                    dialect=dialect,
+                    domain=row.get("domain", ""),
+                    image_path=image_path,
+                    caption=row.get("caption", ""),
+                    answer=row.get("caption", ""),  # Reference caption
+                    metadata=row,
+                )
+            else:
+                continue
+
+            samples.append(sample)
+
+            if limit is not None and len(samples) >= limit:
+                break
+
+    return samples
+
+
+def load_banglaverse_dataset(
+    data_dir: str | Path = "banglaverse_processing/output",
+    tasks: list[str] | None = None,
+    limit: int | None = None,
+) -> list[BanglaVerseSample]:
+    """Load BanglaVerse dataset from output directory.
+
+    Args:
+        data_dir: Directory containing JSONL files
+        tasks: List of tasks to load ("vqa", "csu", "captions"). Default: all.
+        limit: Per-task sample limit.
+    """
+    data_dir = Path(data_dir)
+    if tasks is None:
+        tasks = ["vqa", "csu", "captions"]
+
+    all_samples: list[BanglaVerseSample] = []
+    for task in tasks:
+        jsonl_file = data_dir / f"{task}_records.jsonl"
+        if jsonl_file.exists():
+            samples = load_banglaverse_from_jsonl(jsonl_file, limit=limit, task_filter=task)
+            all_samples.extend(samples)
+
+    return all_samples
