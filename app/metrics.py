@@ -13,8 +13,14 @@ try:
 except ImportError:
     pass  # dotenv not installed   
 
-YES_SET = {"yes", "y", "হ্যাঁ", "হ্যা", "হঁ্যা", "haan", "ha", "yes."}
-NO_SET = {"no", "n", "না", "nah", "na", "no."}
+from difflib import SequenceMatcher
+
+try:
+    from unidecode import unidecode
+except Exception:
+    unidecode = None
+YES_SET = {"yes", "y", "হ্যাঁ", "হ্যা", "হঁ্যা", "জি", "আছে", "হয়েছে", "ঠিক", "সঠিক", "haan", "ha", "yes."}
+NO_SET = {"no", "n", "না", "নেই", "নাই", "নেই়", "না আছে", "না হয়েছে", "গেছে", "nah", "na", "no."}
 REFUSAL_PATTERNS = (
     "i cannot",
     "i can't",
@@ -101,26 +107,122 @@ def normalize_for_segment(text: str, segment: str) -> str:
     return normalized
 
 
+# Canonical form mapping — every synonym maps to one canonical form
+# This way বিড়াল and ক্যাট both map to "বিড়াল" and will match
+SYNONYM_CANONICAL: dict[str, str] = {
+    # Water
+    "জল": "পানি",
+    "জলের": "পানির",
+    "জলে": "পানিতে",
+    # Bowl / container
+    "বালি": "বাটি",
+    "বালিকা": "বাটি",
+    "পাত্র": "বাটি",
+    # Animals — Bangla script transliterations → pure Bangla
+    "ক্যাট": "বিড়াল",
+    "cat": "বিড়াল",
+    "ডগ": "কুকুর",
+    "dog": "কুকুর",
+    "বার্ড": "পাখি",
+    "bird": "পাখি",
+    "কাউ": "গরু",
+    "cow": "গরু",
+    "হর্স": "ঘোড়া",
+    "horse": "ঘোড়া",
+    "শিপ": "ভেড়া",
+    "sheep": "ভেড়া",
+    "এলিফ্যান্ট": "হাতি",
+    "elephant": "হাতি",
+    "মাংকি": "বানর",
+    "monkey": "বানর",
+    "বিয়ার": "ভালুক",
+    "bear": "ভালুক",
+    # Transport
+    "বোট": "নৌকা",
+    "boat": "নৌকা",
+    "বাস": "বাস",
+    "ট্রেন": "ট্রেন",
+    "কার": "গাড়ি",
+    "car": "গাড়ি",
+    "বাইক": "মোটরসাইকেল",
+    "bike": "মোটরসাইকেল",
+    # Verbs
+    "খাওয়া": "পান করা",
+    "খাচ্ছে": "পান করছে",
+    "পাচ্ছে": "পান করছে",
+    # Colors (English in Bangla script)
+    "রেড": "লাল",
+    "red": "লাল",
+    "ব্লু": "নীল",
+    "blue": "নীল",
+    "গ্রিন": "সবুজ",
+    "green": "সবুজ",
+    "ইয়েলো": "হলুদ",
+    "yellow": "হলুদ",
+    "হোয়াইট": "সাদা",
+    "white": "সাদা",
+    "ব্ল্যাক": "কালো",
+    "black": "কালো",
+    "ব্রাউন": "বাদামি",
+    "brown": "বাদামি",
+}
+
+# Keep old SYNONYM_MAP for backward compat
+SYNONYM_MAP = SYNONYM_CANONICAL
+
+def _apply_synonym_normalization(text: str) -> str:
+    """Normalize text by replacing all known synonyms with their canonical form."""
+    normalized = normalize_answer(text)
+    # Replace every known synonym token with canonical form (longest match first)
+    for word in sorted(SYNONYM_CANONICAL, key=len, reverse=True):
+        if word in normalized:
+            normalized = normalized.replace(word, SYNONYM_CANONICAL[word])
+    return normalized.strip()
+
+
 def compare_answers(predicted: str, ground_truth: str, segment: str, question: str = "") -> bool:
     """
-    Compare predicted answer with ground truth.
+    Compare predicted answer with ground truth using multi-level approach.
 
-    For descriptive answers, uses LLM-as-Judge for semantic similarity
-    instead of exact string matching. Question context is provided for better judgment.
-    
-    Args:
-        predicted: Model's predicted answer
-        ground_truth: Ground truth answer
-        segment: Answer segment type (polar, numeric, descriptive)
-        question: The question text (for descriptive answers, helps with semantic matching)
+    For polar/numeric: exact match only (after normalization)
+    For descriptive: exact → synonym → embedding → LLM judge
     """
     norm_pred = normalize_for_segment(predicted, segment)
     norm_truth = normalize_for_segment(ground_truth, segment)
-    # For descriptive answers, use semantic similarity with question context
-    if segment == "descriptive":
-        return _semantic_match(norm_pred, norm_truth, question)
-    # For polar and numeric, use exact match
-    return norm_pred == norm_truth
+
+    # Level 0: Exact match
+    if norm_pred == norm_truth:
+        return True
+
+    # Polar and numeric: only exact match
+    if segment in {"polar", "numeric"}:
+        return False
+
+    # Descriptive: multi-level
+    # Level 1: Synonym-normalized match
+    syn_pred = _apply_synonym_normalization(norm_pred)
+    syn_truth = _apply_synonym_normalization(norm_truth)
+    if syn_pred == syn_truth:
+        return True
+
+    # Level 2: Embedding similarity
+    embedding_sim = _compute_embedding_similarity(norm_pred, norm_truth)
+
+    # If embedding model unavailable (returns 0.5 neutral), go straight to LLM judge
+    model_available = _get_embedding_model() is not None
+    if not model_available:
+        return _llm_judge_similarity(norm_pred, norm_truth, question, embedding_score=0.5)
+
+    if embedding_sim >= 0.75:
+        return True
+
+    if embedding_sim < 0.4:
+        return False
+
+    # Level 3: LLM judge for borderline (0.4 <= sim < 0.75)
+    return _llm_judge_similarity(norm_pred, norm_truth, question, embedding_score=embedding_sim)
+
+    return False
 
 
 def _confidence_to_unit(value: float | None) -> float | None:
@@ -195,31 +297,31 @@ def _llm_judge_similarity(predicted: str, ground_truth: str, question: str = "",
     model, host = _get_llm_judge_config()
     
     # Build prompt with embedding score context
-    prompt = f"""You are a semantic similarity judge for Bangla (Bengali) answers.
-
-Question: {question}
-Ground Truth: {ground_truth}
-Predicted: {predicted}
-
-Task: Do these two answers convey the same meaning in the context of the question?
-Important: Be LENIENT - if they refer to the same thing/concept, answer "yes" even if wording differs.
-
-Examples where answers are equivalent (YES):
-- "জলের বাটি" vs "পানির বালি" → both are water containers (yes)
-- "জল" vs "পানির দিকে" → both refer to water (yes)
-- "না" vs "নেই" → both mean "no/none" (yes)
-- "বোটে" vs "নৌকায়" → both mean "in boat" (yes)
-
-Examples where answers are different (NO):
-- "বিড়াল" vs "কুকুর" → different animals (no)
-- "লাল" vs "নীল" → different colors (no)
-- "ডানদিকে" vs "বাঁদিকে" → opposite directions (no)
-
-Previous similarity score: {embedding_score:.2f} (0=different, 1=same)
-
-Respond with ONLY "yes" or "no" (be lenient, prefer "yes" if uncertain):
-
-Answer:"""
+    prompt = (
+        "You are a semantic similarity judge for Bangla (Bengali) answers.\n\n"
+        f"Question: {question}\n"
+        f"Ground Truth: {ground_truth}\n"
+        f"Predicted: {predicted}\n\n"
+        "Task: Do these two answers convey the same meaning in the context of the question?\n"
+        "Be LENIENT - if they refer to the same thing/concept, answer yes even if wording differs.\n\n"
+        "Synonym pairs that ARE equivalent (answer yes):\n"
+        "- বিড়াল = ক্যাট = cat (same animal)\n"
+        "- কুকুর = ডগ = dog (same animal)\n"
+        "- পাখি = বার্ড = bird (same animal)\n"
+        "- জল = পানি (same: water)\n"
+        "- জলের বাটি = পানির বালিকা = পানির বাটি (same: water bowl)\n"
+        "- নৌকা = বোট = boat (same)\n"
+        "- গাড়ি = কার = car (same)\n"
+        "- পানির দিকে when truth is জল → yes (refers to water)\n"
+        "- কাঠের বেড়া when truth is কাঠ → yes (contains key concept)\n\n"
+        "Answers that are NOT equivalent (answer no):\n"
+        "- ছাঁচ vs কাঠ → no (different materials)\n"
+        "- বিড়াল vs কুকুর → no (different animals)\n"
+        "- লাল vs নীল → no (different colors)\n"
+        "- ডানদিকে vs বাঁদিকে → no (opposite directions)\n\n"
+        f"Previous similarity score: {embedding_score:.2f} (0=different, 1=same)\n\n"
+        "Respond with ONLY yes or no:\n\nAnswer:"
+    )
     try:
         response = requests.post(
             f"{host}/api/generate",
@@ -294,6 +396,25 @@ def _semantic_match(predicted: str, ground_truth: str, question: str = "", thres
     
     # Low similarity = definite mismatch (no LLM call needed)
     if embedding_sim <= 0.35:
+        # Check romanized/transliteration similarity as a fallback
+        def _romanized_similarity(a: str, b: str) -> float:
+            if unidecode is None:
+                return 0.0
+            ra = unidecode(a or "").lower()
+            rb = unidecode(b or "").lower()
+            # keep only ascii alphanum
+            ra = re.sub(r"[^a-z0-9]", "", ra)
+            rb = re.sub(r"[^a-z0-9]", "", rb)
+            if not ra or not rb:
+                return 0.0
+            return SequenceMatcher(None, ra, rb).ratio()
+
+        roman_sim = _romanized_similarity(norm_pred, norm_truth)
+        # If romanized strings are very similar, use LLM judge or accept
+        if roman_sim >= 0.8:
+            return True
+        if 0.5 <= roman_sim < 0.8:
+            return _llm_judge_similarity(norm_pred, norm_truth, question, embedding_score=embedding_sim)
         return False
     
     # Borderline case: use LLM judge

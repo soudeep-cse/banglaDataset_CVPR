@@ -18,6 +18,7 @@ from .data import load_dataset_from_file
 from .metrics import compare_answers, compute_metrics
 from .models import build_model
 from .preprocess import prepare_segment_files
+from .validator import validate_results
 
 
 def _safe_output_stem(model_name: str) -> str:
@@ -85,6 +86,8 @@ def evaluate(
     retry_backoff: float = 2.0,
     save_raw: bool = False,
     resume_from: str | None = None,
+    validate: bool = False,
+    judge_model: str = "qwen2.5vl:latest",
 ) -> dict[str, object]:
     data_dir = Path(data_dir)
     results_dir = Path(results_dir)
@@ -262,4 +265,15 @@ def evaluate(
     if save_raw and raw_output_dir:
         print(f"Raw outputs saved to: {raw_output_dir}")
 
-    return {"model": model_name, "report_path": str(report_path), "report": report}
+    validation_report: dict | None = None
+    if validate:
+        validation_report = validate_results(
+            results=all_results,
+            ollama_host=ollama_host,
+            judge_model=judge_model,
+        )
+        val_path = results_dir / f"validation_{safe_name}_{timestamp}.json"
+        val_path.write_text(json.dumps(validation_report, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"Validation report saved: {val_path}")
+
+    return {"model": model_name, "report_path": str(report_path), "report": report, "validation": validation_report}

@@ -70,9 +70,14 @@ python evaluate.py --model ollama/qwen2.5vl:7b --sample 5
 Useful options:
 
 ```bash
+python evaluate.py --model qwen2.5vl --data_dir Bangla-Bayanno-full --sample 20 --preprocessed_dir Bangla-Bayanno-full/preprocessed
 python evaluate.py --model qwen2.5vl --sample 100 --preprocessed_dir preprocessed_dataset
 python evaluate.py --model llava --sample 100 --oer_threshold 0.7 --ece_bins 10
 python evaluate.py --model bakllava --skip_preprocess
+----------------------------
+python evaluate.py --model qwen2.5vl --data_dir Bangla-Bayanno-full --sample 20 --preprocessed_dir Bangla-Bayanno-full/preprocessed --validate
+python evaluate.py --model qwen2.5vl --data_dir Bangla-Bayanno-full --sample 20 --preprocessed_dir Bangla-Bayanno-full/preprocessed --validate --judge_model qwen2.5:7b
+
 ```
 
 If your RunPod host is not in `.env`, pass it explicitly:

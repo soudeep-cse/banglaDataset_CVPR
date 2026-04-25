@@ -87,7 +87,7 @@ def preprocess_answer(answer: str, segment: str) -> str:
             return "না"
         return cleaned
     if segment == "numeric":
-        return _to_bangla_digits(cleaned)
+        return _normalize_digits(cleaned)  # Convert Bangla digits to English
     return cleaned
 
 
@@ -96,12 +96,14 @@ def has_english_text(question_text: str, answer_text: str) -> bool:
 
 
 def _numeric_to_english_variant(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Create variant with numeric answers explicitly normalized to English digits."""
     converted: list[dict[str, Any]] = []
     for row in rows:
         updated = dict(row)
         if str(updated.get("type", "")) == "numeric":
             answer_bn = str(updated.get("answer_bn", ""))
             answer = str(updated.get("answer", answer_bn))
+            # Ensure both are English digits (consistency with preprocessing)
             updated["answer_bn"] = _normalize_digits(answer_bn)
             updated["answer"] = _normalize_digits(answer)
         converted.append(updated)

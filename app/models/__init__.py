@@ -15,12 +15,12 @@ def build_model(name: str, load_in_4bit: bool = False, host: str | None = None):
         return build_ollama_model(name=normalized, model_id="bakllava:7b", host=host)
     if normalized in {"moondream", "ollama-moondream", "moondream-ollama", "moondream:1.8b"}:
         return build_ollama_model(name=normalized, model_id="moondream:1.8b", host=host)
-    if normalized in {"qwen3.5", "ollama-qwen3.5", "qwen3.5-ollama", "qwen3.5:9b"}:
-        # Note: qwen3.5:9b is text-only, not a vision model
-        return build_ollama_model(name=normalized, model_id="qwen3.5:9b", host=host)
-    # Legacy aliases for compatibility (qwen2.5vl maps to qwen3.5:9b)
+    if normalized in {"qwen3.5", "ollama-qwen3.5", "qwen3.5-ollama", "qwen3.5:9b", "qwen2.5vl:7b"}:
+        # Note: qwen3.5:9b is text-only, not a vision model; use qwen2.5vl:latest instead
+        return build_ollama_model(name=normalized, model_id="qwen2.5vl:latest", host=host)
+    # Legacy aliases for compatibility (qwen2.5vl maps to qwen2.5vl:latest)
     if normalized in {"ollama-qwen2-vl", "qwen2-vl-ollama", "ollama-qwen2.5vl", "qwen2.5vl-ollama", "qwen2.5vl"}:
-        return build_ollama_model(name=normalized, model_id="qwen3.5:9b", host=host)
+        return build_ollama_model(name=normalized, model_id="qwen2.5vl:latest", host=host)
     if normalized in {"minicpm-v", "minicpmv", "ollama-minicpm-v", "minicpm-v-ollama"}:
         return build_ollama_model(name=normalized, model_id="minicpm-v:latest", host=host)
     if normalized in {"llama3.2-vision", "llama3.2-visionollama", "ollama-llama3.2-vision", "llama3.2-vision-ollama"}:
@@ -38,7 +38,7 @@ def build_model(name: str, load_in_4bit: bool = False, host: str | None = None):
     if normalized in {"http-moondream", "httpmoondream", "moondream-http", "http-moondream:1.8b"}:
         return build_ollama_http_model(name=normalized, model_id="moondream:1.8b", host=host)
     if normalized in {"http-qwen3.5", "httpqwen3.5", "qwen3.5-http", "http-qwen3.5:9b", "qwen2.5vl:7b"}:
-        return build_ollama_http_model(name=normalized, model_id="qwen2.5vl:7b", host=host)
+        return build_ollama_http_model(name=normalized, model_id="qwen2.5vl:latest", host=host)
     # Generic HTTP prefix
     if normalized.startswith("http-ollama/") or normalized.startswith("httpllama/"):
         model_id = name.split("/", 1)[1] if "/" in name else "llava:7b"
