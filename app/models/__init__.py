@@ -37,8 +37,8 @@ def build_model(name: str, load_in_4bit: bool = False, host: str | None = None):
         return build_ollama_http_model(name=normalized, model_id="bakllava:7b", host=host)
     if normalized in {"http-moondream", "httpmoondream", "moondream-http", "http-moondream:1.8b"}:
         return build_ollama_http_model(name=normalized, model_id="moondream:1.8b", host=host)
-    if normalized in {"http-qwen3.5", "httpqwen3.5", "qwen3.5-http", "http-qwen3.5:9b"}:
-        return build_ollama_http_model(name=normalized, model_id="qwen3.5:9b", host=host)
+    if normalized in {"http-qwen3.5", "httpqwen3.5", "qwen3.5-http", "http-qwen3.5:9b", "qwen2.5vl:7b"}:
+        return build_ollama_http_model(name=normalized, model_id="qwen2.5vl:7b", host=host)
     # Generic HTTP prefix
     if normalized.startswith("http-ollama/") or normalized.startswith("httpllama/"):
         model_id = name.split("/", 1)[1] if "/" in name else "llava:7b"

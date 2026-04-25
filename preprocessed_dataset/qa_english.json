@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "qa_id": 52,
+    "image_id": 152286,
+    "image_file": "COCO_train2014_000000152286.jpg",
+    "question_bn": "লোকটির শার্টে কী লেখা আছে",
+    "answer_bn": "eas",
+    "answer": "eas",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 97,
+    "image_id": 314224,
+    "image_file": "COCO_train2014_000000314224.jpg",
+    "question_bn": "সাদা শার্টে কী আছে",
+    "answer_bn": "big",
+    "answer": "big",
+    "type": "descriptive"
+  }
+]

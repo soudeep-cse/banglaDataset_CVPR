@@ -97,5 +97,185 @@
     "answer_bn": "না",
     "answer": "না",
     "type": "polar"
+  },
+  {
+    "qa_id": 31,
+    "image_id": 52305,
+    "image_file": "COCO_train2014_000000052305.jpg",
+    "question_bn": "একটি ছোট নৌকা আছে কি",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 32,
+    "image_id": 52305,
+    "image_file": "COCO_train2014_000000052305.jpg",
+    "question_bn": "এই নৌকায় থাকা কি ভীতিজনক হবে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 35,
+    "image_id": 52305,
+    "image_file": "COCO_train2014_000000052305.jpg",
+    "question_bn": "এটি কি একটি স্পিড বোট",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 39,
+    "image_id": 52305,
+    "image_file": "COCO_train2014_000000052305.jpg",
+    "question_bn": "দূরে কি পাহাড় দেখতে পাচ্ছেন",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 43,
+    "image_id": 52305,
+    "image_file": "COCO_train2014_000000052305.jpg",
+    "question_bn": "ওটা কি একটি মাছ ধরার জাল",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 45,
+    "image_id": 52305,
+    "image_file": "COCO_train2014_000000052305.jpg",
+    "question_bn": "দৃশ্যটিতে কি কোনো মানুষ আছে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 46,
+    "image_id": 152286,
+    "image_file": "COCO_train2014_000000152286.jpg",
+    "question_bn": "এই খেলাটির নাম কি বেসবল",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 53,
+    "image_id": 152286,
+    "image_file": "COCO_train2014_000000152286.jpg",
+    "question_bn": "এই লোকটি কি একটি বেসবল ব্যাট ধরে আছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 57,
+    "image_id": 152286,
+    "image_file": "COCO_train2014_000000152286.jpg",
+    "question_bn": "এই ব্যক্তি কি সন্তান ধারণে সক্ষম",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 61,
+    "image_id": 152286,
+    "image_file": "COCO_train2014_000000152286.jpg",
+    "question_bn": "খেলোয়াড়টি কি বল ছুঁড়ছে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 66,
+    "image_id": 565756,
+    "image_file": "COCO_train2014_000000565756.jpg",
+    "question_bn": "এই ফুলদানিটি কি ভারী মনে হচ্ছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 71,
+    "image_id": 357614,
+    "image_file": "COCO_train2014_000000357614.jpg",
+    "question_bn": "এই ছবিতে কি সবাই দাঁড়িয়ে আছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 72,
+    "image_id": 357614,
+    "image_file": "COCO_train2014_000000357614.jpg",
+    "question_bn": "এই লোকটি কি তার খাবার উপভোগ করছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 84,
+    "image_id": 179811,
+    "image_file": "COCO_train2014_000000179811.jpg",
+    "question_bn": "এই ইউরিনালটি কি পরিষ্কার দেখাচ্ছে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 85,
+    "image_id": 179811,
+    "image_file": "COCO_train2014_000000179811.jpg",
+    "question_bn": "এই ছবিতে কি কোনো আয়না আছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 89,
+    "image_id": 121582,
+    "image_file": "COCO_train2014_000000121582.jpg",
+    "question_bn": "এই ঘোড়াটি কি দৌড়াচ্ছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 90,
+    "image_id": 121582,
+    "image_file": "COCO_train2014_000000121582.jpg",
+    "question_bn": "এটি কি একটি ভবনের সামনে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 91,
+    "image_id": 121582,
+    "image_file": "COCO_train2014_000000121582.jpg",
+    "question_bn": "রাস্তায় কি কোনো ক্যাব আছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 93,
+    "image_id": 314224,
+    "image_file": "COCO_train2014_000000314224.jpg",
+    "question_bn": "তারা কি হেলমেট পরে আছে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 94,
+    "image_id": 314224,
+    "image_file": "COCO_train2014_000000314224.jpg",
+    "question_bn": "ছেলেটি কি আইনত মোটরসাইকেল চালাতে পারে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
   }
 ]

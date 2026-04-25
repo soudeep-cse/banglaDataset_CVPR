@@ -10,3 +10,10 @@ results/
 figures/
 banglabench.egg-info/
 logs/
+preprocessed_dataset/*
+preprocessed_dataset/qa_all.json
+preprocessed_dataset/qa_all_numeric_en.json
+preprocessed_dataset/qa_descriptive.json
+preprocessed_dataset/qa_english.json
+preprocessed_dataset/qa_numeric.json
+preprocessed_dataset/qa_polar.json

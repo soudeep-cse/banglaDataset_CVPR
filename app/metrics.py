@@ -1,9 +1,17 @@
 from __future__ import annotations
 
+import os
 import re
 import unicodedata
 from typing import Any
 
+import requests
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass  # dotenv not installed   
 
 YES_SET = {"yes", "y", "হ্যাঁ", "হ্যা", "হঁ্যা", "haan", "ha", "yes."}
 NO_SET = {"no", "n", "না", "nah", "na", "no."}
@@ -93,8 +101,26 @@ def normalize_for_segment(text: str, segment: str) -> str:
     return normalized
 
 
-def compare_answers(predicted: str, ground_truth: str, segment: str) -> bool:
-    return normalize_for_segment(predicted, segment) == normalize_for_segment(ground_truth, segment)
+def compare_answers(predicted: str, ground_truth: str, segment: str, question: str = "") -> bool:
+    """
+    Compare predicted answer with ground truth.
+
+    For descriptive answers, uses LLM-as-Judge for semantic similarity
+    instead of exact string matching. Question context is provided for better judgment.
+    
+    Args:
+        predicted: Model's predicted answer
+        ground_truth: Ground truth answer
+        segment: Answer segment type (polar, numeric, descriptive)
+        question: The question text (for descriptive answers, helps with semantic matching)
+    """
+    norm_pred = normalize_for_segment(predicted, segment)
+    norm_truth = normalize_for_segment(ground_truth, segment)
+    # For descriptive answers, use semantic similarity with question context
+    if segment == "descriptive":
+        return _semantic_match(norm_pred, norm_truth, question)
+    # For polar and numeric, use exact match
+    return norm_pred == norm_truth
 
 
 def _confidence_to_unit(value: float | None) -> float | None:
@@ -104,6 +130,179 @@ def _confidence_to_unit(value: float | None) -> float | None:
     if confidence > 1.0:
         confidence /= 100.0
     return max(0.0, min(1.0, confidence))
+
+
+# Hybrid Semantic Similarity: Embedding + LLM Judge
+# Embedding is fast and handles most synonyms, LLM handles edge cases
+_EMBEDDING_MODEL = None
+_EMBEDDING_CACHE = {}
+_LLM_JUDGE_CACHE = {}
+_LLM_JUDGE_MODEL = None
+_LLM_HOST = None
+
+
+def _get_embedding_model():
+    """Lazy-load the embedding model."""
+    global _EMBEDDING_MODEL
+    if _EMBEDDING_MODEL is None:
+        try:
+            from sentence_transformers import SentenceTransformer
+            _EMBEDDING_MODEL = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
+        except ImportError:
+            return None
+    return _EMBEDDING_MODEL
+
+
+def _get_llm_judge_config():
+    """Get LLM judge configuration from environment."""
+    global _LLM_JUDGE_MODEL, _LLM_HOST
+    if _LLM_JUDGE_MODEL is None:
+        _LLM_JUDGE_MODEL = os.getenv("JUDGE_MODEL", "qwen2.5:7b")
+        _LLM_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
+    return _LLM_JUDGE_MODEL, _LLM_HOST
+
+
+def _compute_embedding_similarity(text1: str, text2: str) -> float:
+    """Compute cosine similarity using embeddings (fast)."""
+    cache_key = (text1.strip().lower(), text2.strip().lower())
+    if cache_key in _EMBEDDING_CACHE:
+        return _EMBEDDING_CACHE[cache_key]
+    
+    model = _get_embedding_model()
+    if model is None:
+        return 0.5  # Neutral if model not available
+    
+    try:
+        from sentence_transformers import util
+        embeddings = model.encode([text1, text2], convert_to_tensor=True)
+        similarity = util.pytorch_cos_sim(embeddings[0], embeddings[1]).item()
+        _EMBEDDING_CACHE[cache_key] = similarity
+        return similarity
+    except Exception:
+        return 0.5
+
+
+def _llm_judge_similarity(predicted: str, ground_truth: str, question: str = "", embedding_score: float = 0.0) -> bool:
+    """
+    Use LLM to judge if two answers are semantically equivalent.
+    Only called for borderline cases where embedding similarity is unclear.
+    Returns True if they mean the same thing.
+    """
+    cache_key = (predicted.strip().lower(), ground_truth.strip().lower(), question.strip().lower())
+    if cache_key in _LLM_JUDGE_CACHE:
+        return _LLM_JUDGE_CACHE[cache_key]
+    
+    model, host = _get_llm_judge_config()
+    
+    # Build prompt with embedding score context
+    prompt = f"""You are a semantic similarity judge for Bangla (Bengali) answers.
+
+Question: {question}
+Ground Truth: {ground_truth}
+Predicted: {predicted}
+
+Task: Do these two answers convey the same meaning in the context of the question?
+Important: Be LENIENT - if they refer to the same thing/concept, answer "yes" even if wording differs.
+
+Examples where answers are equivalent (YES):
+- "জলের বাটি" vs "পানির বালি" → both are water containers (yes)
+- "জল" vs "পানির দিকে" → both refer to water (yes)
+- "না" vs "নেই" → both mean "no/none" (yes)
+- "বোটে" vs "নৌকায়" → both mean "in boat" (yes)
+
+Examples where answers are different (NO):
+- "বিড়াল" vs "কুকুর" → different animals (no)
+- "লাল" vs "নীল" → different colors (no)
+- "ডানদিকে" vs "বাঁদিকে" → opposite directions (no)
+
+Previous similarity score: {embedding_score:.2f} (0=different, 1=same)
+
+Respond with ONLY "yes" or "no" (be lenient, prefer "yes" if uncertain):
+
+Answer:"""
+    try:
+        response = requests.post(
+            f"{host}/api/generate",
+            json={
+                "model": model,
+                "prompt": prompt,
+                "stream": False,
+                "options": {"temperature": 0.0, "num_predict": 100}
+            },
+            timeout=10
+        )
+        response.raise_for_status()
+        result = response.json()
+        answer = result.get("response", "").strip().lower()
+        print(f"LLM raw response: '{answer}'")
+        
+        # Parse yes/no - be more flexible
+        is_match = False
+        if answer:
+            # Check for yes (English or Bangla)
+            if any(x in answer for x in ["yes", "হ্যাঁ", "true", "1", "equivalent", "same"]):
+                is_match = True
+            elif any(x in answer for x in ["no", "না", "false", "0", "different"]):
+                is_match = False
+            else:
+                # If unclear, default to substring matching
+                is_match = predicted.strip().lower() in ground_truth.strip().lower() or \
+                          ground_truth.strip().lower() in predicted.strip().lower()
+        
+        _LLM_JUDGE_CACHE[cache_key] = is_match
+        return is_match
+        
+    except Exception as e:
+        # Fallback to simple matching if LLM fails
+        return predicted.strip().lower() == ground_truth.strip().lower()
+
+
+def _semantic_match(predicted: str, ground_truth: str, question: str = "", threshold: float = 0.65) -> bool:
+    """
+    Check if predicted semantically matches ground truth using hybrid approach.
+    
+    1. Fast embedding similarity (covers most synonyms)
+    2. LLM judge only for borderline cases (0.3 < similarity < 0.8)
+    
+    Args:
+        predicted: Model's predicted answer
+        ground_truth: Ground truth answer
+        question: The question text (provides context for better judgment)
+        threshold: Threshold for embedding similarity (default 0.65)
+    
+    Returns:
+        True if answers are semantically equivalent
+    """
+    norm_pred = predicted.strip()
+    norm_truth = ground_truth.strip()
+    
+    # Strategy 1: Exact match (fast path)
+    if norm_pred.lower() == norm_truth.lower():
+        return True
+    
+    # Strategy 2: Substring match (fast path for short answers)
+    if len(norm_pred) <= 20 or len(norm_truth) <= 20:
+        if norm_pred in norm_truth or norm_truth in norm_pred:
+            return True
+    
+    # Strategy 3: Embedding-based similarity (fast)
+    embedding_sim = _compute_embedding_similarity(norm_pred, norm_truth)
+    
+    # High similarity = definite match (no LLM call needed)
+    if embedding_sim >= 0.75:
+        return True
+    
+    # Low similarity = definite mismatch (no LLM call needed)
+    if embedding_sim <= 0.35:
+        return False
+    
+    # Borderline case: use LLM judge
+    # Only call LLM for non-trivial cases with borderline embedding scores
+    if len(norm_pred) > 2 and len(norm_truth) > 2:
+        return _llm_judge_similarity(norm_pred, norm_truth, question, embedding_sim)
+    
+    # Default to embedding result for very short answers
+    return embedding_sim >= threshold
 
 
 def _safe_confidence(item: dict[str, Any]) -> float:

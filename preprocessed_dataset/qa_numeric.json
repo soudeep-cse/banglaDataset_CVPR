@@ -16,5 +16,77 @@
     "answer_bn": "৯",
     "answer": "৯",
     "type": "numeric"
+  },
+  {
+    "qa_id": 29,
+    "image_id": 52305,
+    "image_file": "COCO_train2014_000000052305.jpg",
+    "question_bn": "নৌকায় কয়টি মোটর আছে",
+    "answer_bn": "১",
+    "answer": "১",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 30,
+    "image_id": 52305,
+    "image_file": "COCO_train2014_000000052305.jpg",
+    "question_bn": "জলে কয়টি নৌকা আছে",
+    "answer_bn": "১",
+    "answer": "১",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 33,
+    "image_id": 52305,
+    "image_file": "COCO_train2014_000000052305.jpg",
+    "question_bn": "কয়টি নৌকা দেখা যাচ্ছে",
+    "answer_bn": "১",
+    "answer": "১",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 64,
+    "image_id": 152286,
+    "image_file": "COCO_train2014_000000152286.jpg",
+    "question_bn": "এই পিচার এই খেলায় কয়টি হিট করতে দিয়েছেন",
+    "answer_bn": "৩",
+    "answer": "৩",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 70,
+    "image_id": 565756,
+    "image_file": "COCO_train2014_000000565756.jpg",
+    "question_bn": "কয়টি পালক আছে",
+    "answer_bn": "৯",
+    "answer": "৯",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 92,
+    "image_id": 314224,
+    "image_file": "COCO_train2014_000000314224.jpg",
+    "question_bn": "কয়টি বাইক",
+    "answer_bn": "২",
+    "answer": "২",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 95,
+    "image_id": 314224,
+    "image_file": "COCO_train2014_000000314224.jpg",
+    "question_bn": "এই মোটরসাইকেলটি কোন সালে বিক্রির জন্য আনা হয়েছিল",
+    "answer_bn": "১৯৮৫",
+    "answer": "১৯৮৫",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 98,
+    "image_id": 314224,
+    "image_file": "COCO_train2014_000000314224.jpg",
+    "question_bn": "কয়টি বাইক দেখা যাচ্ছে",
+    "answer_bn": "২",
+    "answer": "২",
+    "type": "numeric"
   }
 ]

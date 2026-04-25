@@ -38,6 +38,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max_retries", type=int, default=3, help="Maximum retries for retryable API errors")
     parser.add_argument("--retry_backoff", type=float, default=2.0, help="Base backoff in seconds for retries")
     parser.add_argument("--save-raw", action="store_true", help="Save raw model outputs for each sample to results/raw_outputs/")
+    parser.add_argument("--resume-from", type=str, default=None, help="Resume from checkpoint file (JSONL path) - skips already processed samples")
     return parser
 
 
@@ -68,6 +69,7 @@ def main() -> None:
         max_retries=args.max_retries,
         retry_backoff=args.retry_backoff,
         save_raw=args.save_raw,
+        resume_from=args.resume_from,
     )
     report = result["report"]
     overall = report.get("overall", {})

@@ -51,6 +51,24 @@ def _is_retryable_error(exc: Exception) -> bool:
     return any(marker in message for marker in retry_markers)
 
 
+def _load_processed_ids(checkpoint_path: Path | None) -> set[str]:
+    """Load already processed qa_ids from checkpoint file."""
+    if checkpoint_path is None or not checkpoint_path.exists():
+        return set()
+    processed = set()
+    try:
+        with open(checkpoint_path, "r", encoding="utf-8") as f:
+            for line in f:
+                if line.strip():
+                    data = json.loads(line)
+                    qa_id = data.get("qa_id")
+                    if qa_id:
+                        processed.add(str(qa_id))
+    except Exception as e:
+        print(f"Warning: Could not load checkpoint: {e}")
+    return processed
+
+
 def evaluate(
     model_name: str,
     data_dir: str | Path = "dataset",
@@ -66,10 +84,26 @@ def evaluate(
     max_retries: int = 3,
     retry_backoff: float = 2.0,
     save_raw: bool = False,
+    resume_from: str | None = None,
 ) -> dict[str, object]:
     data_dir = Path(data_dir)
     results_dir = Path(results_dir)
     results_dir.mkdir(parents=True, exist_ok=True)
+
+    # Load already processed samples if resuming
+    checkpoint_path = Path(resume_from) if resume_from else None
+    processed_ids = _load_processed_ids(checkpoint_path)
+    if processed_ids:
+        print(f"Resuming from checkpoint: {checkpoint_path}")
+        print(f"Already processed: {len(processed_ids)} samples")
+        # Load existing results from checkpoint to include in final report
+        all_results = []
+        with open(checkpoint_path, "r", encoding="utf-8") as f:
+            for line in f:
+                if line.strip():
+                    all_results.append(json.loads(line))
+    else:
+        all_results = []
 
     if not skip_preprocess:
         prep_info = prepare_segment_files(data_dir=data_dir, output_dir=preprocessed_dir, limit=sample)
@@ -98,7 +132,21 @@ def evaluate(
         for f in raw_output_dir.glob("raw_outputs_*.jsonl"):
             f.unlink()
 
-    all_results: list[dict[str, Any]] = []
+    # Setup incremental checkpoint file (progress backup)
+    timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    safe_name = _safe_output_stem(model_name)
+    
+    # If resuming, use the provided checkpoint file for appending
+    # Otherwise create new checkpoint files
+    if resume_from:
+        checkpoint_file = checkpoint_path  # Use the resumed checkpoint file
+        latest_checkpoint = results_dir / f"checkpoint_{safe_name}_latest.jsonl"
+    else:
+        checkpoint_file = results_dir / f"checkpoint_{safe_name}_{timestamp}.jsonl"
+        latest_checkpoint = results_dir / f"checkpoint_{safe_name}_latest.jsonl"
+        # Clear latest checkpoint if starting fresh
+        if latest_checkpoint.exists():
+            latest_checkpoint.unlink()
     images_dir = data_dir / "images"
     output_root = Path(preprocessed_dir)
 
@@ -116,6 +164,15 @@ def evaluate(
         iterator = tqdm(samples, desc=desc, disable=not HAS_TQDM)
 
         for sample_row in iterator:
+            # Skip if already processed (resume mode)
+            if str(sample_row.sample_id) in processed_ids:
+                if HAS_TQDM:
+                    # Update progress bar with existing accuracy
+                    correct_count = sum(1 for r in all_results if r.get("correct"))
+                    accuracy = correct_count / len(all_results) if all_results else 0
+                    iterator.set_postfix({"acc": f"{accuracy:.2%}", "n": len(all_results), "skip": len(processed_ids)})
+                continue
+
             attempt = 0
             while True:
                 try:
@@ -131,7 +188,7 @@ def evaluate(
 
             predicted = response.answer.strip()
             confidence = _confidence_to_unit(response.confidence)
-            correct = compare_answers(predicted=predicted, ground_truth=sample_row.answer, segment=segment)
+            correct = compare_answers(predicted=predicted, ground_truth=sample_row.answer, segment=segment, question=sample_row.question)
 
             result = {
                 "qa_id": sample_row.sample_id,
@@ -143,10 +200,19 @@ def evaluate(
                 "correct": correct,
                 "raw_output": response.raw_text if hasattr(response, 'raw_text') else None,
                 "image_path": str(sample_row.image_path) if hasattr(sample_row, 'image_path') else None,
+                "timestamp": datetime.now(timezone.utc).isoformat(),
             }
             all_results.append(result)
 
-            # Save raw output incrementally
+            # Save to incremental checkpoint (progress backup)
+            # This ensures we don't lose progress if evaluation crashes
+            with checkpoint_file.open("a", encoding="utf-8") as f:
+                f.write(json.dumps(result, ensure_ascii=False) + "\n")
+            # Also update latest checkpoint (append for resume support)
+            with latest_checkpoint.open("a", encoding="utf-8") as f:
+                f.write(json.dumps(result, ensure_ascii=False) + "\n")
+
+            # Save raw output incrementally (per-segment files)
             if save_raw and raw_output_dir:
                 raw_file = raw_output_dir / f"raw_outputs_{segment}.jsonl"
                 with raw_file.open("a", encoding="utf-8") as f:
@@ -168,7 +234,6 @@ def evaluate(
         for rows in ([entry for entry in all_results if entry.get("type") == segment],)
     }
 
-    timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     report = {
         "metadata": {
             "model": model_name,
@@ -178,19 +243,23 @@ def evaluate(
             "preprocessed_dir": str(preprocessed_dir),
             "preprocess_counts": prep_info.get("counts", {}),
             "total_results": len(all_results),
+            "checkpoint_file": str(checkpoint_file.name),
         },
         "overall": overall,
         "segment_wise": segment_wise,
         "results": all_results,
     }
-    # Save report with timestamp like BanglaVerse
-    safe_name = _safe_output_stem(model_name)
+    # Save final report with timestamp like BanglaVerse
     report_path = results_dir / f"banglabayanno_report_{safe_name}_{timestamp}.json"
     with report_path.open("w", encoding="utf-8") as handle:
         json.dump(report, handle, ensure_ascii=False, indent=2)
 
+    # Print checkpoint info
+    print(f"\nCheckpoint saved to: {checkpoint_file}")
+    print(f"Latest checkpoint: {latest_checkpoint}")
+    
     # Also save raw outputs summary if enabled
     if save_raw and raw_output_dir:
-        print(f"\nRaw outputs saved to: {raw_output_dir}")
+        print(f"Raw outputs saved to: {raw_output_dir}")
 
     return {"model": model_name, "report_path": str(report_path), "report": report}

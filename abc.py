@@ -6,9 +6,9 @@ with open(r"C:\Users\slmns\Desktop\thesis\banglaDataset_CVPR\BanglaVerse\data\im
     image_data = base64.b64encode(f.read()).decode("utf-8")
 
 response = requests.post(
-    "http://194.68.245.42:22166/api/chat",
+    "http://213.173.99.31:36766/api/chat",
     json={
-        "model": "qwen3.5:9b",
+        "model": "gemma4:e2b",
         "messages": [
             {
                 "role": "user",
