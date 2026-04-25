@@ -7,3 +7,12 @@ dataset/images/*.jpg filter=lfs diff=lfs merge=lfs -text
 dataset/images/*.jpeg filter=lfs diff=lfs merge=lfs -text
 dataset/images/*.png filter=lfs diff=lfs merge=lfs -text
 dataset/images/*.webp filter=lfs diff=lfs merge=lfs -text
+Bangla-Bayanno-full/* filter=lfs diff=lfs merge=lfs -text
+Bangla-Bayanno-full/images/*.jpg filter=lfs diff=lfs merge=lfs -text
+Bangla-Bayanno-full/images/*.jpeg filter=lfs diff=lfs merge=lfs -text
+Bangla-Bayanno-full/images/*.png filter=lfs diff=lfs merge=lfs -text
+Bangla-Bayanno-full/images/*.webp filter=lfs diff=lfs merge=lfs -text
+Bangla-Bayanno-full/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+Bangla-Bayanno-full/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+Bangla-Bayanno-full/**/*.png filter=lfs diff=lfs merge=lfs -text
+Bangla-Bayanno-full/**/*.webp filter=lfs diff=lfs merge=lfs -text
