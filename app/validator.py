@@ -1,4 +1,4 @@
-"""Post-run validation agent using qwen2.5vl as a coach to catch matching errors."""
+"""Post-run validation agent using qwen3.5:35b as a coach to catch matching errors."""
 from __future__ import annotations
 
 import json
@@ -19,7 +19,7 @@ def _llm_verify(
     predicted: str,
     marked_correct: bool,
     host: str,
-    model: str = "qwen2.5vl:latest",
+    model: str = "qwen3.5:35b",
 ) -> dict[str, Any]:
     """Ask LLM: is the marked_correct label actually right?"""
     marked_label = 'CORRECT' if marked_correct else 'INCORRECT'
@@ -100,7 +100,7 @@ def _llm_verify(
 def validate_results(
     results: list[dict[str, Any]],
     ollama_host: str | None = None,
-    judge_model: str = "qwen2.5vl:latest",
+    judge_model: str = "qwen3.5:9b",
     sample_limit: int | None = None,
 ) -> dict[str, Any]:
     """
@@ -200,7 +200,7 @@ def validate_report_file(
     report_path: str | Path,
     output_path: str | Path | None = None,
     ollama_host: str | None = None,
-    judge_model: str = "qwen2.5vl:latest",
+    judge_model: str = "qwen3.5:9b",
     sample_limit: int | None = None,
 ) -> dict[str, Any]:
     """Load a saved report JSON and validate its results."""

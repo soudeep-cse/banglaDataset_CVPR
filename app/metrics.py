@@ -259,7 +259,7 @@ def _get_llm_judge_config():
     """Get LLM judge configuration from environment."""
     global _LLM_JUDGE_MODEL, _LLM_HOST
     if _LLM_JUDGE_MODEL is None:
-        _LLM_JUDGE_MODEL = os.getenv("JUDGE_MODEL", "qwen2.5:7b")
+        _LLM_JUDGE_MODEL = os.getenv("JUDGE_MODEL", "qwen3.5:35b")
         _LLM_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
     return _LLM_JUDGE_MODEL, _LLM_HOST
 

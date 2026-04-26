@@ -16,5 +16,3830 @@
     "answer_bn": "big",
     "answer": "big",
     "type": "descriptive"
+  },
+  {
+    "qa_id": 170,
+    "image_id": 413115,
+    "image_file": "COCO_train2014_000000413115.jpg",
+    "question_bn": "আপনি কি 'C' অক্ষর দিয়ে শুরু হওয়া কোনো শব্দ দেখতে পাচ্ছেন",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 214,
+    "image_id": 138684,
+    "image_file": "COCO_train2014_000000138684.jpg",
+    "question_bn": "এই ফ্রিজটি কোন ব্র্যান্ডের",
+    "answer_bn": "ge",
+    "answer": "ge",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 604,
+    "image_id": 239007,
+    "image_file": "COCO_train2014_000000239007.jpg",
+    "question_bn": "ওভেনের ব্র্যান্ড কি",
+    "answer_bn": "ge",
+    "answer": "ge",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 979,
+    "image_id": 294659,
+    "image_file": "COCO_train2014_000000294659.jpg",
+    "question_bn": "লোকটির বাম দিকে লেখাতে কি লেখা আছে",
+    "answer_bn": "rch",
+    "answer": "rch",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 1041,
+    "image_id": 221360,
+    "image_file": "COCO_train2014_000000221360.jpg",
+    "question_bn": "চিহ্নটিতে কি লেখা আছে",
+    "answer_bn": "major st",
+    "answer": "major st",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 1042,
+    "image_id": 221360,
+    "image_file": "COCO_train2014_000000221360.jpg",
+    "question_bn": "এটা কোন রাস্তা",
+    "answer_bn": "major",
+    "answer": "major",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 1101,
+    "image_id": 278229,
+    "image_file": "COCO_train2014_000000278229.jpg",
+    "question_bn": "হৃদয়যুক্ত স্টিকারটিতে কি লেখা আছে",
+    "answer_bn": "i ny",
+    "answer": "i ny",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 1160,
+    "image_id": 373251,
+    "image_file": "COCO_train2014_000000373251.jpg",
+    "question_bn": "কেকের উপর কি লেখা আছে",
+    "answer_bn": "carat 2015",
+    "answer": "carat 2015",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 1388,
+    "image_id": 277470,
+    "image_file": "COCO_train2014_000000277470.jpg",
+    "question_bn": "এটা কোন ব্র্যান্ডের বাইক",
+    "answer_bn": "schwinn",
+    "answer": "schwinn",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 1397,
+    "image_id": 450318,
+    "image_file": "COCO_train2014_000000450318.jpg",
+    "question_bn": "কোন চিহ্নটি বরফে ঢাকা নয়",
+    "answer_bn": "agnes",
+    "answer": "agnes",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 1430,
+    "image_id": 478785,
+    "image_file": "COCO_train2014_000000478785.jpg",
+    "question_bn": "বাসটির নাম কি",
+    "answer_bn": "qbuzz",
+    "answer": "qbuzz",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 1431,
+    "image_id": 478785,
+    "image_file": "COCO_train2014_000000478785.jpg",
+    "question_bn": "এই বাসটি কোন ব্র্যান্ডের",
+    "answer_bn": "qbuzz",
+    "answer": "qbuzz",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 1575,
+    "image_id": 560992,
+    "image_file": "COCO_train2014_000000560992.jpg",
+    "question_bn": "এটা কি ধরনের বাইক",
+    "answer_bn": "honda",
+    "answer": "honda",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 1577,
+    "image_id": 560992,
+    "image_file": "COCO_train2014_000000560992.jpg",
+    "question_bn": "বাইকটির মেক কি",
+    "answer_bn": "honda",
+    "answer": "honda",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 3366,
+    "image_id": 324171,
+    "image_file": "COCO_train2014_000000324171.jpg",
+    "question_bn": "রুপোর посуdaগুলো কোথায়",
+    "answer_bn": "প্লেট",
+    "answer": "প্লেট",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 3500,
+    "image_id": 460113,
+    "image_file": "COCO_train2014_000000460113.jpg",
+    "question_bn": "এই ছবির কপিরাইট কার কাছে",
+    "answer_bn": "bryanelkuscom",
+    "answer": "bryanelkuscom",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 4052,
+    "image_id": 564481,
+    "image_file": "COCO_train2014_000000564481.jpg",
+    "question_bn": "লোকটি কি উই (Wii) খেলছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 4330,
+    "image_id": 102604,
+    "image_file": "COCO_train2014_000000102604.jpg",
+    "question_bn": "নৌকাটির ইংরেজি নাম কী",
+    "answer_bn": "fn437",
+    "answer": "fn437",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 4331,
+    "image_id": 102604,
+    "image_file": "COCO_train2014_000000102604.jpg",
+    "question_bn": "নৌকার হালের উপর \"FN437\" কল সাইনটি কীসের জন্য",
+    "answer_bn": "লাইসেন্স নম্বর",
+    "answer": "লাইসেন্স নম্বর",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 5031,
+    "image_id": 161654,
+    "image_file": "COCO_train2014_000000161654.jpg",
+    "question_bn": "নীচের ডানদিকের কোণায় সবচেয়ে ছোট শব্দটি কী",
+    "answer_bn": "cskulevold",
+    "answer": "cskulevold",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 5049,
+    "image_id": 161654,
+    "image_file": "COCO_train2014_000000161654.jpg",
+    "question_bn": "ম্যাগাজিনটির নাম কী",
+    "answer_bn": "cskulevold",
+    "answer": "cskulevold",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 5057,
+    "image_id": 161654,
+    "image_file": "COCO_train2014_000000161654.jpg",
+    "question_bn": "নীচের ডান কোণায় নামটি কী বোঝায়",
+    "answer_bn": "cskulevold",
+    "answer": "cskulevold",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 5065,
+    "image_id": 161654,
+    "image_file": "COCO_train2014_000000161654.jpg",
+    "question_bn": "ছবির নীচে কী লেখা আছে",
+    "answer_bn": "@cskulevold",
+    "answer": "@cskulevold",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 5977,
+    "image_id": 431363,
+    "image_file": "COCO_train2014_000000431363.jpg",
+    "question_bn": "হলুদ লাইসেন্স প্লেটে কী লেখা আছে",
+    "answer_bn": "vx05 jyn",
+    "answer": "vx05 jyn",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 5991,
+    "image_id": 431363,
+    "image_file": "COCO_train2014_000000431363.jpg",
+    "question_bn": "লাইসেন্স প্লেটে কোন অক্ষরগুলো আছে",
+    "answer_bn": "vx05 jyn",
+    "answer": "vx05 jyn",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 6024,
+    "image_id": 109506,
+    "image_file": "COCO_train2014_000000109506.jpg",
+    "question_bn": "এই ছবিতে P অক্ষরটি কতবার দেখা যাচ্ছে",
+    "answer_bn": "4",
+    "answer": "4",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 6242,
+    "image_id": 211760,
+    "image_file": "COCO_train2014_000000211760.jpg",
+    "question_bn": "হাসিমুখে থাকা লোকটির কালো শার্টে কোন অক্ষরগুলো লেখা আছে",
+    "answer_bn": "jpn",
+    "answer": "jpn",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 6249,
+    "image_id": 137953,
+    "image_file": "COCO_train2014_000000137953.jpg",
+    "question_bn": "ছবির উপরের দিকের সাইনবোর্ডে কোন অক্ষরটি আছে",
+    "answer_bn": "p",
+    "answer": "p",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 6767,
+    "image_id": 349410,
+    "image_file": "COCO_train2014_000000349410.jpg",
+    "question_bn": "বাসের পাশে কোন অক্ষরটি আছে",
+    "answer_bn": "t",
+    "answer": "t",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 7216,
+    "image_id": 94420,
+    "image_file": "COCO_train2014_000000094420.jpg",
+    "question_bn": "বাসের লাইসেন্স প্লেট নম্বর কত",
+    "answer_bn": "ch60 cdh",
+    "answer": "ch60 cdh",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 7217,
+    "image_id": 94420,
+    "image_file": "COCO_train2014_000000094420.jpg",
+    "question_bn": "বাসের লাইসেন্স প্লেট নম্বর কত",
+    "answer_bn": "ch60 cdh",
+    "answer": "ch60 cdh",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 7216,
+    "image_id": 94420,
+    "image_file": "COCO_train2014_000000094420.jpg",
+    "question_bn": "বাসের লাইসেন্স প্লেট নম্বর কত",
+    "answer_bn": "ch60 cdh",
+    "answer": "ch60 cdh",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 7217,
+    "image_id": 94420,
+    "image_file": "COCO_train2014_000000094420.jpg",
+    "question_bn": "বাসের লাইসেন্স প্লেট নম্বর কত",
+    "answer_bn": "ch60 cdh",
+    "answer": "ch60 cdh",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 7473,
+    "image_id": 217341,
+    "image_file": "COCO_train2014_000000217341.jpg",
+    "question_bn": "এই ছবিতে কত ধরনের প্রাণী represbntado আছে",
+    "answer_bn": "1",
+    "answer": "1",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 7620,
+    "image_id": 570569,
+    "image_file": "COCO_train2014_000000570569.jpg",
+    "question_bn": "T-এর উপরের অংশের রঙ কী",
+    "answer_bn": "সাদা",
+    "answer": "সাদা",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 7684,
+    "image_id": 217302,
+    "image_file": "COCO_train2014_000000217302.jpg",
+    "question_bn": "বাসের লাইসেন্স প্লেটে কী লেখা আছে",
+    "answer_bn": "w908rbb",
+    "answer": "w908rbb",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 8426,
+    "image_id": 324580,
+    "image_file": "COCO_train2014_000000324580.jpg",
+    "question_bn": "\"E\" কিসের সংক্ষিপ্ত রূপ",
+    "answer_bn": "পূর্ব",
+    "answer": "পূর্ব",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 8432,
+    "image_id": 324580,
+    "image_file": "COCO_train2014_000000324580.jpg",
+    "question_bn": "STOP এর নিচে কী লেখা আছে",
+    "answer_bn": "হ্যামার টাইম",
+    "answer": "হ্যামার টাইম",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 9049,
+    "image_id": 288021,
+    "image_file": "COCO_train2014_000000288021.jpg",
+    "question_bn": "ML এর নিচে কী লেখা আছে",
+    "answer_bn": "থামুন",
+    "answer": "থামুন",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 9181,
+    "image_id": 84582,
+    "image_file": "COCO_train2014_000000084582.jpg",
+    "question_bn": "প্লেনের পাশে লেখা শব্দটি কি AMERICA",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 9266,
+    "image_id": 29154,
+    "image_file": "COCO_train2014_000000029154.jpg",
+    "question_bn": "এই সব ফল এবং সবজি কি homegrown",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 9430,
+    "image_id": 209859,
+    "image_file": "COCO_train2014_000000209859.jpg",
+    "question_bn": "Fret মানে কি",
+    "answer_bn": "মালবাহী",
+    "answer": "মালবাহী",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 9488,
+    "image_id": 19681,
+    "image_file": "COCO_train2014_000000019681.jpg",
+    "question_bn": "\"OMEGLE\" কোথায় আঁকা আছে",
+    "answer_bn": "বাসের সামনে",
+    "answer": "বাসের সামনে",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 9645,
+    "image_id": 371923,
+    "image_file": "COCO_train2014_000000371923.jpg",
+    "question_bn": "লাল অক্ষরে কী লেখা আছে",
+    "answer_bn": "bnix",
+    "answer": "bnix",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 10132,
+    "image_id": 570874,
+    "image_file": "COCO_train2014_000000570874.jpg",
+    "question_bn": "লাইসেন্স প্লেটে কী আছে",
+    "answer_bn": "ald941b",
+    "answer": "ald941b",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 10133,
+    "image_id": 570874,
+    "image_file": "COCO_train2014_000000570874.jpg",
+    "question_bn": "লাইসেন্স প্লেট নম্বর কত",
+    "answer_bn": "ald 941b",
+    "answer": "ald 941b",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 10552,
+    "image_id": 502104,
+    "image_file": "COCO_train2014_000000502104.jpg",
+    "question_bn": "গাড়িটির লাইসেন্স প্লেট কী",
+    "answer_bn": "lg57hle",
+    "answer": "lg57hle",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 10587,
+    "image_id": 89384,
+    "image_file": "COCO_train2014_000000089384.jpg",
+    "question_bn": "টাওয়ারে কোন অক্ষরগুলো লেখা আছে",
+    "answer_bn": "uncg",
+    "answer": "uncg",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 12017,
+    "image_id": 400190,
+    "image_file": "COCO_train2014_000000400190.jpg",
+    "question_bn": "বাচ্চাটি কি উই (Wii) খেলতে পছন্দ করে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 12065,
+    "image_id": 273276,
+    "image_file": "COCO_train2014_000000273276.jpg",
+    "question_bn": "এই ব্যক্তিটি কোন ধরণের খেলা খেলছে",
+    "answer_bn": "উই (wii)",
+    "answer": "উই (wii)",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 12067,
+    "image_id": 273276,
+    "image_file": "COCO_train2014_000000273276.jpg",
+    "question_bn": "এই ব্যক্তিটি কোন গেম সিস্টেম দিয়ে খেলছে",
+    "answer_bn": "উই (wii)",
+    "answer": "উই (wii)",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 12205,
+    "image_id": 337422,
+    "image_file": "COCO_train2014_000000337422.jpg",
+    "question_bn": "কাপটিতে কি লেখা আছে",
+    "answer_bn": "ক্যাফে ডু monde",
+    "answer": "ক্যাফে ডু monde",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 12471,
+    "image_id": 3293,
+    "image_file": "COCO_train2014_000000003293.jpg",
+    "question_bn": "এটি কি একটি stark রঙের প্যালেট",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 13308,
+    "image_id": 174680,
+    "image_file": "COCO_train2014_000000174680.jpg",
+    "question_bn": "ব্যক্তিটি কী স্পর্শ করছে",
+    "answer_bn": "wii রিমোট",
+    "answer": "wii রিমোট",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 13313,
+    "image_id": 174680,
+    "image_file": "COCO_train2014_000000174680.jpg",
+    "question_bn": "কোন যন্ত্র বাজানো হচ্ছে",
+    "answer_bn": "wii",
+    "answer": "wii",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 13315,
+    "image_id": 174680,
+    "image_file": "COCO_train2014_000000174680.jpg",
+    "question_bn": "ভদ্রলোকটি কী ধরে আছে",
+    "answer_bn": "wii রিমোট",
+    "answer": "wii রিমোট",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 13317,
+    "image_id": 174680,
+    "image_file": "COCO_train2014_000000174680.jpg",
+    "question_bn": "এই ব্যক্তিটি কী বহন করছে",
+    "answer_bn": "wii রিমোট",
+    "answer": "wii রিমোট",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 13318,
+    "image_id": 174680,
+    "image_file": "COCO_train2014_000000174680.jpg",
+    "question_bn": "সে কী ধরে আছে",
+    "answer_bn": "wii কন্ট্রোলার",
+    "answer": "wii কন্ট্রোলার",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 13328,
+    "image_id": 174680,
+    "image_file": "COCO_train2014_000000174680.jpg",
+    "question_bn": "লোকটি কী করছে",
+    "answer_bn": "wii খেলছে",
+    "answer": "wii খেলছে",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 13329,
+    "image_id": 174680,
+    "image_file": "COCO_train2014_000000174680.jpg",
+    "question_bn": "লোকটি কী ধরে আছে",
+    "answer_bn": "wii রিমোট",
+    "answer": "wii রিমোট",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 13330,
+    "image_id": 174680,
+    "image_file": "COCO_train2014_000000174680.jpg",
+    "question_bn": "লোকটির হাতে কী আছে",
+    "answer_bn": "wii রিমোট",
+    "answer": "wii রিমোট",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 13340,
+    "image_id": 174680,
+    "image_file": "COCO_train2014_000000174680.jpg",
+    "question_bn": "লোকটি কী করছে",
+    "answer_bn": "wii খেলছে",
+    "answer": "wii খেলছে",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 13349,
+    "image_id": 174680,
+    "image_file": "COCO_train2014_000000174680.jpg",
+    "question_bn": "তারা কি Wii টেনিস খেলছে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 13357,
+    "image_id": 174680,
+    "image_file": "COCO_train2014_000000174680.jpg",
+    "question_bn": "লোকটির হাতে কী আছে",
+    "answer_bn": "wii রিমোট",
+    "answer": "wii রিমোট",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 13574,
+    "image_id": 377423,
+    "image_file": "COCO_train2014_000000377423.jpg",
+    "question_bn": "টেনিস র‍্যাকেটে কোন অক্ষর আছে",
+    "answer_bn": "w",
+    "answer": "w",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 13627,
+    "image_id": 305858,
+    "image_file": "COCO_train2014_000000305858.jpg",
+    "question_bn": "সাদা অক্ষর P কোথায়",
+    "answer_bn": "মেঝেতে",
+    "answer": "মেঝেতে",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 13707,
+    "image_id": 526008,
+    "image_file": "COCO_train2014_000000526008.jpg",
+    "question_bn": "চিহ্নটিতে \"place\" এর উপরে কোন শব্দটি আছে",
+    "answer_bn": "east",
+    "answer": "east",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 13755,
+    "image_id": 526008,
+    "image_file": "COCO_train2014_000000526008.jpg",
+    "question_bn": "লাল চিহ্নটির তৃতীয় অক্ষরটি কী",
+    "answer_bn": "s",
+    "answer": "s",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 13759,
+    "image_id": 526008,
+    "image_file": "COCO_train2014_000000526008.jpg",
+    "question_bn": "চিহ্নটিতে কোন অক্ষরটি বড়",
+    "answer_bn": "e",
+    "answer": "e",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 13767,
+    "image_id": 161610,
+    "image_file": "COCO_train2014_000000161610.jpg",
+    "question_bn": "রাস্তার চিহ্নে কি ANNIE শব্দটি আছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 13809,
+    "image_id": 525101,
+    "image_file": "COCO_train2014_000000525101.jpg",
+    "question_bn": "ট্রেনের সামনে অক্ষরগুলো কী",
+    "answer_bn": "a",
+    "answer": "a",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 13904,
+    "image_id": 392606,
+    "image_file": "COCO_train2014_000000392606.jpg",
+    "question_bn": "উপরের ডানদিকের চিহ্নে দুটি অক্ষর কী",
+    "answer_bn": "st",
+    "answer": "st",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 14011,
+    "image_id": 376492,
+    "image_file": "COCO_train2014_000000376492.jpg",
+    "question_bn": "ভ্যানের সামনের তিনটি অক্ষরের মাঝের অক্ষরটি কী",
+    "answer_bn": "b",
+    "answer": "b",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 14042,
+    "image_id": 222929,
+    "image_file": "COCO_train2014_000000222929.jpg",
+    "question_bn": "\"P\" অক্ষরটি কী বোঝায়",
+    "answer_bn": "পুলিশ",
+    "answer": "পুলিশ",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 14171,
+    "image_id": 53684,
+    "image_file": "COCO_train2014_000000053684.jpg",
+    "question_bn": "For-এর পরে কী আসে",
+    "answer_bn": "সেন্ট",
+    "answer": "সেন্ট",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 14461,
+    "image_id": 225053,
+    "image_file": "COCO_train2014_000000225053.jpg",
+    "question_bn": "পটভূমির ব্যানার থেকে সম্পূর্ণ URL টি কী",
+    "answer_bn": "wwwwimbledonorg",
+    "answer": "wwwwimbledonorg",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 14612,
+    "image_id": 218982,
+    "image_file": "COCO_train2014_000000218982.jpg",
+    "question_bn": "FDC অক্ষরগুলোর রঙ কী",
+    "answer_bn": "লাল",
+    "answer": "লাল",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 15407,
+    "image_id": 247545,
+    "image_file": "COCO_train2014_000000247545.jpg",
+    "question_bn": "কোথায় \"GE Money\" লেখা আছে",
+    "answer_bn": "দেয়ালে",
+    "answer": "দেয়ালে",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 15802,
+    "image_id": 129433,
+    "image_file": "COCO_train2014_000000129433.jpg",
+    "question_bn": "পেছনের বেড়াতে কোন শব্দটি লেখা আছে",
+    "answer_bn": "usopbnorg",
+    "answer": "usopbnorg",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 16475,
+    "image_id": 448653,
+    "image_file": "COCO_train2014_000000448653.jpg",
+    "question_bn": "টাpperware আছে কি",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 17381,
+    "image_id": 84582,
+    "image_file": "COCO_train2014_000000084582.jpg",
+    "question_bn": "বিমানের পাশে লেখা শব্দটি কি AMERICA",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19001,
+    "image_id": 577759,
+    "image_file": "COCO_train2014_000000577759.jpg",
+    "question_bn": "Is the man wearing a leather jacket",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19002,
+    "image_id": 577759,
+    "image_file": "COCO_train2014_000000577759.jpg",
+    "question_bn": "Is the man old",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19003,
+    "image_id": 577759,
+    "image_file": "COCO_train2014_000000577759.jpg",
+    "question_bn": "What tool is being used",
+    "answer_bn": "scissors",
+    "answer": "scissors",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19004,
+    "image_id": 577759,
+    "image_file": "COCO_train2014_000000577759.jpg",
+    "question_bn": "What is the boy holding",
+    "answer_bn": "scissors",
+    "answer": "scissors",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19005,
+    "image_id": 577759,
+    "image_file": "COCO_train2014_000000577759.jpg",
+    "question_bn": "What is in the persons left hand",
+    "answer_bn": "scissors",
+    "answer": "scissors",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19006,
+    "image_id": 62426,
+    "image_file": "COCO_train2014_000000062426.jpg",
+    "question_bn": "Is the tub made from marble",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19007,
+    "image_id": 62426,
+    "image_file": "COCO_train2014_000000062426.jpg",
+    "question_bn": "What type of lighting fixture is hanging from the ceiling",
+    "answer_bn": "chandelier",
+    "answer": "chandelier",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19008,
+    "image_id": 62426,
+    "image_file": "COCO_train2014_000000062426.jpg",
+    "question_bn": "What is the main color in the bathroom",
+    "answer_bn": "yellow",
+    "answer": "yellow",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19009,
+    "image_id": 259297,
+    "image_file": "COCO_train2014_000000259297.jpg",
+    "question_bn": "How many sandwiches do you see",
+    "answer_bn": "3",
+    "answer": "3",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19010,
+    "image_id": 259297,
+    "image_file": "COCO_train2014_000000259297.jpg",
+    "question_bn": "Is there donuts here",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19011,
+    "image_id": 259297,
+    "image_file": "COCO_train2014_000000259297.jpg",
+    "question_bn": "What language are these labels in",
+    "answer_bn": "chinese",
+    "answer": "chinese",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19012,
+    "image_id": 259297,
+    "image_file": "COCO_train2014_000000259297.jpg",
+    "question_bn": "How much do the onions cost",
+    "answer_bn": "105",
+    "answer": "105",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19013,
+    "image_id": 467397,
+    "image_file": "COCO_train2014_000000467397.jpg",
+    "question_bn": "How many donuts have sprinkles",
+    "answer_bn": "3",
+    "answer": "3",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19014,
+    "image_id": 467397,
+    "image_file": "COCO_train2014_000000467397.jpg",
+    "question_bn": "How many donuts are on the plate",
+    "answer_bn": "3",
+    "answer": "3",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19015,
+    "image_id": 467397,
+    "image_file": "COCO_train2014_000000467397.jpg",
+    "question_bn": "How many donuts are brown",
+    "answer_bn": "3",
+    "answer": "3",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19016,
+    "image_id": 467397,
+    "image_file": "COCO_train2014_000000467397.jpg",
+    "question_bn": "What color is the foreground",
+    "answer_bn": "brown",
+    "answer": "brown",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19017,
+    "image_id": 402527,
+    "image_file": "COCO_train2014_000000402527.jpg",
+    "question_bn": "How many boys",
+    "answer_bn": "2",
+    "answer": "2",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19018,
+    "image_id": 402527,
+    "image_file": "COCO_train2014_000000402527.jpg",
+    "question_bn": "What sport are these childrbn playing",
+    "answer_bn": "tbnnis",
+    "answer": "tbnnis",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19019,
+    "image_id": 402527,
+    "image_file": "COCO_train2014_000000402527.jpg",
+    "question_bn": "Is the boy wearing a grebn shirt",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19020,
+    "image_id": 228681,
+    "image_file": "COCO_train2014_000000228681.jpg",
+    "question_bn": "What color are the traffic signals",
+    "answer_bn": "red",
+    "answer": "red",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19021,
+    "image_id": 228681,
+    "image_file": "COCO_train2014_000000228681.jpg",
+    "question_bn": "Is it daytime or nighttime",
+    "answer_bn": "night",
+    "answer": "night",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19022,
+    "image_id": 228681,
+    "image_file": "COCO_train2014_000000228681.jpg",
+    "question_bn": "How many differbnt letters are there in this picture",
+    "answer_bn": "7",
+    "answer": "7",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19023,
+    "image_id": 228681,
+    "image_file": "COCO_train2014_000000228681.jpg",
+    "question_bn": "Is the face in the illuminated traffic signal happy or sad",
+    "answer_bn": "happy",
+    "answer": "happy",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19024,
+    "image_id": 228681,
+    "image_file": "COCO_train2014_000000228681.jpg",
+    "question_bn": "What scbne is this",
+    "answer_bn": "street",
+    "answer": "street",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19025,
+    "image_id": 228681,
+    "image_file": "COCO_train2014_000000228681.jpg",
+    "question_bn": "Is it night time",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19026,
+    "image_id": 228681,
+    "image_file": "COCO_train2014_000000228681.jpg",
+    "question_bn": "Is it day time",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19027,
+    "image_id": 228681,
+    "image_file": "COCO_train2014_000000228681.jpg",
+    "question_bn": "Was it takbn during a day",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19028,
+    "image_id": 228681,
+    "image_file": "COCO_train2014_000000228681.jpg",
+    "question_bn": "What color is the parking sign",
+    "answer_bn": "grebn",
+    "answer": "grebn",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19029,
+    "image_id": 194564,
+    "image_file": "COCO_train2014_000000194564.jpg",
+    "question_bn": "Are there any salt and pepper shakers on the table",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19030,
+    "image_id": 194564,
+    "image_file": "COCO_train2014_000000194564.jpg",
+    "question_bn": "What kind of plates are on the table",
+    "answer_bn": "paper",
+    "answer": "paper",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19031,
+    "image_id": 194564,
+    "image_file": "COCO_train2014_000000194564.jpg",
+    "question_bn": "Does the child look happy or sad",
+    "answer_bn": "sad",
+    "answer": "sad",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19032,
+    "image_id": 194564,
+    "image_file": "COCO_train2014_000000194564.jpg",
+    "question_bn": "What color is this guy's eyes",
+    "answer_bn": "brown",
+    "answer": "brown",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19033,
+    "image_id": 194564,
+    "image_file": "COCO_train2014_000000194564.jpg",
+    "question_bn": "Is this pizza good",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19034,
+    "image_id": 194564,
+    "image_file": "COCO_train2014_000000194564.jpg",
+    "question_bn": "Is the photo outdoors",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19035,
+    "image_id": 194564,
+    "image_file": "COCO_train2014_000000194564.jpg",
+    "question_bn": "What are the toppings",
+    "answer_bn": "cheese and pepperoni",
+    "answer": "cheese and pepperoni",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19036,
+    "image_id": 194564,
+    "image_file": "COCO_train2014_000000194564.jpg",
+    "question_bn": "Are those plates made of glass",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19037,
+    "image_id": 194564,
+    "image_file": "COCO_train2014_000000194564.jpg",
+    "question_bn": "Is this food part of his culture",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19038,
+    "image_id": 275511,
+    "image_file": "COCO_train2014_000000275511.jpg",
+    "question_bn": "What type of sink is in the room",
+    "answer_bn": "pedestal",
+    "answer": "pedestal",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19039,
+    "image_id": 275511,
+    "image_file": "COCO_train2014_000000275511.jpg",
+    "question_bn": "Is there a cat on the toilet",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19040,
+    "image_id": 275511,
+    "image_file": "COCO_train2014_000000275511.jpg",
+    "question_bn": "Is this a colorful bathroom",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19041,
+    "image_id": 275511,
+    "image_file": "COCO_train2014_000000275511.jpg",
+    "question_bn": "Where is the cat",
+    "answer_bn": "toilet",
+    "answer": "toilet",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19042,
+    "image_id": 275511,
+    "image_file": "COCO_train2014_000000275511.jpg",
+    "question_bn": "What pattern is on the floor",
+    "answer_bn": "polka dots",
+    "answer": "polka dots",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19043,
+    "image_id": 275511,
+    "image_file": "COCO_train2014_000000275511.jpg",
+    "question_bn": "Is the bathroom in disrepair",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19044,
+    "image_id": 275511,
+    "image_file": "COCO_train2014_000000275511.jpg",
+    "question_bn": "What color is the towel",
+    "answer_bn": "white",
+    "answer": "white",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19045,
+    "image_id": 275511,
+    "image_file": "COCO_train2014_000000275511.jpg",
+    "question_bn": "Why is the lid down",
+    "answer_bn": "not in use",
+    "answer": "not in use",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19046,
+    "image_id": 275511,
+    "image_file": "COCO_train2014_000000275511.jpg",
+    "question_bn": "Are there shadows cast",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19047,
+    "image_id": 275511,
+    "image_file": "COCO_train2014_000000275511.jpg",
+    "question_bn": "Are the animals awake",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19048,
+    "image_id": 568378,
+    "image_file": "COCO_train2014_000000568378.jpg",
+    "question_bn": "What color is the tray",
+    "answer_bn": "white",
+    "answer": "white",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19049,
+    "image_id": 568378,
+    "image_file": "COCO_train2014_000000568378.jpg",
+    "question_bn": "What are the large rectangles made of",
+    "answer_bn": "tofu",
+    "answer": "tofu",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19050,
+    "image_id": 568378,
+    "image_file": "COCO_train2014_000000568378.jpg",
+    "question_bn": "Is the flower edible",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19051,
+    "image_id": 503647,
+    "image_file": "COCO_train2014_000000503647.jpg",
+    "question_bn": "Are these animals contained",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19052,
+    "image_id": 503647,
+    "image_file": "COCO_train2014_000000503647.jpg",
+    "question_bn": "What animals are shown",
+    "answer_bn": "zebras",
+    "answer": "zebras",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19053,
+    "image_id": 503647,
+    "image_file": "COCO_train2014_000000503647.jpg",
+    "question_bn": "What is the animal to the right doing",
+    "answer_bn": "laying down",
+    "answer": "laying down",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19054,
+    "image_id": 1496,
+    "image_file": "COCO_train2014_000000001496.jpg",
+    "question_bn": "Is it on display",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19055,
+    "image_id": 1496,
+    "image_file": "COCO_train2014_000000001496.jpg",
+    "question_bn": "What color is the fire hydrant",
+    "answer_bn": "yellow",
+    "answer": "yellow",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19056,
+    "image_id": 1496,
+    "image_file": "COCO_train2014_000000001496.jpg",
+    "question_bn": "Is there any grass",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19057,
+    "image_id": 1496,
+    "image_file": "COCO_train2014_000000001496.jpg",
+    "question_bn": "What type of purple flower is next to the hydrant",
+    "answer_bn": "blue",
+    "answer": "blue",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19058,
+    "image_id": 1496,
+    "image_file": "COCO_train2014_000000001496.jpg",
+    "question_bn": "What substance is on the fire hydrant",
+    "answer_bn": "rust",
+    "answer": "rust",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19059,
+    "image_id": 1496,
+    "image_file": "COCO_train2014_000000001496.jpg",
+    "question_bn": "Is the picture in Black and White",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19060,
+    "image_id": 1496,
+    "image_file": "COCO_train2014_000000001496.jpg",
+    "question_bn": "Are any stone carvings visible",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19061,
+    "image_id": 1496,
+    "image_file": "COCO_train2014_000000001496.jpg",
+    "question_bn": "What is the color of fire hydrant",
+    "answer_bn": "yellow",
+    "answer": "yellow",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19062,
+    "image_id": 1496,
+    "image_file": "COCO_train2014_000000001496.jpg",
+    "question_bn": "What is growing up from the ground just behind the fire hydrant",
+    "answer_bn": "grass",
+    "answer": "grass",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19063,
+    "image_id": 1496,
+    "image_file": "COCO_train2014_000000001496.jpg",
+    "question_bn": "What is the main color of the fire hydrant",
+    "answer_bn": "yellow",
+    "answer": "yellow",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19064,
+    "image_id": 1496,
+    "image_file": "COCO_train2014_000000001496.jpg",
+    "question_bn": "Is this an act of vandalism",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19065,
+    "image_id": 1496,
+    "image_file": "COCO_train2014_000000001496.jpg",
+    "question_bn": "Has the hydrant bebn painted recbntly",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19066,
+    "image_id": 190487,
+    "image_file": "COCO_train2014_000000190487.jpg",
+    "question_bn": "What major sporting evbnt is he participating in",
+    "answer_bn": "skiing",
+    "answer": "skiing",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19067,
+    "image_id": 190487,
+    "image_file": "COCO_train2014_000000190487.jpg",
+    "question_bn": "What is the man standing on",
+    "answer_bn": "skis",
+    "answer": "skis",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19068,
+    "image_id": 190487,
+    "image_file": "COCO_train2014_000000190487.jpg",
+    "question_bn": "Is the man wearing goggles",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19069,
+    "image_id": 308509,
+    "image_file": "COCO_train2014_000000308509.jpg",
+    "question_bn": "What number is on the left door",
+    "answer_bn": "0",
+    "answer": "0",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19070,
+    "image_id": 308509,
+    "image_file": "COCO_train2014_000000308509.jpg",
+    "question_bn": "Is a window behind the guy",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19071,
+    "image_id": 308509,
+    "image_file": "COCO_train2014_000000308509.jpg",
+    "question_bn": "Do people usually wear a necktie with that style of shirt",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19072,
+    "image_id": 308509,
+    "image_file": "COCO_train2014_000000308509.jpg",
+    "question_bn": "Is the man a waiter",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19073,
+    "image_id": 308509,
+    "image_file": "COCO_train2014_000000308509.jpg",
+    "question_bn": "What is on the man's shoulder",
+    "answer_bn": "stethoscope",
+    "answer": "stethoscope",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19074,
+    "image_id": 308509,
+    "image_file": "COCO_train2014_000000308509.jpg",
+    "question_bn": "Is the man wearing a tie",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19075,
+    "image_id": 308509,
+    "image_file": "COCO_train2014_000000308509.jpg",
+    "question_bn": "Is he professionally dressed",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19076,
+    "image_id": 308509,
+    "image_file": "COCO_train2014_000000308509.jpg",
+    "question_bn": "How many televisions are in the picture",
+    "answer_bn": "0",
+    "answer": "0",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19077,
+    "image_id": 176085,
+    "image_file": "COCO_train2014_000000176085.jpg",
+    "question_bn": "What is on the plate",
+    "answer_bn": "fruit",
+    "answer": "fruit",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19078,
+    "image_id": 176085,
+    "image_file": "COCO_train2014_000000176085.jpg",
+    "question_bn": "How many pieces of banana are in the picture",
+    "answer_bn": "6",
+    "answer": "6",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19079,
+    "image_id": 176085,
+    "image_file": "COCO_train2014_000000176085.jpg",
+    "question_bn": "How many types of fruit do you see",
+    "answer_bn": "2",
+    "answer": "2",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19080,
+    "image_id": 176085,
+    "image_file": "COCO_train2014_000000176085.jpg",
+    "question_bn": "Were these fresh or canned",
+    "answer_bn": "fresh",
+    "answer": "fresh",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19081,
+    "image_id": 176085,
+    "image_file": "COCO_train2014_000000176085.jpg",
+    "question_bn": "What kind of fruit is this",
+    "answer_bn": "banana and orange",
+    "answer": "banana and orange",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19082,
+    "image_id": 176085,
+    "image_file": "COCO_train2014_000000176085.jpg",
+    "question_bn": "Would a vegetarian eat this",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19083,
+    "image_id": 176085,
+    "image_file": "COCO_train2014_000000176085.jpg",
+    "question_bn": "Is the table top laminate",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19084,
+    "image_id": 411823,
+    "image_file": "COCO_train2014_000000411823.jpg",
+    "question_bn": "How many trees are on the left side",
+    "answer_bn": "2",
+    "answer": "2",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19085,
+    "image_id": 411823,
+    "image_file": "COCO_train2014_000000411823.jpg",
+    "question_bn": "Is the sun shining in the room",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19086,
+    "image_id": 411823,
+    "image_file": "COCO_train2014_000000411823.jpg",
+    "question_bn": "Is this a glass door or a glass window",
+    "answer_bn": "door",
+    "answer": "door",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19087,
+    "image_id": 411823,
+    "image_file": "COCO_train2014_000000411823.jpg",
+    "question_bn": "Would this bed be comfortable",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19088,
+    "image_id": 411823,
+    "image_file": "COCO_train2014_000000411823.jpg",
+    "question_bn": "Where was the picture takbn of the bed",
+    "answer_bn": "bedroom",
+    "answer": "bedroom",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19089,
+    "image_id": 411823,
+    "image_file": "COCO_train2014_000000411823.jpg",
+    "question_bn": "Is that towel on the chair",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19090,
+    "image_id": 411823,
+    "image_file": "COCO_train2014_000000411823.jpg",
+    "question_bn": "Is the bed made",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19091,
+    "image_id": 411823,
+    "image_file": "COCO_train2014_000000411823.jpg",
+    "question_bn": "Does the bed have sheets on it",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19092,
+    "image_id": 411823,
+    "image_file": "COCO_train2014_000000411823.jpg",
+    "question_bn": "Is this a bedroom",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19093,
+    "image_id": 411823,
+    "image_file": "COCO_train2014_000000411823.jpg",
+    "question_bn": "Is there a table in this picture",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19094,
+    "image_id": 411823,
+    "image_file": "COCO_train2014_000000411823.jpg",
+    "question_bn": "Why are the blinds closed",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19095,
+    "image_id": 411823,
+    "image_file": "COCO_train2014_000000411823.jpg",
+    "question_bn": "What is sitting on the bed",
+    "answer_bn": "towels",
+    "answer": "towels",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19096,
+    "image_id": 411823,
+    "image_file": "COCO_train2014_000000411823.jpg",
+    "question_bn": "What shape is the door and window of",
+    "answer_bn": "house",
+    "answer": "house",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19097,
+    "image_id": 411823,
+    "image_file": "COCO_train2014_000000411823.jpg",
+    "question_bn": "Are the curtains opaque",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19098,
+    "image_id": 420608,
+    "image_file": "COCO_train2014_000000420608.jpg",
+    "question_bn": "Is the photo colorful",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19099,
+    "image_id": 420608,
+    "image_file": "COCO_train2014_000000420608.jpg",
+    "question_bn": "Is the cow tied up",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19100,
+    "image_id": 420608,
+    "image_file": "COCO_train2014_000000420608.jpg",
+    "question_bn": "Is the road paved",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19101,
+    "image_id": 581091,
+    "image_file": "COCO_train2014_000000581091.jpg",
+    "question_bn": "What type of shirt is the person wearing",
+    "answer_bn": "t-shirt",
+    "answer": "t-shirt",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19102,
+    "image_id": 581091,
+    "image_file": "COCO_train2014_000000581091.jpg",
+    "question_bn": "What activity is the man doing",
+    "answer_bn": "skateboarding",
+    "answer": "skateboarding",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19103,
+    "image_id": 581091,
+    "image_file": "COCO_train2014_000000581091.jpg",
+    "question_bn": "Is the picture in color",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19104,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "What color is the couch",
+    "answer_bn": "blue",
+    "answer": "blue",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19105,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "What material is the couch made of",
+    "answer_bn": "cloth",
+    "answer": "cloth",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19106,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "Is the collar red",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19107,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "What color is the sofa",
+    "answer_bn": "gray",
+    "answer": "gray",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19108,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "Is the cough cold",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19109,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "Does this dog shed",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19110,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "What color is the blanket under the dog",
+    "answer_bn": "blue",
+    "answer": "blue",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19111,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "What is on the couch",
+    "answer_bn": "dog",
+    "answer": "dog",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19112,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "IS the dog asleep",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19113,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "What is covering the couch",
+    "answer_bn": "blanket",
+    "answer": "blanket",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19114,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "What is the dominant breed of dog in this picture",
+    "answer_bn": "lab",
+    "answer": "lab",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19115,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "What color is the dog",
+    "answer_bn": "yellow",
+    "answer": "yellow",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19116,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "Is there a laptop in this picture",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19117,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "What color pillow is next to the dog",
+    "answer_bn": "blue",
+    "answer": "blue",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19118,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "Is there a design on the couch",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19119,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "What is the dog laying on",
+    "answer_bn": "couch",
+    "answer": "couch",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19120,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "Is someone sitting on the couch",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19121,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "What animal is on the couch",
+    "answer_bn": "dog",
+    "answer": "dog",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19122,
+    "image_id": 513138,
+    "image_file": "COCO_train2014_000000513138.jpg",
+    "question_bn": "Where is the dog looking",
+    "answer_bn": "blanket",
+    "answer": "blanket",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19123,
+    "image_id": 371254,
+    "image_file": "COCO_train2014_000000371254.jpg",
+    "question_bn": "Is this a new train or an antique",
+    "answer_bn": "new",
+    "answer": "new",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19124,
+    "image_id": 371254,
+    "image_file": "COCO_train2014_000000371254.jpg",
+    "question_bn": "Where does this train run",
+    "answer_bn": "london",
+    "answer": "london",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19125,
+    "image_id": 371254,
+    "image_file": "COCO_train2014_000000371254.jpg",
+    "question_bn": "What color is the train",
+    "answer_bn": "white",
+    "answer": "white",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19126,
+    "image_id": 371254,
+    "image_file": "COCO_train2014_000000371254.jpg",
+    "question_bn": "Is this train in the United States",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19127,
+    "image_id": 371254,
+    "image_file": "COCO_train2014_000000371254.jpg",
+    "question_bn": "What does the sign say",
+    "answer_bn": "sncf",
+    "answer": "sncf",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19128,
+    "image_id": 371254,
+    "image_file": "COCO_train2014_000000371254.jpg",
+    "question_bn": "What is growing on the sign",
+    "answer_bn": "nothing",
+    "answer": "nothing",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19129,
+    "image_id": 371254,
+    "image_file": "COCO_train2014_000000371254.jpg",
+    "question_bn": "What is the letter near the door",
+    "answer_bn": "i",
+    "answer": "i",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19130,
+    "image_id": 371254,
+    "image_file": "COCO_train2014_000000371254.jpg",
+    "question_bn": "Where is the train going",
+    "answer_bn": "charlotte",
+    "answer": "charlotte",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19131,
+    "image_id": 371254,
+    "image_file": "COCO_train2014_000000371254.jpg",
+    "question_bn": "What number is on the train",
+    "answer_bn": "08720",
+    "answer": "08720",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19132,
+    "image_id": 371254,
+    "image_file": "COCO_train2014_000000371254.jpg",
+    "question_bn": "What is the name on the train",
+    "answer_bn": "corail intercites",
+    "answer": "corail intercites",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19133,
+    "image_id": 453219,
+    "image_file": "COCO_train2014_000000453219.jpg",
+    "question_bn": "Is this a happy couple",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19134,
+    "image_id": 453219,
+    "image_file": "COCO_train2014_000000453219.jpg",
+    "question_bn": "What is in his jacket's left pocket",
+    "answer_bn": "handkerchief",
+    "answer": "handkerchief",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19135,
+    "image_id": 453219,
+    "image_file": "COCO_train2014_000000453219.jpg",
+    "question_bn": "Is the woman wearing a necklace",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19136,
+    "image_id": 453219,
+    "image_file": "COCO_train2014_000000453219.jpg",
+    "question_bn": "What color is the suit on the right",
+    "answer_bn": "black",
+    "answer": "black",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19137,
+    "image_id": 496127,
+    "image_file": "COCO_train2014_000000496127.jpg",
+    "question_bn": "Is this dangerous",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19138,
+    "image_id": 496127,
+    "image_file": "COCO_train2014_000000496127.jpg",
+    "question_bn": "What sport is being played",
+    "answer_bn": "frisbee",
+    "answer": "frisbee",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19139,
+    "image_id": 496127,
+    "image_file": "COCO_train2014_000000496127.jpg",
+    "question_bn": "What is the man wearing",
+    "answer_bn": "shirt and shorts",
+    "answer": "shirt and shorts",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19140,
+    "image_id": 496127,
+    "image_file": "COCO_train2014_000000496127.jpg",
+    "question_bn": "What is in the air",
+    "answer_bn": "frisbee",
+    "answer": "frisbee",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19141,
+    "image_id": 496127,
+    "image_file": "COCO_train2014_000000496127.jpg",
+    "question_bn": "What is he doing",
+    "answer_bn": "playing frisbee",
+    "answer": "playing frisbee",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19142,
+    "image_id": 496127,
+    "image_file": "COCO_train2014_000000496127.jpg",
+    "question_bn": "Is he going to catch it",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19143,
+    "image_id": 570440,
+    "image_file": "COCO_train2014_000000570440.jpg",
+    "question_bn": "What letter is on the man's hat",
+    "answer_bn": "b",
+    "answer": "b",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19144,
+    "image_id": 570440,
+    "image_file": "COCO_train2014_000000570440.jpg",
+    "question_bn": "What number is he",
+    "answer_bn": "21",
+    "answer": "21",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19145,
+    "image_id": 570440,
+    "image_file": "COCO_train2014_000000570440.jpg",
+    "question_bn": "What color hat does the person with the ball have on",
+    "answer_bn": "blue",
+    "answer": "blue",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19146,
+    "image_id": 570440,
+    "image_file": "COCO_train2014_000000570440.jpg",
+    "question_bn": "What brand of shoes is the man wearing",
+    "answer_bn": "nike",
+    "answer": "nike",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19147,
+    "image_id": 570440,
+    "image_file": "COCO_train2014_000000570440.jpg",
+    "question_bn": "Does the pitcher have on black socks",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19148,
+    "image_id": 570440,
+    "image_file": "COCO_train2014_000000570440.jpg",
+    "question_bn": "What number is this player",
+    "answer_bn": "21",
+    "answer": "21",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19149,
+    "image_id": 570440,
+    "image_file": "COCO_train2014_000000570440.jpg",
+    "question_bn": "Is this guy a fastball pitcher",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19150,
+    "image_id": 570440,
+    "image_file": "COCO_train2014_000000570440.jpg",
+    "question_bn": "What is the man wearing on his head",
+    "answer_bn": "cap",
+    "answer": "cap",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19151,
+    "image_id": 570440,
+    "image_file": "COCO_train2014_000000570440.jpg",
+    "question_bn": "What team is this",
+    "answer_bn": "rysox",
+    "answer": "rysox",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19152,
+    "image_id": 61822,
+    "image_file": "COCO_train2014_000000061822.jpg",
+    "question_bn": "What number of cars are on the road",
+    "answer_bn": "3",
+    "answer": "3",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19153,
+    "image_id": 61822,
+    "image_file": "COCO_train2014_000000061822.jpg",
+    "question_bn": "What shoes are on the picture of the woman",
+    "answer_bn": "boots",
+    "answer": "boots",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19154,
+    "image_id": 61822,
+    "image_file": "COCO_train2014_000000061822.jpg",
+    "question_bn": "Do you see a red car",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19155,
+    "image_id": 61822,
+    "image_file": "COCO_train2014_000000061822.jpg",
+    "question_bn": "What is the number displayed on the taxi",
+    "answer_bn": "0",
+    "answer": "0",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19156,
+    "image_id": 61822,
+    "image_file": "COCO_train2014_000000061822.jpg",
+    "question_bn": "How many meters are in the photo",
+    "answer_bn": "0",
+    "answer": "0",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19157,
+    "image_id": 61822,
+    "image_file": "COCO_train2014_000000061822.jpg",
+    "question_bn": "Is this a four way stop",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19158,
+    "image_id": 61822,
+    "image_file": "COCO_train2014_000000061822.jpg",
+    "question_bn": "What color is the car on the right",
+    "answer_bn": "silver",
+    "answer": "silver",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19159,
+    "image_id": 61822,
+    "image_file": "COCO_train2014_000000061822.jpg",
+    "question_bn": "Are all these cars parked",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19160,
+    "image_id": 61822,
+    "image_file": "COCO_train2014_000000061822.jpg",
+    "question_bn": "Is there traffic",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19161,
+    "image_id": 61822,
+    "image_file": "COCO_train2014_000000061822.jpg",
+    "question_bn": "How many cars are visible",
+    "answer_bn": "3",
+    "answer": "3",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19162,
+    "image_id": 61822,
+    "image_file": "COCO_train2014_000000061822.jpg",
+    "question_bn": "Are all the cars white",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19163,
+    "image_id": 61822,
+    "image_file": "COCO_train2014_000000061822.jpg",
+    "question_bn": "Is this at a rider platform",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19164,
+    "image_id": 61822,
+    "image_file": "COCO_train2014_000000061822.jpg",
+    "question_bn": "Are there clouds",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19165,
+    "image_id": 441909,
+    "image_file": "COCO_train2014_000000441909.jpg",
+    "question_bn": "What color is the sign",
+    "answer_bn": "white",
+    "answer": "white",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19166,
+    "image_id": 441909,
+    "image_file": "COCO_train2014_000000441909.jpg",
+    "question_bn": "What type of plant is on the left in this image",
+    "answer_bn": "tree",
+    "answer": "tree",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19167,
+    "image_id": 441909,
+    "image_file": "COCO_train2014_000000441909.jpg",
+    "question_bn": "Is there a glare in the photo",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19168,
+    "image_id": 441909,
+    "image_file": "COCO_train2014_000000441909.jpg",
+    "question_bn": "Is the street sign brokbn",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19169,
+    "image_id": 441909,
+    "image_file": "COCO_train2014_000000441909.jpg",
+    "question_bn": "What's on the bushes in the background",
+    "answer_bn": "leaves",
+    "answer": "leaves",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19170,
+    "image_id": 441909,
+    "image_file": "COCO_train2014_000000441909.jpg",
+    "question_bn": "What sign is in the background",
+    "answer_bn": "stop",
+    "answer": "stop",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19171,
+    "image_id": 441909,
+    "image_file": "COCO_train2014_000000441909.jpg",
+    "question_bn": "What street is this",
+    "answer_bn": "durham",
+    "answer": "durham",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19172,
+    "image_id": 441909,
+    "image_file": "COCO_train2014_000000441909.jpg",
+    "question_bn": "What does the sign say",
+    "answer_bn": "durham court",
+    "answer": "durham court",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19173,
+    "image_id": 441909,
+    "image_file": "COCO_train2014_000000441909.jpg",
+    "question_bn": "Is there a shadow in this picture",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19174,
+    "image_id": 104282,
+    "image_file": "COCO_train2014_000000104282.jpg",
+    "question_bn": "Is the car full",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19175,
+    "image_id": 104282,
+    "image_file": "COCO_train2014_000000104282.jpg",
+    "question_bn": "Are 2 or more people more than likely going on this trip",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19176,
+    "image_id": 104282,
+    "image_file": "COCO_train2014_000000104282.jpg",
+    "question_bn": "Where are they going",
+    "answer_bn": "skiing",
+    "answer": "skiing",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19177,
+    "image_id": 104282,
+    "image_file": "COCO_train2014_000000104282.jpg",
+    "question_bn": "Are the people likely going somewhere cold or warm",
+    "answer_bn": "cold",
+    "answer": "cold",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19178,
+    "image_id": 306890,
+    "image_file": "COCO_train2014_000000306890.jpg",
+    "question_bn": "Are these duplicate pictures",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19179,
+    "image_id": 306890,
+    "image_file": "COCO_train2014_000000306890.jpg",
+    "question_bn": "What color is his shirt",
+    "answer_bn": "yellow",
+    "answer": "yellow",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19180,
+    "image_id": 306890,
+    "image_file": "COCO_train2014_000000306890.jpg",
+    "question_bn": "What game is he playing",
+    "answer_bn": "tbnnis",
+    "answer": "tbnnis",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19181,
+    "image_id": 62478,
+    "image_file": "COCO_train2014_000000062478.jpg",
+    "question_bn": "What color is the light",
+    "answer_bn": "grebn",
+    "answer": "grebn",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19182,
+    "image_id": 62478,
+    "image_file": "COCO_train2014_000000062478.jpg",
+    "question_bn": "Is the neighborhood old or new",
+    "answer_bn": "old",
+    "answer": "old",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19183,
+    "image_id": 62478,
+    "image_file": "COCO_train2014_000000062478.jpg",
+    "question_bn": "What color of light is on",
+    "answer_bn": "grebn",
+    "answer": "grebn",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19184,
+    "image_id": 62478,
+    "image_file": "COCO_train2014_000000062478.jpg",
+    "question_bn": "What is the color of the sign",
+    "answer_bn": "yellow",
+    "answer": "yellow",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19185,
+    "image_id": 62478,
+    "image_file": "COCO_train2014_000000062478.jpg",
+    "question_bn": "Would you be able to shop in this area",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19186,
+    "image_id": 62478,
+    "image_file": "COCO_train2014_000000062478.jpg",
+    "question_bn": "What does the yellow sign mean",
+    "answer_bn": "two way traffic",
+    "answer": "two way traffic",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19187,
+    "image_id": 227248,
+    "image_file": "COCO_train2014_000000227248.jpg",
+    "question_bn": "What are these people doing here",
+    "answer_bn": "walking",
+    "answer": "walking",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19188,
+    "image_id": 227248,
+    "image_file": "COCO_train2014_000000227248.jpg",
+    "question_bn": "Is the water safe to drink",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19189,
+    "image_id": 227248,
+    "image_file": "COCO_train2014_000000227248.jpg",
+    "question_bn": "What is this person riding",
+    "answer_bn": "motorcycle",
+    "answer": "motorcycle",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19190,
+    "image_id": 227248,
+    "image_file": "COCO_train2014_000000227248.jpg",
+    "question_bn": "Is there a fir tree",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19191,
+    "image_id": 227248,
+    "image_file": "COCO_train2014_000000227248.jpg",
+    "question_bn": "Are these people dressed appropriately for the weather",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19192,
+    "image_id": 227248,
+    "image_file": "COCO_train2014_000000227248.jpg",
+    "question_bn": "Wouldn't you love to walk out your back door and go for a swim",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19193,
+    "image_id": 227248,
+    "image_file": "COCO_train2014_000000227248.jpg",
+    "question_bn": "How many people are in the photo",
+    "answer_bn": "2",
+    "answer": "2",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19194,
+    "image_id": 227248,
+    "image_file": "COCO_train2014_000000227248.jpg",
+    "question_bn": "Is the weather rainy",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 19195,
+    "image_id": 227248,
+    "image_file": "COCO_train2014_000000227248.jpg",
+    "question_bn": "What has just happbned",
+    "answer_bn": "flood",
+    "answer": "flood",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19196,
+    "image_id": 227248,
+    "image_file": "COCO_train2014_000000227248.jpg",
+    "question_bn": "How did he lose his shoe",
+    "answer_bn": "water",
+    "answer": "water",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19197,
+    "image_id": 227248,
+    "image_file": "COCO_train2014_000000227248.jpg",
+    "question_bn": "What number of mbn are riding bikes",
+    "answer_bn": "1",
+    "answer": "1",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 19198,
+    "image_id": 227248,
+    "image_file": "COCO_train2014_000000227248.jpg",
+    "question_bn": "How can you tell if the water is moving",
+    "answer_bn": "ripples",
+    "answer": "ripples",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19199,
+    "image_id": 227248,
+    "image_file": "COCO_train2014_000000227248.jpg",
+    "question_bn": "What is the man riding on",
+    "answer_bn": "motorcycle",
+    "answer": "motorcycle",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 19200,
+    "image_id": 227248,
+    "image_file": "COCO_train2014_000000227248.jpg",
+    "question_bn": "Can this bike work in the water",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 20622,
+    "image_id": 21330,
+    "image_file": "COCO_train2014_000000021330.jpg",
+    "question_bn": "সবুজ চিহ্নে 'K' অক্ষরের নিচে কোন সংখ্যাটি আছে",
+    "answer_bn": "30-47",
+    "answer": "30-47",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 21126,
+    "image_id": 484714,
+    "image_file": "COCO_train2014_000000484714.jpg",
+    "question_bn": "সiluet টি কি করছে",
+    "answer_bn": "সার্ফিং",
+    "answer": "সার্ফিং",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 21298,
+    "image_id": 366021,
+    "image_file": "COCO_train2014_000000366021.jpg",
+    "question_bn": "আপনি কি P অক্ষরটি দেখতে পাচ্ছেন",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 22795,
+    "image_id": 200946,
+    "image_file": "COCO_train2014_000000200946.jpg",
+    "question_bn": "সাদা চিহ্ন থেকে কোন অক্ষরগুলো অনুপস্থিত",
+    "answer_bn": "e এবং y",
+    "answer": "e এবং y",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 22909,
+    "image_id": 256806,
+    "image_file": "COCO_train2014_000000256806.jpg",
+    "question_bn": "বাক্সের উপর E4 এর রঙ কী",
+    "answer_bn": "সাদা",
+    "answer": "সাদা",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 23129,
+    "image_id": 506592,
+    "image_file": "COCO_train2014_000000506592.jpg",
+    "question_bn": "এই ছবিতে কোন অক্ষরটি আপনি পরিষ্কারভাবে দেখতে পাচ্ছেন",
+    "answer_bn": "i",
+    "answer": "i",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 23298,
+    "image_id": 85291,
+    "image_file": "COCO_train2014_000000085291.jpg",
+    "question_bn": "বিমানের লেজে কোন অক্ষরগুলো আছে",
+    "answer_bn": "nd",
+    "answer": "nd",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 23301,
+    "image_id": 85291,
+    "image_file": "COCO_train2014_000000085291.jpg",
+    "question_bn": "ঐটা কোন কোম্পানির বিমান",
+    "answer_bn": "nd",
+    "answer": "nd",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 23373,
+    "image_id": 245895,
+    "image_file": "COCO_train2014_000000245895.jpg",
+    "question_bn": "কোন বিজ্ঞাপনটি M অক্ষর দিয়ে শুরু",
+    "answer_bn": "mbi",
+    "answer": "mbi",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 23399,
+    "image_id": 520342,
+    "image_file": "COCO_train2014_000000520342.jpg",
+    "question_bn": "গ্রাফিতিতে কী লেখা আছে",
+    "answer_bn": "phize",
+    "answer": "phize",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 23478,
+    "image_id": 530284,
+    "image_file": "COCO_train2014_000000530284.jpg",
+    "question_bn": "এটি কি একটি HDTV",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 23537,
+    "image_id": 286388,
+    "image_file": "COCO_train2014_000000286388.jpg",
+    "question_bn": "চিহ্নটি উল্টো করে বানান করুন",
+    "answer_bn": "pmmuh",
+    "answer": "pmmuh",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 24207,
+    "image_id": 296281,
+    "image_file": "COCO_train2014_000000296281.jpg",
+    "question_bn": "উপরে আঠালো, runny পদার্থটি কী",
+    "answer_bn": "পনির",
+    "answer": "পনির",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 24256,
+    "image_id": 482631,
+    "image_file": "COCO_train2014_000000482631.jpg",
+    "question_bn": "ছবির নিচের ডানদিকে কোন অক্ষরগুলো আছে",
+    "answer_bn": "st",
+    "answer": "st",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 24459,
+    "image_id": 337806,
+    "image_file": "COCO_train2014_000000337806.jpg",
+    "question_bn": "ট্রেনের উপর AL এর অর্থ কী",
+    "answer_bn": "অগসবার্গার লোকালবাহন",
+    "answer": "অগসবার্গার লোকালবাহন",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 24664,
+    "image_id": 282565,
+    "image_file": "COCO_train2014_000000282565.jpg",
+    "question_bn": "পুতুলের ট্যাগে কোন অক্ষর লেখা আছে",
+    "answer_bn": "e",
+    "answer": "e",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 25235,
+    "image_id": 342340,
+    "image_file": "COCO_train2014_000000342340.jpg",
+    "question_bn": "তারা কি উই (Wii) গেম খেলছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 25330,
+    "image_id": 461114,
+    "image_file": "COCO_train2014_000000461114.jpg",
+    "question_bn": "প্রথম অক্ষরটি কী",
+    "answer_bn": "j",
+    "answer": "j",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 25381,
+    "image_id": 359037,
+    "image_file": "COCO_train2014_000000359037.jpg",
+    "question_bn": "সেখানে কয়টি Wii রিমোট আছে",
+    "answer_bn": "0",
+    "answer": "0",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 25423,
+    "image_id": 61842,
+    "image_file": "COCO_train2014_000000061842.jpg",
+    "question_bn": "ছেলেগুলো কী করছে",
+    "answer_bn": "উই (wii) খেলছে",
+    "answer": "উই (wii) খেলছে",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 25455,
+    "image_id": 61842,
+    "image_file": "COCO_train2014_000000061842.jpg",
+    "question_bn": "লোকটি কোন খেলা খেলছে",
+    "answer_bn": "উই (wii)",
+    "answer": "উই (wii)",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 25460,
+    "image_id": 61842,
+    "image_file": "COCO_train2014_000000061842.jpg",
+    "question_bn": "লোকগুলো কোন খেলা খেলছে",
+    "answer_bn": "উই (wii)",
+    "answer": "উই (wii)",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 25471,
+    "image_id": 61842,
+    "image_file": "COCO_train2014_000000061842.jpg",
+    "question_bn": "তারা কোন খেলা খেলছে",
+    "answer_bn": "উই (wii)",
+    "answer": "উই (wii)",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 25486,
+    "image_id": 61842,
+    "image_file": "COCO_train2014_000000061842.jpg",
+    "question_bn": "লাল পোশাক পরা ব্যক্তিটি কী করছে",
+    "answer_bn": "উই (wii) খেলছে",
+    "answer": "উই (wii) খেলছে",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 25504,
+    "image_id": 61842,
+    "image_file": "COCO_train2014_000000061842.jpg",
+    "question_bn": "এটি শৈশবের কোন খেলনা",
+    "answer_bn": "উই (wii)",
+    "answer": "উই (wii)",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 25528,
+    "image_id": 397167,
+    "image_file": "COCO_train2014_000000397167.jpg",
+    "question_bn": "লোকটির শার্টে কি \"Z\" অক্ষর আছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 25588,
+    "image_id": 35769,
+    "image_file": "COCO_train2014_000000035769.jpg",
+    "question_bn": "কম্পিউটার স্ক্রিনে লাল রঙের শব্দটি কী",
+    "answer_bn": "oha",
+    "answer": "oha",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 25676,
+    "image_id": 211272,
+    "image_file": "COCO_train2014_000000211272.jpg",
+    "question_bn": "লোকগুলো কোন ধরনের খেলায় অংশ নিচ্ছে",
+    "answer_bn": "উই (wii)",
+    "answer": "উই (wii)",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 25679,
+    "image_id": 211272,
+    "image_file": "COCO_train2014_000000211272.jpg",
+    "question_bn": "ফ্রেমের মাঝখানে থাকা লোকটি কোন খেলা খেলছে",
+    "answer_bn": "উই (wii)",
+    "answer": "উই (wii)",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 25831,
+    "image_id": 359048,
+    "image_file": "COCO_train2014_000000359048.jpg",
+    "question_bn": "বাইকটি কোন কোম্পানি তৈরি করে",
+    "answer_bn": "schwinn",
+    "answer": "schwinn",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 25865,
+    "image_id": 223526,
+    "image_file": "COCO_train2014_000000223526.jpg",
+    "question_bn": "লোকেরা কি bonding করছে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 26033,
+    "image_id": 123949,
+    "image_file": "COCO_train2014_000000123949.jpg",
+    "question_bn": "মহিলার পিছনে কোন শব্দটি আছে",
+    "answer_bn": "tiscali",
+    "answer": "tiscali",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 27202,
+    "image_id": 336006,
+    "image_file": "COCO_train2014_000000336006.jpg",
+    "question_bn": "বিমানের উপর বড় অক্ষরগুলো কি",
+    "answer_bn": "c-gthl",
+    "answer": "c-gthl",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 27371,
+    "image_id": 404059,
+    "image_file": "COCO_train2014_000000404059.jpg",
+    "question_bn": "গাড়িটি কি একটি সেডান না একটি SUV",
+    "answer_bn": "সেডান",
+    "answer": "সেডান",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 28007,
+    "image_id": 317040,
+    "image_file": "COCO_train2014_000000317040.jpg",
+    "question_bn": "স্কেটবোর্ডে আপনি কোন অক্ষর দেখতে পাচ্ছেন",
+    "answer_bn": "f",
+    "answer": "f",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 28030,
+    "image_id": 375737,
+    "image_file": "COCO_train2014_000000375737.jpg",
+    "question_bn": "'St' এর পরে কোন ধরনের বিরামচিহ্ন বসে",
+    "answer_bn": "পিরিয়ড",
+    "answer": "পিরিয়ড",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 29382,
+    "image_id": 282694,
+    "image_file": "COCO_train2014_000000282694.jpg",
+    "question_bn": "মহিলাটি কি করছে",
+    "answer_bn": "উই (wii) খেলছে",
+    "answer": "উই (wii) খেলছে",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 29386,
+    "image_id": 282694,
+    "image_file": "COCO_train2014_000000282694.jpg",
+    "question_bn": "লোকেরা কি করছে",
+    "answer_bn": "উই (wii) খেলছে",
+    "answer": "উই (wii) খেলছে",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 29512,
+    "image_id": 128647,
+    "image_file": "COCO_train2014_000000128647.jpg",
+    "question_bn": "সে কি উই (Wii) খেলছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 29670,
+    "image_id": 325596,
+    "image_file": "COCO_train2014_000000325596.jpg",
+    "question_bn": "কয়টি চেয়ারের পেছনে 'b' অক্ষরটি আছে",
+    "answer_bn": "1",
+    "answer": "1",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 29806,
+    "image_id": 552444,
+    "image_file": "COCO_train2014_000000552444.jpg",
+    "question_bn": "তারা কি উই (Wii) খেলছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 29812,
+    "image_id": 552444,
+    "image_file": "COCO_train2014_000000552444.jpg",
+    "question_bn": "লোকেরা কি উই (Wii) খেলছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 29993,
+    "image_id": 67439,
+    "image_file": "COCO_train2014_000000067439.jpg",
+    "question_bn": "লাইসেন্স প্লেটের নম্বর কত",
+    "answer_bn": "lt12fht",
+    "answer": "lt12fht",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 29995,
+    "image_id": 67439,
+    "image_file": "COCO_train2014_000000067439.jpg",
+    "question_bn": "লাইসেন্স প্লেটের প্রথম অক্ষরটি কি",
+    "answer_bn": "l",
+    "answer": "l",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 30068,
+    "image_id": 38317,
+    "image_file": "COCO_train2014_000000038317.jpg",
+    "question_bn": "দৃশ্যটি fotograf করতে কোন ধরনের লেন্স ব্যবহার করা হয়েছিল",
+    "answer_bn": "সাধারণ",
+    "answer": "সাধারণ",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 30344,
+    "image_id": 461114,
+    "image_file": "COCO_train2014_000000461114.jpg",
+    "question_bn": "প্রথম অক্ষরটি কী",
+    "answer_bn": "j",
+    "answer": "j",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 30401,
+    "image_id": 248315,
+    "image_file": "COCO_train2014_000000248315.jpg",
+    "question_bn": "ছবিতে মহিলারা কী করছে",
+    "answer_bn": "উই (wii) খেলছে",
+    "answer": "উই (wii) খেলছে",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 30417,
+    "image_id": 73690,
+    "image_file": "COCO_train2014_000000073690.jpg",
+    "question_bn": "এটি কী ধরনের দৃশ্য",
+    "answer_bn": "উই (wii) খেলছে",
+    "answer": "উই (wii) খেলছে",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 30442,
+    "image_id": 73690,
+    "image_file": "COCO_train2014_000000073690.jpg",
+    "question_bn": "বাচ্চারা কী গেম খেলছে",
+    "answer_bn": "উই (wii)",
+    "answer": "উই (wii)",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 30449,
+    "image_id": 73690,
+    "image_file": "COCO_train2014_000000073690.jpg",
+    "question_bn": "এই লোকেরা কী খেলছে",
+    "answer_bn": "উই (wii)",
+    "answer": "উই (wii)",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 30459,
+    "image_id": 73690,
+    "image_file": "COCO_train2014_000000073690.jpg",
+    "question_bn": "কতজন লোক উই (Wii) খেলছে",
+    "answer_bn": "2",
+    "answer": "2",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 30463,
+    "image_id": 73690,
+    "image_file": "COCO_train2014_000000073690.jpg",
+    "question_bn": "ঘরের লোকেরা কী করছে",
+    "answer_bn": "উই (wii) খেলছে",
+    "answer": "উই (wii) খেলছে",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 30492,
+    "image_id": 73690,
+    "image_file": "COCO_train2014_000000073690.jpg",
+    "question_bn": "তারা কোন উই (Wii) গেম খেলছে",
+    "answer_bn": "বক্সিং",
+    "answer": "বক্সিং",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 32446,
+    "image_id": 290511,
+    "image_file": "COCO_train2014_0_0000290511.jpg",
+    "question_bn": "STOP সাইনটির কয়টি দিক আছে",
+    "answer_bn": "8",
+    "answer": "8",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 32558,
+    "image_id": 324909,
+    "image_file": "COCO_train2014_000000324909.jpg",
+    "question_bn": "স্কেটবোর্ডের উপর অক্ষরগুলো কি",
+    "answer_bn": "k",
+    "answer": "k",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 33011,
+    "image_id": 288547,
+    "image_file": "COCO_train2014_000000288547.jpg",
+    "question_bn": "infowars.com কি",
+    "answer_bn": "ওয়েবসাইট",
+    "answer": "ওয়েবসাইট",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 33096,
+    "image_id": 273094,
+    "image_file": "COCO_train2014_000000273094.jpg",
+    "question_bn": "টেনিস রেকেটে কোন অক্ষরটি দেখানো হয়েছে",
+    "answer_bn": "w",
+    "answer": "w",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 33217,
+    "image_id": 352564,
+    "image_file": "COCO_train2014_000000352564.jpg",
+    "question_bn": "চিহ্নটি থেকে কোন অক্ষরটি অনুপস্থিত",
+    "answer_bn": "e",
+    "answer": "e",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 33777,
+    "image_id": 21330,
+    "image_file": "COCO_train2014_000000021330.jpg",
+    "question_bn": "সবুজ চিহ্নের 'K' অক্ষরের নিচে কোন নম্বরটি আছে",
+    "answer_bn": "30-47",
+    "answer": "30-47",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 33874,
+    "image_id": 253447,
+    "image_file": "COCO_train2014_000000253447.jpg",
+    "question_bn": "এখানে দেখানো লাল ব্যাকগ্রাউন্ড সহ হলুদ M কার লোগো",
+    "answer_bn": "ম্যাকডোনাল্ডস",
+    "answer": "ম্যাকডোনাল্ডস",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 34375,
+    "image_id": 312506,
+    "image_file": "COCO_train2014_000000312506.jpg",
+    "question_bn": "লাল X কোথায়",
+    "answer_bn": "চিহ্ন",
+    "answer": "চিহ্ন",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 34517,
+    "image_id": 312054,
+    "image_file": "COCO_train2014_000000312054.jpg",
+    "question_bn": "এই সব রাস্তা কি B অক্ষর দিয়ে শুরু",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 34537,
+    "image_id": 220527,
+    "image_file": "COCO_train2014_000000220527.jpg",
+    "question_bn": "\"P\" অক্ষরটি কতবার দেখা যাচ্ছে",
+    "answer_bn": "2",
+    "answer": "2",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 34803,
+    "image_id": 94420,
+    "image_file": "COCO_train2014_000000094420.jpg",
+    "question_bn": "বাসের লাইসেন্স প্লেট নম্বর কত",
+    "answer_bn": "ch60 cdh",
+    "answer": "ch60 cdh",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 34804,
+    "image_id": 94420,
+    "image_file": "COCO_train2014_000000094420.jpg",
+    "question_bn": "বাসের লাইসেন্স প্লেট নম্বর কত",
+    "answer_bn": "ch60 cdh",
+    "answer": "ch60 cdh",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 35624,
+    "image_id": 302527,
+    "image_file": "COCO_train2014_000000302527.jpg",
+    "question_bn": "লোকটির শার্টে কি 'Z' অক্ষরটি আছে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 35642,
+    "image_id": 94420,
+    "image_file": "COCO_train2014_000000094420.jpg",
+    "question_bn": "বাসের লাইসেন্স প্লেট নম্বর কত",
+    "answer_bn": "ch60 cdh",
+    "answer": "ch60 cdh",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 35643,
+    "image_id": 94420,
+    "image_file": "COCO_train2014_000000094420.jpg",
+    "question_bn": "বাসের লাইসেন্স প্লেট নম্বর কত",
+    "answer_bn": "ch60 cdh",
+    "answer": "ch60 cdh",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 35996,
+    "image_id": 160625,
+    "image_file": "COCO_train2014_000000160625.jpg",
+    "question_bn": "এই ছবিতে কি একটি টিপি (teepee) আছে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 36664,
+    "image_id": 417650,
+    "image_file": "COCO_train2014_000000417650.jpg",
+    "question_bn": "এই ঘরটি কি dimly lit",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 36794,
+    "image_id": 455696,
+    "image_file": "COCO_train2014_000000455696.jpg",
+    "question_bn": "বিমানের শেষ দুটি অক্ষর কী",
+    "answer_bn": "ph",
+    "answer": "ph",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 37125,
+    "image_id": 412501,
+    "image_file": "COCO_train2014_000000412501.jpg",
+    "question_bn": "লেজের e অক্ষরটি কি বড় হাতের নাকি ছোট হাতের",
+    "answer_bn": "উভয়ই",
+    "answer": "উভয়ই",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 37299,
+    "image_id": 104443,
+    "image_file": "COCO_train2014_000000104443.jpg",
+    "question_bn": "ছবির মাঝখানে কোন অক্ষরটি আছে",
+    "answer_bn": "c",
+    "answer": "c",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 37458,
+    "image_id": 99004,
+    "image_file": "COCO_train2014_000000099004.jpg",
+    "question_bn": "p এর রঙ কী",
+    "answer_bn": "কালো",
+    "answer": "কালো",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 37758,
+    "image_id": 158614,
+    "image_file": "COCO_train2014_000000158614.jpg",
+    "question_bn": "W এর অর্থ কী",
+    "answer_bn": "কাঠ",
+    "answer": "কাঠ",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 37765,
+    "image_id": 158614,
+    "image_file": "COCO_train2014_000000158614.jpg",
+    "question_bn": "উপরের চিহ্নের প্রথম অক্ষরটি কী",
+    "answer_bn": "w",
+    "answer": "w",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 38008,
+    "image_id": 461114,
+    "image_file": "COCO_train2014_000000461114.jpg",
+    "question_bn": "প্রথম অক্ষরটি কী",
+    "answer_bn": "j",
+    "answer": "j",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 38795,
+    "image_id": 512289,
+    "image_file": "COCO_train2014_000000512289.jpg",
+    "question_bn": "জিরাফের ঘাড় বর্ণমালার কোন অক্ষর তৈরি করে",
+    "answer_bn": "i",
+    "answer": "i",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 38996,
+    "image_id": 354655,
+    "image_file": "COCO_train2014_000000354655.jpg",
+    "question_bn": "প্রথম মোটরসাইকেলের লাইসেন্স প্লেট কী",
+    "answer_bn": "lg07ezb",
+    "answer": "lg07ezb",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 38999,
+    "image_id": 354655,
+    "image_file": "COCO_train2014_000000354655.jpg",
+    "question_bn": "হলুদ লাইসেন্স প্লেটে কী আছে",
+    "answer_bn": "lg07ezb",
+    "answer": "lg07ezb",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 39008,
+    "image_id": 354655,
+    "image_file": "COCO_train2014_000000354655.jpg",
+    "question_bn": "মোটরসাইকেলের লাইসেন্স প্লেট নম্বর কত",
+    "answer_bn": "lg07ezb",
+    "answer": "lg07ezb",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 39952,
+    "image_id": 311641,
+    "image_file": "COCO_train2014_000000311641.jpg",
+    "question_bn": "গাছের ডালগুলো কি \"V\" অক্ষর তৈরি করে",
+    "answer_bn": "হ্যাঁ",
+    "answer": "হ্যাঁ",
+    "type": "polar"
+  },
+  {
+    "qa_id": 40023,
+    "image_id": 133615,
+    "image_file": "COCO_train2014_000000133615.jpg",
+    "question_bn": "টেনিস র‌্যাকেটে কোন অক্ষরটি আছে",
+    "answer_bn": "w",
+    "answer": "w",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 40163,
+    "image_id": 367699,
+    "image_file": "COCO_train2014_000000367699.jpg",
+    "question_bn": "কুকুরটি কোন ধরণের হাঁস ধরে আছে",
+    "answer_bn": "mallard",
+    "answer": "mallard",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 40900,
+    "image_id": 164999,
+    "image_file": "COCO_train2014_000000164999.jpg",
+    "question_bn": "চিহ্নটিতে কী আছে",
+    "answer_bn": "abbetved 3",
+    "answer": "abbetved 3",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 40901,
+    "image_id": 164999,
+    "image_file": "COCO_train2014_000000164999.jpg",
+    "question_bn": "চিহ্নটিতে কী লেখা আছে",
+    "answer_bn": "abbetved 3",
+    "answer": "abbetved 3",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 40904,
+    "image_id": 164999,
+    "image_file": "COCO_train2014_000000164999.jpg",
+    "question_bn": "চিহ্নটিতে কী লেখা আছে",
+    "answer_bn": "abbetved",
+    "answer": "abbetved",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 40936,
+    "image_id": 99004,
+    "image_file": "COCO_train2014_000000099004.jpg",
+    "question_bn": "পি (p) এর রঙ কী",
+    "answer_bn": "কালো",
+    "answer": "কালো",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 40900,
+    "image_id": 164999,
+    "image_file": "COCO_train2014_000000164999.jpg",
+    "question_bn": "চিহ্নটিতে কী আছে",
+    "answer_bn": "abbetved 3",
+    "answer": "abbetved 3",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 40901,
+    "image_id": 164999,
+    "image_file": "COCO_train2014_000000164999.jpg",
+    "question_bn": "চিহ্নটিতে কী লেখা আছে",
+    "answer_bn": "abbetved 3",
+    "answer": "abbetved 3",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 40904,
+    "image_id": 164999,
+    "image_file": "COCO_train2014_000000164999.jpg",
+    "question_bn": "চিহ্নটিতে কী লেখা আছে",
+    "answer_bn": "abbetved",
+    "answer": "abbetved",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 40936,
+    "image_id": 99004,
+    "image_file": "COCO_train2014_000000099004.jpg",
+    "question_bn": "পি (p) এর রঙ কী",
+    "answer_bn": "কালো",
+    "answer": "কালো",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 41325,
+    "image_id": 366863,
+    "image_file": "COCO_train2014_000000366863.jpg",
+    "question_bn": "ছবির কোণায় ওয়েবসাইটটি কী",
+    "answer_bn": "rarupeu",
+    "answer": "rarupeu",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 41485,
+    "image_id": 214892,
+    "image_file": "COCO_train2014_000000214892.jpg",
+    "question_bn": "এই ছবিটি কোন ওয়েবসাইটে পাওয়া যাবে",
+    "answer_bn": "bryanelkuscom",
+    "answer": "bryanelkuscom",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 41569,
+    "image_id": 324580,
+    "image_file": "COCO_train2014_000000324580.jpg",
+    "question_bn": "\"E\" এর সংক্ষিপ্ত রূপ কী",
+    "answer_bn": "পূর্ব",
+    "answer": "পূর্ব",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 41575,
+    "image_id": 324580,
+    "image_file": "COCO_train2014_000000324580.jpg",
+    "question_bn": "STOP এর নিচে কী লেখা আছে",
+    "answer_bn": "হ্যামার টাইম",
+    "answer": "হ্যামার টাইম",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 41631,
+    "image_id": 163240,
+    "image_file": "COCO_train2014_000000163240.jpg",
+    "question_bn": "ট্রেনের সামনে অক্ষরগুলো কী",
+    "answer_bn": "cf",
+    "answer": "cf",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 41569,
+    "image_id": 324580,
+    "image_file": "COCO_train2014_000000324580.jpg",
+    "question_bn": "\"E\" এর সংক্ষিপ্ত রূপ কী",
+    "answer_bn": "পূর্ব",
+    "answer": "পূর্ব",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 41575,
+    "image_id": 324580,
+    "image_file": "COCO_train2014_000000324580.jpg",
+    "question_bn": "STOP এর নিচে কী লেখা আছে",
+    "answer_bn": "হ্যামার টাইম",
+    "answer": "হ্যামার টাইম",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 41631,
+    "image_id": 163240,
+    "image_file": "COCO_train2014_000000163240.jpg",
+    "question_bn": "ট্রেনের সামনে অক্ষরগুলো কী",
+    "answer_bn": "cf",
+    "answer": "cf",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 41569,
+    "image_id": 324580,
+    "image_file": "COCO_train2014_000000324580.jpg",
+    "question_bn": "\"E\" এর সংক্ষিপ্ত রূপ কী",
+    "answer_bn": "পূর্ব",
+    "answer": "পূর্ব",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 41575,
+    "image_id": 324580,
+    "image_file": "COCO_train2014_000000324580.jpg",
+    "question_bn": "STOP এর নিচে কী লেখা আছে",
+    "answer_bn": "হ্যামার টাইম",
+    "answer": "হ্যামার টাইম",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 41631,
+    "image_id": 163240,
+    "image_file": "COCO_train2014_000000163240.jpg",
+    "question_bn": "ট্রেনের সামনে অক্ষরগুলো কী",
+    "answer_bn": "cf",
+    "answer": "cf",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 41485,
+    "image_id": 214892,
+    "image_file": "COCO_train2014_000000214892.jpg",
+    "question_bn": "এই ছবিটি কোন ওয়েবসাইটে পাওয়া যাবে",
+    "answer_bn": "bryanelkuscom",
+    "answer": "bryanelkuscom",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 41569,
+    "image_id": 324580,
+    "image_file": "COCO_train2014_000000324580.jpg",
+    "question_bn": "\"E\" এর সংক্ষিপ্ত রূপ কী",
+    "answer_bn": "পূর্ব",
+    "answer": "পূর্ব",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 41575,
+    "image_id": 324580,
+    "image_file": "COCO_train2014_000000324580.jpg",
+    "question_bn": "STOP এর নিচে কী লেখা আছে",
+    "answer_bn": "হ্যামার টাইম",
+    "answer": "হ্যামার টাইম",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 41631,
+    "image_id": 163240,
+    "image_file": "COCO_train2014_000000163240.jpg",
+    "question_bn": "ট্রেনের সামনে অক্ষরগুলো কী",
+    "answer_bn": "cf",
+    "answer": "cf",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 41979,
+    "image_id": 350077,
+    "image_file": "COCO_train2014_000000350077.jpg",
+    "question_bn": "সাইনটির 'P' অক্ষরটি কী বোঝায়",
+    "answer_bn": "প্রেসিডিও",
+    "answer": "প্রেসিডিও",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 42404,
+    "image_id": 462899,
+    "image_file": "COCO_train2014_000000462899.jpg",
+    "question_bn": "ক্যাচারের মাথার উপরের লোগোটি কোন দুটি অক্ষর মিলে তৈরি হয়েছে",
+    "answer_bn": "u এবং",
+    "answer": "u এবং",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 42426,
+    "image_id": 100439,
+    "image_file": "COCO_train2014_000000100439.jpg",
+    "question_bn": "এই লোকেরা কি সম্ভবত Wii বক্সিং খেলছে",
+    "answer_bn": "না",
+    "answer": "না",
+    "type": "polar"
+  },
+  {
+    "qa_id": 42920,
+    "image_id": 202041,
+    "image_file": "COCO_train2014_000000202041.jpg",
+    "question_bn": "লাইসেন্স প্লেট নম্বর কত",
+    "answer_bn": "fj58ltv",
+    "answer": "fj58ltv",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 43298,
+    "image_id": 570874,
+    "image_file": "COCO_train2014_000000570874.jpg",
+    "question_bn": "লাইসেন্স প্লেটে কি আছে",
+    "answer_bn": "ald941b",
+    "answer": "ald941b",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 43299,
+    "image_id": 570874,
+    "image_file": "COCO_train2014_000000570874.jpg",
+    "question_bn": "লাইসেন্স প্লেট নম্বর কত",
+    "answer_bn": "ald 941b",
+    "answer": "ald 941b",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 43426,
+    "image_id": 479372,
+    "image_file": "COCO_train2014_000000479372.jpg",
+    "question_bn": "বিজ্ঞাপনে কোন অক্ষরটি পড়া যায়",
+    "answer_bn": "b",
+    "answer": "b",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 43479,
+    "image_id": 485131,
+    "image_file": "COCO_train2014_000000485131.jpg",
+    "question_bn": "তার শার্টে কি লেখা আছে",
+    "answer_bn": "c",
+    "answer": "c",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 44167,
+    "image_id": 99004,
+    "image_file": "COCO_train2014_000000099004.jpg",
+    "question_bn": "p-এর রঙ কি",
+    "answer_bn": "কালো",
+    "answer": "কালো",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 44272,
+    "image_id": 201324,
+    "image_file": "COCO_train2014_000000201324.jpg",
+    "question_bn": "বিমানের পাশে কোন নামটি আঁকা আছে",
+    "answer_bn": "d-mvfr",
+    "answer": "d-mvfr",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 44276,
+    "image_id": 201324,
+    "image_file": "COCO_train2014_000000201324.jpg",
+    "question_bn": "বিমানের লেজে শেষ অক্ষরটি কি",
+    "answer_bn": "e",
+    "answer": "e",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 44335,
+    "image_id": 410580,
+    "image_file": "COCO_train2014_000000410580.jpg",
+    "question_bn": "বাসের লাইসেন্স প্লেটটি কি",
+    "answer_bn": "r624 jub",
+    "answer": "r624 jub",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 44375,
+    "image_id": 45026,
+    "image_file": "COCO_train2014_000000045026.jpg",
+    "question_bn": "সাদা SUV-টির পিছনে কী আছে",
+    "answer_bn": "গাড়ি",
+    "answer": "গাড়ি",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 44458,
+    "image_id": 311469,
+    "image_file": "COCO_train2014_000000311469.jpg",
+    "question_bn": "চিহ্নটিতে কী লেখা আছে",
+    "answer_bn": "sauf riverains et cyclistes",
+    "answer": "sauf riverains et cyclistes",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 44488,
+    "image_id": 38317,
+    "image_file": "COCO_train2014_000000038317.jpg",
+    "question_bn": "দৃশ্যটি fotograf করতে কোন ধরনের লেন্স ব্যবহার করা হয়েছিল",
+    "answer_bn": "সাধারণ",
+    "answer": "সাধারণ",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 44998,
+    "image_id": 320816,
+    "image_file": "COCO_train2014_000000320816.jpg",
+    "question_bn": "দেয়ালে কোন ওয়েবসাইট আছে",
+    "answer_bn": "usopbnorg",
+    "answer": "usopbnorg",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 45079,
+    "image_id": 535250,
+    "image_file": "COCO_train2014_000000535250.jpg",
+    "question_bn": "ট্রেনের সামনে কোন অক্ষরগুলো আছে",
+    "answer_bn": "db",
+    "answer": "db",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 45084,
+    "image_id": 535250,
+    "image_file": "COCO_train2014_000000535250.jpg",
+    "question_bn": "ট্রেনের সামনে কোন অক্ষরটি আছে",
+    "answer_bn": "db",
+    "answer": "db",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 45103,
+    "image_id": 535250,
+    "image_file": "COCO_train2014_000000535250.jpg",
+    "question_bn": "ট্রেনে কোন অক্ষরগুলো আছে",
+    "answer_bn": "db",
+    "answer": "db",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 45105,
+    "image_id": 535250,
+    "image_file": "COCO_train2014_000000535250.jpg",
+    "question_bn": "কোন বিখ্যাত ট্রেনটি দেখানো হয়েছে",
+    "answer_bn": "db",
+    "answer": "db",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 45211,
+    "image_id": 246586,
+    "image_file": "COCO_train2014_000000246586.jpg",
+    "question_bn": "ফ্রিজের পুরো দরজা ঢাকতে কয়টি বর্গাকার ২\"x ২\" চুম্বক লাগবে",
+    "answer_bn": "200",
+    "answer": "200",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 46799,
+    "image_id": 468444,
+    "image_file": "COCO_train2014_000000468444.jpg",
+    "question_bn": "বিমানে কয়টি D অক্ষর আছে",
+    "answer_bn": "1",
+    "answer": "1",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 47195,
+    "image_id": 547072,
+    "image_file": "COCO_train2014_000000547072.jpg",
+    "question_bn": "ডাউনিং স্ট্রিট SW1 কোন শহরে",
+    "answer_bn": "লন্ডন",
+    "answer": "লন্ডন",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 47292,
+    "image_id": 260039,
+    "image_file": "COCO_train2014_000000260039.jpg",
+    "question_bn": "কতজন লোক Wii খেলছে",
+    "answer_bn": "4",
+    "answer": "4",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 47297,
+    "image_id": 260039,
+    "image_file": "COCO_train2014_000000260039.jpg",
+    "question_bn": "এই মেয়েরা কোন খেলা খেলে",
+    "answer_bn": "wii",
+    "answer": "wii",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 47301,
+    "image_id": 260039,
+    "image_file": "COCO_train2014_000000260039.jpg",
+    "question_bn": "মহিলারা হাতে কী ধরে আছে",
+    "answer_bn": "wii কন্ট্রোলার",
+    "answer": "wii কন্ট্রোলার",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 47302,
+    "image_id": 260039,
+    "image_file": "COCO_train2014_000000260039.jpg",
+    "question_bn": "মহিলারা কোন গেমিং সিস্টেম খেলছে",
+    "answer_bn": "wii",
+    "answer": "wii",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 47423,
+    "image_id": 94792,
+    "image_file": "COCO_train2014_000000094792.jpg",
+    "question_bn": "কোন অক্ষরগুলো DES দ্বারা প্রতিস্থাপিত হয়েছিল",
+    "answer_bn": "cons",
+    "answer": "cons",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 47424,
+    "image_id": 94792,
+    "image_file": "COCO_train2014_000000094792.jpg",
+    "question_bn": "প্রথম শব্দটি কী",
+    "answer_bn": "bnd",
+    "answer": "bnd",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 47971,
+    "image_id": 183617,
+    "image_file": "COCO_train2014_000000183617.jpg",
+    "question_bn": "W অক্ষরটি কতবার দেখা যাচ্ছে",
+    "answer_bn": "2",
+    "answer": "2",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 48877,
+    "image_id": 531828,
+    "image_file": "COCO_train2014_000000531828.jpg",
+    "question_bn": "ডোনাটটি এখন বর্ণমালার কোন অক্ষরের মতো দেখাচ্ছে",
+    "answer_bn": "o",
+    "answer": "o",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 49069,
+    "image_id": 298162,
+    "image_file": "COCO_train2014_000000298162.jpg",
+    "question_bn": "ঘুঁড়িতে কি নকশা আছে",
+    "answer_bn": "x",
+    "answer": "x",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 50316,
+    "image_id": 167813,
+    "image_file": "COCO_train2014_000000167813.jpg",
+    "question_bn": "ছবিতে \"dogs\" শব্দটি কতবার আছে",
+    "answer_bn": "1",
+    "answer": "1",
+    "type": "numeric"
+  },
+  {
+    "qa_id": 50321,
+    "image_id": 555170,
+    "image_file": "COCO_train2014_000000555170.jpg",
+    "question_bn": "সার্ফবোর্ডের নীচে নকশাটি কী",
+    "answer_bn": "x",
+    "answer": "x",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 51342,
+    "image_id": 159948,
+    "image_file": "COCO_train2014_000000159948.jpg",
+    "question_bn": "বস্তুটির উপর কোন অক্ষর আছে",
+    "answer_bn": "z",
+    "answer": "z",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 52159,
+    "image_id": 88332,
+    "image_file": "COCO_train2014_000000088332.jpg",
+    "question_bn": "এই চিহ্নের শব্দটির দ্বিতীয় অক্ষর কি",
+    "answer_bn": "h",
+    "answer": "h",
+    "type": "descriptive"
+  },
+  {
+    "qa_id": 52547,
+    "image_id": 152309,
+    "image_file": "COCO_train2014_000000152309.jpg",
+    "question_bn": "র‍্যাকেটে কোন অক্ষরটি আছে",
+    "answer_bn": "w",
+    "answer": "w",
+    "type": "descriptive"
   }
 ]
