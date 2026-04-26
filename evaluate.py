@@ -39,8 +39,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--retry_backoff", type=float, default=2.0, help="Base backoff in seconds for retries")
     parser.add_argument("--save-raw", action="store_true", help="Save raw model outputs for each sample to results/raw_outputs/")
     parser.add_argument("--resume-from", type=str, default=None, help="Resume from checkpoint file (JSONL path) - skips already processed samples")
-    parser.add_argument("--validate", action="store_true", help="Run post-evaluation validation agent (qwen2.5vl as coach) after benchmark")
-    parser.add_argument("--judge_model", type=str, default="qwen2.5vl:latest", help="Ollama model to use as validation judge (default: qwen2.5vl:latest)")
+    parser.add_argument("--validate", action="store_true", help="Run post-evaluation validation agent (qwen3.5:35b as coach) after benchmark")
+    parser.add_argument("--judge_model", type=str, default="qwen3.5:35b", help="Ollama model to use as validation judge (default: qwen3.5:35b)")
     return parser
 
 

@@ -87,7 +87,7 @@ def evaluate(
     save_raw: bool = False,
     resume_from: str | None = None,
     validate: bool = False,
-    judge_model: str = "qwen2.5vl:latest",
+    judge_model: str = "qwen3.5:35b",
 ) -> dict[str, object]:
     data_dir = Path(data_dir)
     results_dir = Path(results_dir)

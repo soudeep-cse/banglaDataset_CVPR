@@ -22,11 +22,11 @@ uv pip install -e .
 Create `.env` in repo root:
 
 ```dotenv
-OLLAMA_HOST=http://69.30.85.131:22054
+OLLAMA_HOST=https://ha36csd7jtcgyj-11434.proxy.runpod.net
 ```
 
 If not set, default host is `http://localhost:11434`.
-You can also override it per run with `--ollama_host http://69.30.85.131:22054`.
+You can also override it per run with `--ollama_host https://ha36csd7jtcgyj-11434.proxy.runpod.net`.
 
 ## Dataset
 
@@ -76,14 +76,17 @@ python evaluate.py --model llava --sample 100 --oer_threshold 0.7 --ece_bins 10
 python evaluate.py --model bakllava --skip_preprocess
 ----------------------------
 python evaluate.py --model qwen2.5vl --data_dir Bangla-Bayanno-full --sample 20 --preprocessed_dir Bangla-Bayanno-full/preprocessed --validate
-python evaluate.py --model qwen2.5vl --data_dir Bangla-Bayanno-full --sample 20 --preprocessed_dir Bangla-Bayanno-full/preprocessed --validate --judge_model qwen2.5:7b
+python evaluate.py --model qwen2.5vl --data_dir Bangla-Bayanno-full --sample 20 --preprocessed_dir Bangla-Bayanno-full/preprocessed --validate --judge_model qwen3.5:9b
 
+------------------------------------------------
+
+python run_100_per_segment.py --model ollama/qwen2.5vl:latest --per_segment 100 --ollama_host https://ha36csd7jtcgyj-11434.proxy.runpod.net --delay 0.5
 ```
 
 If your RunPod host is not in `.env`, pass it explicitly:
 
 ```bash
-python evaluate.py --model ollama/qwen2.5vl:7b --sample 5 --ollama_host http://69.30.85.131:22054
+python evaluate.py --model ollama/qwen2.5vl:7b --sample 5 --ollama_host https://ha36csd7jtcgyj-11434.proxy.runpod.net
 ```
 
 Outputs:
@@ -139,7 +142,7 @@ Endpoints:
 ```bash
 curl -X POST http://127.0.0.1:8000/v1/evaluate \
   -H "Content-Type: application/json" \
-  -d '{"model":"ollama/qwen2.5vl:7b","sample":3,"ollama_host":"http://69.30.85.131:22054"}'
+  -d '{"model":"ollama/qwen2.5vl:7b","sample":3,"ollama_host":"https://ha36csd7jtcgyj-11434.proxy.runpod.net"}'
 ```
 
 ### Generate API (Path-Based) Example
@@ -147,7 +150,7 @@ curl -X POST http://127.0.0.1:8000/v1/evaluate \
 ```bash
 curl -X POST http://127.0.0.1:8000/v1/generate \
   -H "Content-Type: application/json" \
-  -d '{"model":"ollama/qwen2.5vl:7b","question":"ছবিতে কী আছে?","image_path":"dataset/images/1.jpg","ollama_host":"http://69.30.85.131:22054"}'
+  -d '{"model":"ollama/qwen2.5vl:7b","question":"ছবিতে কী আছে?","image_path":"dataset/images/1.jpg","ollama_host":"https://ha36csd7jtcgyj-11434.proxy.runpod.net"}'
 ```
 
 ### Generate API (Upload) Example
@@ -155,7 +158,7 @@ curl -X POST http://127.0.0.1:8000/v1/generate \
 ```bash
 curl -X POST http://127.0.0.1:8000/v1/generate-upload \
   -F "model=ollama/qwen2.5vl:7b" \
-  -F "ollama_host=http://69.30.85.131:22054" \
+  -F "ollama_host=https://ha36csd7jtcgyj-11434.proxy.runpod.net" \
   -F "question=ছবিতে কী আছে?" \
   -F "image=@dataset/images/1.jpg"
 ```
