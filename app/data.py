@@ -7,8 +7,8 @@ from typing import Any
 from .types import BanglaVerseSample, QuestionSample
 
 
-QUESTION_KEYS = ("question", "question_bn", "query", "q", "text", "prompt")
-ANSWER_KEYS = ("answer", "answer_bn", "gt_answer", "label", "target", "gold")
+QUESTION_KEYS = ("question_bn", "question", "query", "q", "text", "prompt")
+ANSWER_KEYS = ("answer_bn", "answer", "gt_answer", "label", "target", "gold")
 IMAGE_KEYS = (
     "image",
     "image_file",
@@ -77,7 +77,7 @@ def _rows_to_samples(rows: list[dict[str, Any]], images_dir: Path, limit: int | 
         answer = str(_first_present(row, ANSWER_KEYS, "")).strip()
         image_ref = _first_present(row, IMAGE_KEYS, None)
         if not question:
-            raise ValueError(f"Missing question text for sample {sample_id}")
+            continue  # skip rows with missing question
         if image_ref is None:
             raise ValueError(f"Missing image reference for sample {sample_id}")
         samples.append(

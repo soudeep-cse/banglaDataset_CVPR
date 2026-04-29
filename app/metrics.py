@@ -259,7 +259,7 @@ def _get_llm_judge_config():
     """Get LLM judge configuration from environment."""
     global _LLM_JUDGE_MODEL, _LLM_HOST
     if _LLM_JUDGE_MODEL is None:
-        _LLM_JUDGE_MODEL = os.getenv("JUDGE_MODEL", "qwen3.5:35b")
+        _LLM_JUDGE_MODEL = os.getenv("JUDGE_MODEL", "qwen2.5vl:latest")
         _LLM_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
     return _LLM_JUDGE_MODEL, _LLM_HOST
 
@@ -431,28 +431,37 @@ def _safe_confidence(item: dict[str, Any]) -> float:
     return value if value is not None else 0.5
 
 
-def compute_metrics(results: list[dict[str, Any]], ece_bins: int = 10, oer_threshold: float = 0.7) -> dict[str, object]:
+def compute_metrics(results: list[dict[str, Any]], ece_bins: int = 10, high_conf_threshold: float = 0.80) -> dict[str, object]:
     total = len(results)
-    if total == 0:
+    attempted = sum(1 for item in results if bool(item.get("parse_success", True)))
+    errors = total - attempted
+
+    if attempted == 0:
         return {
-            "total": 0,
+            "total_samples": total,
+            "attempted": 0,
+            "errors": errors,
+            "parse_success_rate": 0.0,
             "accuracy": 0.0,
-            "oer": 0.0,
+            "error_rate": 1.0,
+            "mean_confidence": 0.0,
+            "overconfidence_gap": 0.0,
             "ece": 0.0,
-            "brier": 0.0,
-            "mcw": 0.0,
+            "high_conf_error_rate": 0.0,
+            "high_conf_wrong_count": 0,
         }
 
-    correct = sum(1 for item in results if bool(item.get("correct", False)))
-    wrong_confidences = [_safe_confidence(item) for item in results if not bool(item.get("correct", False))]
-    oer_count = sum(1 for item in results if (not bool(item.get("correct", False))) and _safe_confidence(item) >= oer_threshold)
-    brier = sum((_safe_confidence(item) - (1.0 if bool(item.get("correct", False)) else 0.0)) ** 2 for item in results) / total
+    attempted_results = [item for item in results if bool(item.get("parse_success", True))]
+    correct = sum(1 for item in attempted_results if bool(item.get("correct", False)))
+    accuracy = correct / attempted
+
+    confidences = [_safe_confidence(item) for item in attempted_results]
+    mean_confidence = sum(confidences) / attempted
 
     bin_totals = [0] * max(1, ece_bins)
     bin_correct = [0] * max(1, ece_bins)
     bin_confidence = [0.0] * max(1, ece_bins)
-    for item in results:
-        conf = _safe_confidence(item)
+    for item, conf in zip(attempted_results, confidences):
         index = min(len(bin_totals) - 1, int(conf * len(bin_totals)))
         bin_totals[index] += 1
         bin_correct[index] += int(bool(item.get("correct", False)))
@@ -464,15 +473,24 @@ def compute_metrics(results: list[dict[str, Any]], ece_bins: int = 10, oer_thres
             continue
         avg_acc = correct_in_bin / total_in_bin
         avg_conf = confidence_sum / total_in_bin
-        ece += (total_in_bin / total) * abs(avg_acc - avg_conf)
+        ece += (total_in_bin / attempted) * abs(avg_acc - avg_conf)
+
+    high_conf_items = [item for item, conf in zip(attempted_results, confidences) if conf >= high_conf_threshold]
+    high_conf_wrong = [item for item in high_conf_items if not bool(item.get("correct", False))]
+    high_conf_error_rate = len(high_conf_wrong) / len(high_conf_items) if high_conf_items else 0.0
 
     return {
-        "total": total,
-        "accuracy": correct / total,
-        "oer": oer_count / total,
-        "ece": ece,
-        "brier": brier,
-        "mcw": (sum(wrong_confidences) / len(wrong_confidences)) if wrong_confidences else 0.0,
+        "total_samples": total,
+        "attempted": attempted,
+        "errors": errors,
+        "parse_success_rate": round(attempted / total, 4) if total else 0.0,
+        "accuracy": round(accuracy, 4),
+        "error_rate": round(1 - accuracy, 4),
+        "mean_confidence": round(mean_confidence, 4),
+        "overconfidence_gap": round(mean_confidence - accuracy, 4),
+        "ece": round(ece, 4),
+        "high_conf_error_rate": round(high_conf_error_rate, 4),
+        "high_conf_wrong_count": len(high_conf_wrong),
     }
 
 

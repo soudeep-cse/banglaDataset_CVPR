@@ -195,14 +195,15 @@ def evaluate(
 
             result = {
                 "qa_id": sample_row.sample_id,
-                "type": segment,
-                "question": sample_row.question,
+                "image_file": Path(sample_row.image_path).name if hasattr(sample_row, 'image_path') else None,
+                "answer_type": segment,
+                "question_bn": sample_row.question,
                 "ground_truth": sample_row.answer,
-                "predicted": predicted,
+                "predicted_answer": predicted,
                 "confidence": confidence,
                 "correct": correct,
+                "parse_success": True,
                 "raw_output": response.raw_text if hasattr(response, 'raw_text') else None,
-                "image_path": str(sample_row.image_path) if hasattr(sample_row, 'image_path') else None,
                 "timestamp": datetime.now(timezone.utc).isoformat(),
             }
             all_results.append(result)
@@ -230,18 +231,16 @@ def evaluate(
             if request_delay > 0:
                 time.sleep(request_delay)
 
-    overall = compute_metrics(all_results, ece_bins=ece_bins, oer_threshold=oer_threshold)
+    overall = compute_metrics(all_results, ece_bins=ece_bins)
     segment_wise = {
-        segment: {"n": len(rows), **compute_metrics(rows, ece_bins=ece_bins, oer_threshold=oer_threshold)}
+        segment: compute_metrics([e for e in all_results if e.get("answer_type") == segment], ece_bins=ece_bins)
         for segment in ("polar", "numeric", "descriptive")
-        for rows in ([entry for entry in all_results if entry.get("type") == segment],)
     }
 
     report = {
         "metadata": {
             "model": model_name,
             "timestamp": timestamp,
-            "oer_threshold": oer_threshold,
             "ece_bins": ece_bins,
             "preprocessed_dir": str(preprocessed_dir),
             "preprocess_counts": prep_info.get("counts", {}),

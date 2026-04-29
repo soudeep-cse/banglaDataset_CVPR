@@ -1,8 +1,9 @@
-"""Run 100 samples from each segment (polar, numeric, descriptive).
+"""Run N samples per segment (polar, numeric, descriptive) with balanced sampling.
 
-- Saves incrementally to results/run_100_*.jsonl after every sample.
-- Continues on any failure (records the error and moves on).
-- Prints live progress and final summary.
+- Balanced: uses min(per_segment, smallest_segment_size) for all segments
+- Saves incrementally to results/run_100_*.jsonl after every sample
+- Continues on any failure (records the error and moves on)
+- Full metrics in summary.json
 """
 from __future__ import annotations
 
@@ -28,7 +29,7 @@ except ImportError:
     pass
 
 from app.data import load_dataset_from_file
-from app.metrics import compare_answers
+from app.metrics import compare_answers, compute_metrics
 from app.models import build_model
 from app.preprocess import prepare_segment_files
 
@@ -52,12 +53,12 @@ def _confidence_to_unit(value: float | None) -> float:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run 100 samples per segment with incremental save")
+    parser = argparse.ArgumentParser(description="Run N samples per segment with balanced sampling")
     parser.add_argument("--model", required=True, help="Ollama model name, e.g. ollama/qwen2.5vl:latest")
     parser.add_argument("--data_dir", default="dataset", help="Dataset directory")
     parser.add_argument("--preprocessed_dir", default="preprocessed_dataset", help="Preprocessed directory")
     parser.add_argument("--results_dir", default="results", help="Results directory")
-    parser.add_argument("--per_segment", type=int, default=100, help="Samples per segment (default 100)")
+    parser.add_argument("--per_segment", type=int, default=None, help="Max samples per segment (default: use all, balanced to min available)")
     parser.add_argument("--ollama_host", default=None, help="Ollama host override")
     parser.add_argument("--skip_preprocess", action="store_true", help="Skip preprocessing")
     parser.add_argument("--delay", type=float, default=0.0, help="Seconds between requests")
@@ -71,35 +72,47 @@ def main() -> None:
     host = args.ollama_host or os.getenv("OLLAMA_HOST", "http://localhost:11434")
     print(f"Using Ollama host: {host}")
 
-    # Preprocess if needed
     if not args.skip_preprocess:
         prepare_segment_files(data_dir=data_dir, output_dir=preprocessed_dir, limit=None)
 
-    # Build model once
     model = build_model(args.model, host=host)
     safe_name = _safe_stem(args.model)
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
 
-    # Output files
     out_jsonl = results_dir / f"run_100_{safe_name}_{timestamp}.jsonl"
     out_summary = results_dir / f"run_100_{safe_name}_{timestamp}_summary.json"
 
     images_dir = data_dir / "images"
     all_results: list[dict[str, Any]] = []
-
     segments = ("polar", "numeric", "descriptive")
 
+    # Load all segments first to determine balanced size
+    segment_samples: dict[str, list] = {}
     for segment in segments:
         qa_file = preprocessed_dir / f"qa_{segment}.json"
         if not qa_file.exists():
             print(f"\n[SKIP] {segment}: file not found ({qa_file})")
             continue
-
-        samples = load_dataset_from_file(qa_file, images_dir=images_dir, limit=args.per_segment)
-        if not samples:
+        loaded = load_dataset_from_file(qa_file, images_dir=images_dir)
+        if loaded:
+            segment_samples[segment] = loaded
+        else:
             print(f"\n[SKIP] {segment}: no samples loaded")
-            continue
 
+    if not segment_samples:
+        print("No segments found. Exiting.")
+        return
+
+    # Balanced: min of requested per_segment and smallest segment size
+    min_available = min(len(s) for s in segment_samples.values())
+    balanced_n = min(args.per_segment, min_available) if args.per_segment else min_available
+    print(f"\nBalanced sampling: {balanced_n} per segment")
+    print(f"  Requested: {args.per_segment} | Min available: {min_available}")
+    for seg, samps in segment_samples.items():
+        print(f"  {seg}: {len(samps)} available → using {balanced_n}")
+
+    for segment, all_samples in segment_samples.items():
+        samples = all_samples[:balanced_n]
         total_seg = len(samples)
         print(f"\n=== {segment.upper()} ({total_seg} samples) ===")
 
@@ -109,16 +122,16 @@ def main() -> None:
             start_time = time.time()
             record: dict[str, Any] = {
                 "qa_id": sample_row.sample_id,
-                "type": segment,
-                "question": sample_row.question,
+                "image_file": Path(sample_row.image_path).name,
+                "answer_type": segment,
+                "question_bn": sample_row.question,
                 "ground_truth": sample_row.answer,
-                "predicted": None,
+                "predicted_answer": None,
                 "confidence": None,
                 "correct": False,
+                "parse_success": False,
                 "error": None,
-                "error_trace": None,
                 "latency_sec": 0.0,
-                "image_path": str(sample_row.image_path),
                 "timestamp": datetime.now(timezone.utc).isoformat(),
             }
 
@@ -132,91 +145,73 @@ def main() -> None:
                     segment=segment,
                     question=sample_row.question,
                 )
-
-                record["predicted"] = predicted
+                record["predicted_answer"] = predicted
                 record["confidence"] = confidence
                 record["correct"] = correct
+                record["parse_success"] = True
                 record["raw_output"] = response.raw_text if hasattr(response, "raw_text") else None
 
             except Exception as exc:
                 record["error"] = f"{type(exc).__name__}: {exc}"
-                record["error_trace"] = traceback.format_exc()
-                # Still save and continue
+                record["parse_success"] = False
 
             record["latency_sec"] = round(time.time() - start_time, 3)
 
-            # Append immediately to JSONL
             with out_jsonl.open("a", encoding="utf-8") as f:
                 f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
             all_results.append(record)
 
-            # Live stats
             seg_done = i + 1
-            seg_ok = sum(1 for r in all_results if r["type"] == segment and r["error"] is None)
+            seg_ok = sum(1 for r in all_results if r["answer_type"] == segment and r["parse_success"])
             seg_err = seg_done - seg_ok
-            seg_correct = sum(
-                1 for r in all_results if r["type"] == segment and r.get("correct") is True
-            )
+            seg_correct = sum(1 for r in all_results if r["answer_type"] == segment and r.get("correct") is True)
             if not HAS_TQDM:
-                print(
-                    f"  [{segment}] {seg_done}/{total_seg} | "
-                    f"ok={seg_ok} err={seg_err} correct={seg_correct} "
-                    f"lat={record['latency_sec']:.1f}s"
-                )
+                print(f"  [{segment}] {seg_done}/{total_seg} | ok={seg_ok} err={seg_err} correct={seg_correct} lat={record['latency_sec']:.1f}s")
             elif hasattr(iterator, "set_postfix"):
-                iterator.set_postfix(
-                    ok=seg_ok, err=seg_err, acc=f"{seg_correct / seg_done:.1%}"
-                )
+                iterator.set_postfix(ok=seg_ok, err=seg_err, acc=f"{seg_correct / seg_done:.1%}")
 
             if args.delay > 0:
                 time.sleep(args.delay)
 
-    # Summary
-    total = len(all_results)
-    errors = sum(1 for r in all_results if r["error"] is not None)
-    correct = sum(1 for r in all_results if r.get("correct") is True)
-    attempted = total - errors
+    # Full metrics in summary
+    overall_metrics = compute_metrics(all_results)
+    segment_wise: dict[str, Any] = {}
+    for segment in segments:
+        seg_results = [r for r in all_results if r["answer_type"] == segment]
+        if seg_results:
+            segment_wise[segment] = compute_metrics(seg_results)
 
     summary = {
         "model": args.model,
         "host": host,
         "per_segment_requested": args.per_segment,
+        "balanced_samples_per_segment": balanced_n,
         "timestamp": timestamp,
-        "total_samples": total,
-        "errors": errors,
-        "attempted": attempted,
-        "correct": correct,
-        "accuracy": round(correct / attempted, 4) if attempted else 0.0,
-        "segment_breakdown": {},
+        "overall": overall_metrics,
+        "segment_wise": segment_wise,
         "output_jsonl": str(out_jsonl),
     }
-
-    for segment in segments:
-        seg_results = [r for r in all_results if r["type"] == segment]
-        if not seg_results:
-            continue
-        seg_errors = sum(1 for r in seg_results if r["error"] is not None)
-        seg_attempted = len(seg_results) - seg_errors
-        seg_correct = sum(1 for r in seg_results if r.get("correct") is True)
-        summary["segment_breakdown"][segment] = {
-            "total": len(seg_results),
-            "errors": seg_errors,
-            "attempted": seg_attempted,
-            "correct": seg_correct,
-            "accuracy": round(seg_correct / seg_attempted, 4) if seg_attempted else 0.0,
-        }
 
     with out_summary.open("w", encoding="utf-8") as f:
         json.dump(summary, f, ensure_ascii=False, indent=2)
 
     print(f"\n=== DONE ===")
-    print(f"Total: {total} | Errors: {errors} | Correct: {correct}/{attempted}")
-    print(f"Accuracy: {summary['accuracy']:.2%}")
-    for seg, stats in summary["segment_breakdown"].items():
-        print(f"  [{seg}] n={stats['total']} err={stats['errors']} acc={stats['accuracy']:.2%}")
+    print(f"Balanced N per segment : {balanced_n}")
+    print(f"Total                  : {overall_metrics['total_samples']}")
+    print(f"Attempted              : {overall_metrics['attempted']}")
+    print(f"Errors                 : {overall_metrics['errors']}")
+    print(f"Accuracy               : {overall_metrics['accuracy']:.4f}")
+    print(f"Mean Confidence        : {overall_metrics['mean_confidence']:.4f}")
+    print(f"Overconfidence Gap     : {overall_metrics['overconfidence_gap']:.4f}")
+    print(f"ECE                    : {overall_metrics['ece']:.4f}")
+    print(f"High-Conf Error Rate   : {overall_metrics['high_conf_error_rate']:.4f}")
+    print(f"High-Conf Wrong Count  : {overall_metrics['high_conf_wrong_count']}")
+    print("\nSegment-wise:")
+    for seg, metrics in segment_wise.items():
+        print(f"  [{seg}] n={metrics['total_samples']} acc={metrics['accuracy']:.4f} gap={metrics['overconfidence_gap']:.4f} ece={metrics['ece']:.4f}")
     print(f"\nFiles saved:")
-    print(f"  JSONL : {out_jsonl}")
+    print(f"  JSONL  : {out_jsonl}")
     print(f"  Summary: {out_summary}")
 
 

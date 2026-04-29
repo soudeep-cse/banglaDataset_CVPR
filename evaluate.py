@@ -32,7 +32,6 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--load_in_4bit", action="store_true", help="Legacy flag, ignored in Ollama-only mode")
     parser.add_argument("--env_file", default=".env", help="Path to .env file for runtime config (for example OLLAMA_HOST)")
     parser.add_argument("--ollama_host", default=None, help="Override Ollama host, for example http://69.30.85.131:22054")
-    parser.add_argument("--oer_threshold", type=float, default=0.7, help="Confidence threshold for OER")
     parser.add_argument("--ece_bins", type=int, default=10, help="Number of bins used for ECE")
     parser.add_argument("--request_delay", type=float, default=0.0, help="Delay in seconds between API requests")
     parser.add_argument("--max_retries", type=int, default=3, help="Maximum retries for retryable API errors")
@@ -65,7 +64,6 @@ def main() -> None:
         sample=args.sample,
         load_in_4bit=args.load_in_4bit,
         ollama_host=actual_host,
-        oer_threshold=args.oer_threshold,
         ece_bins=args.ece_bins,
         request_delay=args.request_delay,
         max_retries=args.max_retries,
@@ -78,21 +76,28 @@ def main() -> None:
     report = result["report"]
     overall = report.get("overall", {})
     print("=== Overall ===")
-    print(f"  total: {overall.get('total', 0)}")
-    print(f"  accuracy: {overall.get('accuracy', 0.0):.4f}")
-    print(f"  oer: {overall.get('oer', 0.0):.4f}")
-    print(f"  ece: {overall.get('ece', 0.0):.4f}")
-    print(f"  brier: {overall.get('brier', 0.0):.4f}")
-    print(f"  mcw: {overall.get('mcw', 0.0):.4f}")
+    print(f"  total_samples   : {overall.get('total_samples', 0)}")
+    print(f"  attempted       : {overall.get('attempted', 0)}")
+    print(f"  errors          : {overall.get('errors', 0)}")
+    print(f"  parse_success   : {overall.get('parse_success_rate', 0.0):.4f}")
+    print(f"  accuracy        : {overall.get('accuracy', 0.0):.4f}")
+    print(f"  error_rate      : {overall.get('error_rate', 0.0):.4f}")
+    print(f"  mean_confidence : {overall.get('mean_confidence', 0.0):.4f}")
+    print(f"  overconf_gap    : {overall.get('overconfidence_gap', 0.0):.4f}")
+    print(f"  ece             : {overall.get('ece', 0.0):.4f}")
+    print(f"  high_conf_err   : {overall.get('high_conf_error_rate', 0.0):.4f}")
+    print(f"  high_conf_wrong : {overall.get('high_conf_wrong_count', 0)}")
     print("\n=== Segment-wise ===")
     for segment in ("polar", "numeric", "descriptive"):
-        segment_metrics = report.get("segment_wise", {}).get(segment, {})
-        print(f"\n  [{segment}] (n={segment_metrics.get('n', 0)})")
-        print(f"    accuracy: {segment_metrics.get('accuracy', 0.0):.4f}")
-        print(f"    oer: {segment_metrics.get('oer', 0.0):.4f}")
-        print(f"    ece: {segment_metrics.get('ece', 0.0):.4f}")
-        print(f"    brier: {segment_metrics.get('brier', 0.0):.4f}")
-        print(f"    mcw: {segment_metrics.get('mcw', 0.0):.4f}")
+        seg = report.get("segment_wise", {}).get(segment, {})
+        print(f"\n  [{segment}] (n={seg.get('total_samples', 0)})")
+        print(f"    accuracy        : {seg.get('accuracy', 0.0):.4f}")
+        print(f"    error_rate      : {seg.get('error_rate', 0.0):.4f}")
+        print(f"    mean_confidence : {seg.get('mean_confidence', 0.0):.4f}")
+        print(f"    overconf_gap    : {seg.get('overconfidence_gap', 0.0):.4f}")
+        print(f"    ece             : {seg.get('ece', 0.0):.4f}")
+        print(f"    high_conf_err   : {seg.get('high_conf_error_rate', 0.0):.4f}")
+        print(f"    high_conf_wrong : {seg.get('high_conf_wrong_count', 0)}")
     print(f"\nSaved: {result.get('report_path')}")
     print(json.dumps(report.get("metadata", {}), ensure_ascii=False, indent=2))
 
