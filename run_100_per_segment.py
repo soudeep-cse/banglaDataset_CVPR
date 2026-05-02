@@ -43,6 +43,45 @@ def _safe_stem(name: str) -> str:
     return safe or "model"
 
 
+def _write_realtime_summary(
+    out_summary: Path,
+    all_results: list[dict[str, Any]],
+    args: argparse.Namespace,
+    host: str,
+    timestamp: str,
+    balanced_n: int,
+    segments: tuple,
+) -> None:
+    """Write summary JSON in real-time after each sample."""
+    from app.metrics import compute_metrics
+    
+    overall_metrics = compute_metrics(all_results)
+    segment_wise: dict[str, Any] = {}
+    for segment in segments:
+        seg_results = [r for r in all_results if r["answer_type"] == segment]
+        if seg_results:
+            segment_wise[segment] = compute_metrics(seg_results)
+    
+    summary = {
+        "model": args.model,
+        "host": host,
+        "per_segment_requested": args.per_segment,
+        "balanced_samples_per_segment": balanced_n,
+        "timestamp": timestamp,
+        "total_processed_so_far": len(all_results),
+        "overall": overall_metrics,
+        "segment_wise": segment_wise,
+        "output_jsonl": str(out_summary.parent / f"run_100_{_safe_stem(args.model)}_{timestamp}.jsonl"),
+        "status": "in_progress" if overall_metrics["total_samples"] < balanced_n * 3 else "completed",
+    }
+    
+    # Write atomically to avoid corruption
+    tmp_path = out_summary.with_suffix(".tmp")
+    with tmp_path.open("w", encoding="utf-8") as f:
+        json.dump(summary, f, ensure_ascii=False, indent=2)
+    tmp_path.replace(out_summary)
+
+
 def _confidence_to_unit(value: float | None) -> float:
     if value is None:
         return 0.5
@@ -71,6 +110,11 @@ def main() -> None:
 
     host = args.ollama_host or os.getenv("OLLAMA_HOST", "http://localhost:11434")
     print(f"Using Ollama host: {host}")
+    
+    # Print available models from model registry
+    print("\nConfigured models: llava:7b, bakllava:7b, moondream:1.8b, qwen2.5vl:latest, llama3.2-vision:latest")
+    print(f"Using model: {args.model}")
+    print("Real-time saving: JSONL + Summary JSON updated after every sample\n")
 
     if not args.skip_preprocess:
         prepare_segment_files(data_dir=data_dir, output_dir=preprocessed_dir, limit=None)
@@ -161,6 +205,9 @@ def main() -> None:
                 f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
             all_results.append(record)
+            
+            # Real-time summary update (every sample for live monitoring)
+            _write_realtime_summary(out_summary, all_results, args, host, timestamp, balanced_n, segments)
 
             seg_done = i + 1
             seg_ok = sum(1 for r in all_results if r["answer_type"] == segment and r["parse_success"])
